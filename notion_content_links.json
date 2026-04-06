@@ -1,0 +1,66 @@
+{
+  "class_1": {
+    "english": "https://www.notion.so/english-32ec1523f9cf803d8eaaf92fb2c58e0c?pvs=21",
+    "maths": "https://www.notion.so/MATHS-32ec1523f9cf804d9e0ffd34d0d19e47?pvs=21",
+    "hindi": "https://www.notion.so/hindi-32ec1523f9cf8085a8b6d0ec41abf85e?pvs=21"
+  },
+  "class_2": {
+    "maths": "https://www.notion.so/maths-32ec1523f9cf8016a6a4f72049e66674?pvs=21",
+    "english": "https://www.notion.so/english-32ec1523f9cf80c98edcebde6174b6a6?pvs=21",
+    "evs": "https://www.notion.so/evs-32ec1523f9cf8065a63ff65016e8959f?pvs=21",
+    "hindi": "https://www.notion.so/hindi-32ec1523f9cf804e80f3c70505a73935?pvs=21"
+  },
+  "class_3": {
+    "english": "https://www.notion.so/english-32fc1523f9cf803f8dfcfd138ff3943d?pvs=21",
+    "hindi": "https://www.notion.so/hindi-32fc1523f9cf809997e3fba66ce206d1?pvs=21",
+    "maths": "https://www.notion.so/maths-32fc1523f9cf805293d9d83c2045bca6?pvs=21",
+    "evs": "https://www.notion.so/evs-32fc1523f9cf802f9a9ed04c17a37589?pvs=21"
+  },
+  "class_4": {
+    "english": "https://www.notion.so/english-32fc1523f9cf80d79736f12e5556f9a5?pvs=21",
+    "hindi": "https://www.notion.so/hindi-32fc1523f9cf804aabd9dc7046fbd3c2?pvs=21",
+    "maths": "https://www.notion.so/maths-32fc1523f9cf804e8777f876cf3feb2a?pvs=21",
+    "evs": "https://www.notion.so/evs-32fc1523f9cf80a1938ff025c716e22c?pvs=21"
+  },
+  "class_5": {
+    "english": "https://www.notion.so/english-32fc1523f9cf80129680eace9c0a024e?pvs=21",
+    "hindi": "https://www.notion.so/hindi-32fc1523f9cf80358a81cf416694715f?pvs=21",
+    "maths": "https://www.notion.so/maths-32fc1523f9cf80e798c3d3c2a3b083b4?pvs=21",
+    "evs": "https://www.notion.so/evs-32fc1523f9cf807fa7bede87a21852b4?pvs=21"
+  },
+  "class_6": {
+    "english": "https://www.notion.so/english-32fc1523f9cf804b9df7d455bbe3ef65?pvs=21",
+    "hindi": "https://www.notion.so/hindi-32fc1523f9cf8030b08ec63edae74ad8?pvs=21",
+    "maths": "https://www.notion.so/maths-32fc1523f9cf8026a755f3cb2f8fa6b1?pvs=21",
+    "evs": "https://www.notion.so/evs-32fc1523f9cf80e29ce0db48029d59db?pvs=21",
+    "sst": "https://www.notion.so/sst-32fc1523f9cf8089bad8c11422b4465c?pvs=21"
+  },
+  "class_7": {
+    "english": "https://www.notion.so/english-32fc1523f9cf80ebabc7d3d3a2f6fb76?pvs=21",
+    "hindi": "https://www.notion.so/hindi-32fc1523f9cf803582ddc1079968ace3?pvs=21",
+    "evs": "https://www.notion.so/evs-32fc1523f9cf808a9443ef2f1cfc0ae1?pvs=21",
+    "maths": "https://www.notion.so/maths-32fc1523f9cf8073bff8f6c42d78afb0?pvs=21",
+    "sst": "https://www.notion.so/sst-32fc1523f9cf80789ee0ce6bafeb6a78?pvs=21"
+  },
+  "class_8": {
+    "english": "https://www.notion.so/english-32fc1523f9cf805da01cef519749f133?pvs=21",
+    "hindi": "https://www.notion.so/hindi-32fc1523f9cf80299273cd8def62cbec?pvs=21",
+    "maths": "https://www.notion.so/maths-32fc1523f9cf8042b101c27b40af7c05?pvs=21",
+    "science": "https://www.notion.so/science-32fc1523f9cf8025a097c535aba28fde?pvs=21",
+    "sst": "https://www.notion.so/sst-32fc1523f9cf807ebd19fb44379b9381?pvs=21"
+  },
+  "class_9": {
+    "english": "https://www.notion.so/english-32fc1523f9cf8018a9faf40f6342093e?pvs=21",
+    "hindi": "https://www.notion.so/hindi-32fc1523f9cf808fb4d0df8d0fd237f5?pvs=21",
+    "maths": "https://www.notion.so/maths-32fc1523f9cf8067ba80cc1f521f2e4b?pvs=21",
+    "science": "https://www.notion.so/science-32fc1523f9cf80cea310d5490b92c86c?pvs=21",
+    "sst": "https://www.notion.so/sst-32fc1523f9cf80258a87ea576d44c297?pvs=21"
+  },
+  "class_10": {
+    "english": "https://www.notion.so/english-32fc1523f9cf808cb3c3c89a666bd032?pvs=21",
+    "hindi": "https://www.notion.so/hindi-32fc1523f9cf803ab125e14cb6864a6c?pvs=21",
+    "maths": "https://www.notion.so/maths-32fc1523f9cf801d8681c960c207e26e?pvs=21",
+    "science": "https://www.notion.so/science-32fc1523f9cf801cbfe7c96eeb79ab12?pvs=21",
+    "sst": "https://www.notion.so/sst-32fc1523f9cf80ab8018e1b2c13ec8c5?pvs=21"
+  }
+}

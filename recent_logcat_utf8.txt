@@ -1,0 +1,1092 @@
+﻿--------- beginning of system
+03-27 20:00:48.562   626  1697 V ActivityManager: Got obituary of 32522:com.tannu.edureach
+--------- beginning of main
+03-27 20:00:48.576   626   827 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET, states=14
+03-27 20:00:48.583   626   827 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET6, states=14
+03-27 20:00:48.589   626   827 D InetDiagMessage: Destroyed live tcp sockets for uids={10210} in 14ms
+03-27 20:00:48.592   626   748 W UsageStatsService: Unexpected activity event reported! (com.tannu.edureach/com.tannu.edureach.SplashActivity event : 23 instanceId : 159652157)
+03-27 20:00:48.597   626   827 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET, states=14
+03-27 20:00:48.607   626   827 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET6, states=14
+03-27 20:00:48.610   626   827 D InetDiagMessage: Destroyed live tcp sockets for uids={20210} in 20ms
+03-27 20:00:48.629   626   671 I libprocessgroup: Removed cgroup /sys/fs/cgroup/uid_10210/pid_32522
+03-27 20:00:48.695   940  7493 V WindowManagerShell: onTransitionReady(transaction=2688649544140)
+03-27 20:00:48.698   940  1019 V WindowManagerShell: onTransitionReady (#424) android.os.BinderProxy@5225089: {id=424 t=CLOSE f=0x0 trk=0 r=[0@Point(0, 0)] c=[{WCT{android.window.IWindowContainerToken$Stub$Proxy@6a74f9a} m=TO_FRONT f=NONE leash=Surface(name=Task=74)/@0xc1388af sb=Rect(0, 0 - 1344, 2992) eb=Rect(0, 0 - 1344, 2992) d=0 taskParent=-1},{WCT{android.window.IWindowContainerToken$Stub$Proxy@a9a00cb} m=CLOSE f=NONE leash=Surface(name=Task=85)/@0xe50b4bc sb=Rect(0, 0 - 1344, 2992) eb=Rect(0, 0 - 1344, 2992) d=0 taskParent=-1}]}
+03-27 20:00:48.698   940  1019 V WindowManagerShell: Playing animation for (#424) android.os.BinderProxy@5225089@0
+03-27 20:00:48.699   940  1019 V WindowManagerShell:  try handler com.android.wm.shell.transition.DefaultMixedHandler@e45b1de
+03-27 20:00:48.699   940  1019 V WindowManagerShell:  try handler com.android.wm.shell.keyguard.KeyguardTransitionHandler@f928fbf
+03-27 20:00:48.699   940  1019 V WindowManagerShell:  try handler com.android.wm.shell.pip.PipTransition@5ed968c
+03-27 20:00:48.699   940  1019 V WindowManagerShell:  try handler com.android.wm.shell.activityembedding.ActivityEmbeddingController@64ff1d5
+03-27 20:00:48.699   940  1019 V WindowManagerShell:  try handler com.android.wm.shell.recents.RecentsTransitionHandler@b770dea
+03-27 20:00:48.699   940  1019 V ShellRecents: RecentsTransitionHandler.startAnimation: no controller found
+03-27 20:00:48.699   940  1019 V WindowManagerShell:  try handler com.android.wm.shell.splitscreen.StageCoordinator@4ea68db
+03-27 20:00:48.699   940  1019 V WindowManagerShell:  try handler com.android.wm.shell.transition.RemoteTransitionHandler@8238f78
+03-27 20:00:48.699   940  1019 V WindowManagerShell: Transition doesn't have explicit remote, search filters for match for {id=424 t=CLOSE f=0x0 trk=0 r=[0@Point(0, 0)] c=[{WCT{android.window.IWindowContainerToken$Stub$Proxy@6a74f9a} m=TO_FRONT f=NONE leash=Surface(name=Task=74)/@0xc1388af sb=Rect(0, 0 - 1344, 2992) eb=Rect(0, 0 - 1344, 2992) d=0 taskParent=-1},{WCT{android.window.IWindowContainerToken$Stub$Proxy@a9a00cb} m=CLOSE f=NONE leash=Surface(name=Task=85)/@0xe50b4bc sb=Rect(0, 0 - 1344, 2992) eb=Rect(0, 0 - 1344, 2992) d=0 taskParent=-1}]}
+03-27 20:00:48.699   940  1019 V WindowManagerShell:  Checking filter Pair{{types=[] flags=0x0] notFlags=0x0 checks=[{atype=undefined independent=true modes=[OPEN,TO_FRONT] flags=IN_TASK_WITH_EMBEDDED_ACTIVITY mustBeTask=false order=ANY topActivity=ComponentInfo{com.google.android.apps.nexuslauncher/com.google.android.apps.nexuslauncher.NexusLauncherActivity} launchCookie=null},{atype=undefined independent=true modes=[CLOSE,TO_BACK] flags=IN_TASK_WITH_EMBEDDED_ACTIVITY mustBeTask=false order=ANY topActivity=null launchCookie=null}]} RemoteTransition { remoteTransition = android.window.IRemoteTransition$Stub$Proxy@7ba123f, appThread = android.app.IApplicationThread$Stub$Proxy@783270c, debugName = OverlaySwipeBack }}
+03-27 20:00:48.699   940  1019 V WindowManagerShell:  Checking filter Pair{{types=[] flags=0x0] notFlags=0x0 checks=[{atype=dream independent=true modes=[OPEN,TO_FRONT] flags=NONE mustBeTask=false order=ANY topActivity=null launchCookie=null},{atype=home independent=true modes=[CLOSE,TO_BACK] flags=NONE mustBeTask=false order=ANY topActivity=null launchCookie=null}]} RemoteTransition { remoteTransition = android.window.IRemoteTransition$Stub$Proxy@8057855, appThread = android.app.IApplicationThread$Stub$Proxy@bbc526a, debugName = LauncherToDream }}
+03-27 20:00:48.699   940  1019 V WindowManagerShell:  Checking filter Pair{{types=[] flags=0x0] notFlags=0x100 checks=[{atype=home independent=true modes=[OPEN,TO_FRONT] flags=NONE mustBeTask=false order=TOP topActivity=ComponentInfo{com.google.android.apps.nexuslauncher/com.google.android.apps.nexuslauncher.NexusLauncherActivity} launchCookie=null},{atype=standard independent=true modes=[CLOSE,TO_BACK] flags=NONE mustBeTask=false order=ANY topActivity=null launchCookie=null}]} RemoteTransition { remoteTransition = android.window.IRemoteTransition$Stub$Proxy@847935b, appThread = android.app.IApplicationThread$Stub$Proxy@8c1a7f8, debugName = QuickstepLaunchHome }}
+03-27 20:00:48.700   940  1019 V WindowManagerShell:  Delegate animation for (#424) to null
+03-27 20:00:48.700   940  1019 V WindowManagerShell:  try handler com.android.wm.shell.transition.DefaultTransitionHandler@f5868d
+03-27 20:00:48.700   940  1019 V WindowManagerShell: start default transition animation, info = {id=424 t=CLOSE f=0x0 trk=0 r=[0@Point(0, 0)] c=[{WCT{android.window.IWindowContainerToken$Stub$Proxy@6a74f9a} m=TO_FRONT f=NONE leash=Surface(name=Task=74)/@0xc1388af sb=Rect(0, 0 - 1344, 2992) eb=Rect(0, 0 - 1344, 2992) d=0 taskParent=-1},{WCT{android.window.IWindowContainerToken$Stub$Proxy@a9a00cb} m=CLOSE f=NONE leash=Surface(name=Task=85)/@0xe50b4bc sb=Rect(0, 0 - 1344, 2992) eb=Rect(0, 0 - 1344, 2992) d=0 taskParent=-1}]}
+03-27 20:00:48.703   940  1019 V WindowManagerShell: loadAnimation: anim=android.view.animation.AnimationSet@19acb66 animAttr=0xb type=CLOSE isEntrance=false
+03-27 20:00:48.705   940  1019 V WindowManagerShell: loadAnimation: anim=android.view.animation.AnimationSet@d40df54 animAttr=0xa type=CLOSE isEntrance=true
+03-27 20:00:48.710   940  1019 V WindowManagerShell:  animated by com.android.wm.shell.transition.DefaultTransitionHandler@f5868d
+03-27 20:00:48.725   432   464 D audioserver: logFgsApiBegin: FGS Logger Transaction failed, -129
+03-27 20:00:48.762   626  2307 W AS.PlaybackActivityMon: No piid assigned for invalid/internal port id 16
+03-27 20:00:48.778   439   439 E SurfaceFlinger: Out of order buffers detected for RequestedLayerState{com.google.android.calendar/com.google.android.calendar.launch.oobe.WhatsNewFullScreen#5629 parentId=5051} producedId=10 frameNumber=25 -> producedId=10 frameNumber=2
+03-27 20:00:48.778 27729 28584 E FrameEvents: addRelease: Did not find frame.
+03-27 20:00:48.809   626   656 V WindowManager: Sent Transition (#424) createdAt=03-27 20:00:48.485 via request=TransitionRequestInfo { type = CLOSE, triggerTask = TaskInfo{userId=0 taskId=85 displayId=0 isRunning=false baseIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10000000 cmp=com.tannu.edureach/.SplashActivity } baseActivity=null topActivity=null origActivity=null realActivity=ComponentInfo{com.tannu.edureach/com.tannu.edureach.SplashActivity} numActivities=0 lastActiveTime=46395401 supportsMultiWindow=true resizeMode=1 isResizeable=true minWidth=-1 minHeight=-1 defaultMinSize=220 token=WCT{RemoteToken{64b02cf Task{3d59a94 #85 type=standard A=10210:com.tannu.edureach}}} topActivityType=1 pictureInPictureParams=null shouldDockBigOverlays=false launchIntoPipHostTaskId=-1 lastParentTaskIdBeforePip=-1 displayCutoutSafeInsets=null topActivityInfo=null launchCookies=[] positionInParent=Point(0, 0) parentTaskId=-1 isFocused=false isVisible=true isVisibleRequested=true isSleeping=false locusId=null displayAreaFeatureId=1 isTopActivityTransparent=false appCompatTaskInfo=AppCompatTaskInfo { topActivityInSizeCompat=false topActivityEligibleForLetterboxEducation= falseisLetterboxEducationEnabled= false isLetterboxDoubleTapEnabled= false topActivityEligibleForUserAspectRatioButton= false topActivityBoundsLetterboxed= false isFromLetterboxDoubleTap= false topActivityLetterboxVerticalPosition= -1 topActivityLetterboxHorizontalPosition= -1 topActivityLetterboxWidth=-1 topActivityLetterboxHeight=-1 isUserFullscreenOverrideEnabled=false isSystemFullscreenOverrideEnabled=false cameraCompatTaskInfo=CameraCompatTaskInfo { cameraCompatControlState=hidden freeformCameraCompatMode=inactive}}}, pipTask = null, remoteTransition = null, displayChange = null, flags = 0, debugId = 424 }
+03-27 20:00:48.810   626   656 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [] errorCallbackToken=null taskFragmentOrganizer=null }
+03-27 20:00:48.812   626   656 V WindowManager:     info={id=424 t=CLOSE f=0x0 trk=0 r=[0@Point(0, 0)] c=[
+03-27 20:00:48.812   626   656 V WindowManager:         {WCT{RemoteToken{c3db011 Task{5878e #74 type=standard A=10150:com.android.calendar.event.LaunchInfoActivity}}} m=TO_FRONT f=NONE leash=Surface(name=Task=74)/@0x17cec23 sb=Rect(0, 0 - 1344, 2992) eb=Rect(0, 0 - 1344, 2992) d=0 taskParent=-1},
+03-27 20:00:48.812   626   656 V WindowManager:         {WCT{RemoteToken{64b02cf Task{3d59a94 #85 type=standard A=10210:com.tannu.edureach}}} m=CLOSE f=NONE leash=Surface(name=Task=85)/@0x712cbad sb=Rect(0, 0 - 1344, 2992) eb=Rect(0, 0 - 1344, 2992) d=0 taskParent=-1}
+03-27 20:00:48.812   626   656 V WindowManager:     ]}
+03-27 20:00:48.816   940  1076 D EGL_emulation: app_time_stats: avg=330.92ms min=2.93ms max=2924.54ms count=9
+03-27 20:00:48.828   626  2307 W UserManagerService: Requested status bar icon for non-badged user 0
+03-27 20:00:48.828   626   783 I ImeTracker: com.google.android.calendar:22a4b627: onRequestHide at ORIGIN_SERVER reason HIDE_SAME_WINDOW_FOCUSED_WITHOUT_EDITOR fromUser false
+03-27 20:00:48.833   626   783 I ImeTracker: com.google.android.calendar:22a4b627: onCancelled at PHASE_SERVER_SHOULD_HIDE
+03-27 20:00:48.841  1412  1412 I GoogleInputMethodService: GoogleInputMethodService.onFinishInput():3157 
+03-27 20:00:48.853   439   439 E SurfaceFlinger: Out of order buffers detected for RequestedLayerState{com.google.android.calendar/com.google.android.calendar.launch.oobe.WhatsNewFullScreen#5629 parentId=5051} producedId=10 frameNumber=25 -> producedId=10 frameNumber=3
+03-27 20:00:48.853  1412  1412 I GoogleInputMethodService: GoogleInputMethodService.updateDeviceLockedStatus():2248 repeatCheckTimes = 0, locked = false
+03-27 20:00:48.854  1412  1412 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1986 onStartInput(EditorInfo{EditorInfo{packageName=com.google.android.calendar, inputType=0, inputTypeString=NULL, enableLearning=false, autoCorrection=false, autoComplete=false, imeOptions=0, privateImeOptions=null, actionName=UNSPECIFIED, actionLabel=null, initialSelStart=-1, initialSelEnd=-1, initialCapsMode=0, label=null, fieldId=0, fieldName=null, extras=null, hintText=null, hintLocales=[]}}, false)
+03-27 20:00:48.855  1412  1412 I GoogleInputMethodService: GoogleInputMethodService.updateDeviceLockedStatus():2248 repeatCheckTimes = 1, locked = false
+03-27 20:00:48.856  1412  1412 I AndroidIME: InputBundleManager.loadActiveInputBundleId():450 loadActiveInputBundleId: und-Latn-x-password, password
+03-27 20:00:48.862  1185  1700 D EGL_emulation: app_time_stats: avg=443.22ms min=2.90ms max=3039.11ms count=7
+03-27 20:00:48.870   439   439 E SurfaceFlinger: Out of order buffers detected for RequestedLayerState{com.google.android.calendar/com.google.android.calendar.launch.oobe.WhatsNewFullScreen#5629 parentId=5051} producedId=10 frameNumber=25 -> producedId=10 frameNumber=4
+03-27 20:00:48.875   626  2307 W PackageConfigPersister: App-specific configuration not found for packageName: com.google.android.calendar and userId: 0
+03-27 20:00:48.879   940  1039 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda11@8052c3a
+03-27 20:00:48.879  1412  1412 W NotificationCenter: NotificationCenter$ListenerData.notifyOnExecutor():672 Heavy notify work detected on UI thread: |kga->jjc| takes 23ms
+03-27 20:00:48.885   439   439 E SurfaceFlinger: Out of order buffers detected for RequestedLayerState{com.google.android.calendar/com.google.android.calendar.launch.oobe.WhatsNewFullScreen#5629 parentId=5051} producedId=10 frameNumber=25 -> producedId=10 frameNumber=5
+03-27 20:00:48.887   626  1697 D CoreBackPreview: Window{e1e0c39 u0 Splash Screen com.tannu.edureach EXITING}: Setting back callback null
+03-27 20:00:48.898   626  2307 W InputManager-JNI: Input channel object 'e1e0c39 Splash Screen com.tannu.edureach (client)' was disposed without first being removed with the input manager!
+03-27 20:00:48.919   439   439 E SurfaceFlinger: Out of order buffers detected for RequestedLayerState{com.google.android.calendar/com.google.android.calendar.launch.oobe.WhatsNewFullScreen#5629 parentId=5051} producedId=10 frameNumber=25 -> producedId=10 frameNumber=6
+03-27 20:00:48.935   439   439 E SurfaceFlinger: Out of order buffers detected for RequestedLayerState{com.google.android.calendar/com.google.android.calendar.launch.oobe.WhatsNewFullScreen#5629 parentId=5051} producedId=10 frameNumber=25 -> producedId=10 frameNumber=7
+03-27 20:00:48.952   439   439 E SurfaceFlinger: Out of order buffers detected for RequestedLayerState{com.google.android.calendar/com.google.android.calendar.launch.oobe.WhatsNewFullScreen#5629 parentId=5051} producedId=10 frameNumber=25 -> producedId=10 frameNumber=8
+03-27 20:00:48.956  1185  1189 I s.nexuslauncher: NativeAlloc concurrent mark compact GC freed 518KB AllocSpace bytes, 3(260KB) LOS objects, 49% free, 8036KB/15MB, paused 1.731ms,5.830ms total 81.141ms
+03-27 20:00:48.969   439   439 E SurfaceFlinger: Out of order buffers detected for RequestedLayerState{com.google.android.calendar/com.google.android.calendar.launch.oobe.WhatsNewFullScreen#5629 parentId=5051} producedId=10 frameNumber=25 -> producedId=10 frameNumber=9
+03-27 20:00:48.985  1185  1191 W s.nexuslauncher: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~Fhu61HToJVFCF2KsUfsy2Q==/com.tannu.edureach-hkvMX2kIJhcnC5O2_pNY7A==/base.apk' with 1 weak references
+03-27 20:00:49.009   626   762 D ActivityManager: freezing 24693 com.google.android.apps.messaging
+03-27 20:00:49.022   626   762 D ActivityManager: freezing 26461 com.google.android.apps.wellbeing
+03-27 20:00:49.025   626   762 D ActivityManager: freezing 32304 com.android.providers.calendar
+03-27 20:00:49.138   432   552 D audioserver: logFgsApiEnd: FGS Logger Transaction failed, -129
+03-27 20:00:49.221   940  1019 V WindowManagerShell: Transition animation finished (aborted=false), notifying core (#424) android.os.BinderProxy@5225089@0
+03-27 20:00:49.227   626   656 V WindowManager: Finish Transition (#424): created at 03-27 20:00:48.485 collect-started=0.055ms request-sent=0.405ms started=14.131ms ready=14.097ms sent=206.551ms finished=737.695ms
+03-27 20:00:49.235   940  1019 V WindowManagerShell: Track 0 became idle
+03-27 20:00:49.235   940  1019 V WindowManagerShell: All active transition animations finished
+03-27 20:00:49.239  1185  1185 I TopTaskTracker: onTaskRemoved: taskId=85
+03-27 20:00:49.240  1185  1185 I TopTaskTracker: onTaskRemoved: taskId=85
+03-27 20:00:49.241   626  2307 W UserManagerService: Requested status bar icon for non-badged user 0
+03-27 20:00:49.245   626  2307 W UserManagerService: Requested status bar icon for non-badged user 0
+03-27 20:00:49.729   626   827 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET, states=14
+03-27 20:00:49.730   626   827 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET6, states=14
+03-27 20:00:49.730   626   827 D InetDiagMessage: Destroyed live tcp sockets for uids={10143} in 2ms
+03-27 20:00:49.909   626   827 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET, states=14
+03-27 20:00:49.910   626   827 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET6, states=14
+03-27 20:00:49.910   626   827 D InetDiagMessage: Destroyed live tcp sockets for uids={10094} in 2ms
+03-27 20:00:50.122 27729 28585 D EGL_emulation: app_time_stats: avg=149.74ms min=4.63ms max=1163.39ms count=9
+03-27 20:00:50.135   439   439 E SurfaceFlinger: Out of order buffers detected for RequestedLayerState{com.google.android.calendar/com.google.android.calendar.launch.oobe.WhatsNewFullScreen#5629 parentId=5051} producedId=10 frameNumber=25 -> producedId=10 frameNumber=10
+03-27 20:00:50.154   439   439 E SurfaceFlinger: Out of order buffers detected for RequestedLayerState{com.google.android.calendar/com.google.android.calendar.launch.oobe.WhatsNewFullScreen#5629 parentId=5051} producedId=10 frameNumber=25 -> producedId=10 frameNumber=11
+03-27 20:00:50.185   439   439 E SurfaceFlinger: Out of order buffers detected for RequestedLayerState{com.google.android.calendar/com.google.android.calendar.launch.oobe.WhatsNewFullScreen#5629 parentId=5051} producedId=10 frameNumber=25 -> producedId=10 frameNumber=12
+03-27 20:00:50.202   439   439 E SurfaceFlinger: Out of order buffers detected for RequestedLayerState{com.google.android.calendar/com.google.android.calendar.launch.oobe.WhatsNewFullScreen#5629 parentId=5051} producedId=10 frameNumber=25 -> producedId=10 frameNumber=13
+03-27 20:00:50.219   439   439 E SurfaceFlinger: Out of order buffers detected for RequestedLayerState{com.google.android.calendar/com.google.android.calendar.launch.oobe.WhatsNewFullScreen#5629 parentId=5051} producedId=10 frameNumber=25 -> producedId=10 frameNumber=14
+03-27 20:00:50.235   439   439 E SurfaceFlinger: Out of order buffers detected for RequestedLayerState{com.google.android.calendar/com.google.android.calendar.launch.oobe.WhatsNewFullScreen#5629 parentId=5051} producedId=10 frameNumber=25 -> producedId=10 frameNumber=15
+03-27 20:00:50.253   439   439 E SurfaceFlinger: Out of order buffers detected for RequestedLayerState{com.google.android.calendar/com.google.android.calendar.launch.oobe.WhatsNewFullScreen#5629 parentId=5051} producedId=10 frameNumber=25 -> producedId=10 frameNumber=16
+03-27 20:00:50.272   439   439 E SurfaceFlinger: Out of order buffers detected for RequestedLayerState{com.google.android.calendar/com.google.android.calendar.launch.oobe.WhatsNewFullScreen#5629 parentId=5051} producedId=10 frameNumber=25 -> producedId=10 frameNumber=17
+03-27 20:00:50.285   439   439 E SurfaceFlinger: Out of order buffers detected for RequestedLayerState{com.google.android.calendar/com.google.android.calendar.launch.oobe.WhatsNewFullScreen#5629 parentId=5051} producedId=10 frameNumber=25 -> producedId=10 frameNumber=18
+03-27 20:00:50.301   439   439 E SurfaceFlinger: Out of order buffers detected for RequestedLayerState{com.google.android.calendar/com.google.android.calendar.launch.oobe.WhatsNewFullScreen#5629 parentId=5051} producedId=10 frameNumber=25 -> producedId=10 frameNumber=19
+03-27 20:00:50.318   439   439 E SurfaceFlinger: Out of order buffers detected for RequestedLayerState{com.google.android.calendar/com.google.android.calendar.launch.oobe.WhatsNewFullScreen#5629 parentId=5051} producedId=10 frameNumber=25 -> producedId=10 frameNumber=20
+03-27 20:00:50.336   439   439 E SurfaceFlinger: Out of order buffers detected for RequestedLayerState{com.google.android.calendar/com.google.android.calendar.launch.oobe.WhatsNewFullScreen#5629 parentId=5051} producedId=10 frameNumber=25 -> producedId=10 frameNumber=21
+03-27 20:00:50.352   439   439 E SurfaceFlinger: Out of order buffers detected for RequestedLayerState{com.google.android.calendar/com.google.android.calendar.launch.oobe.WhatsNewFullScreen#5629 parentId=5051} producedId=10 frameNumber=25 -> producedId=10 frameNumber=22
+03-27 20:00:50.368   439   439 E SurfaceFlinger: Out of order buffers detected for RequestedLayerState{com.google.android.calendar/com.google.android.calendar.launch.oobe.WhatsNewFullScreen#5629 parentId=5051} producedId=10 frameNumber=25 -> producedId=10 frameNumber=23
+03-27 20:00:50.385   439   439 E SurfaceFlinger: Out of order buffers detected for RequestedLayerState{com.google.android.calendar/com.google.android.calendar.launch.oobe.WhatsNewFullScreen#5629 parentId=5051} producedId=10 frameNumber=25 -> producedId=10 frameNumber=24
+03-27 20:00:52.043   377  5581 D android.hardware.audio@7.1-impl.ranchu: threadLoop: entering standby, frames: 51468928
+03-27 20:00:55.219  1591  2332 I BugleRcsEngine: handleMessage processing message:[NOTIFY_UPTIME_IGNORE_STATE_CHANGED] with [non-null]:RcsEngineImpl reference [CONTEXT log_prefix="RcsEngineImpl[DUAL_REG]:[3992289e-38d6]>Handler" thread_id=60 ]
+03-27 20:00:55.223  1591  2020 I BugleRcsEngine: Connected state: [1], networkType: [WIFI] [CONTEXT thread_id=55 ]
+03-27 20:00:55.223   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:00:55.223   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:00:55.223   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:00:55.223   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:00:55.224   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:00:55.228   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:00:55.229  1270  1631 I NullBinder: NullBinder for android.net.action.RECOMMEND_NETWORKS triggering remote TransactionTooLargeException due to Service without Chimera impl, calling uid: 1000, calling pid: 0
+03-27 20:00:55.231  1270  1631 W .gms.persistent: Large reply transaction of 1056768 bytes, interface descriptor , code 1
+03-27 20:00:55.233   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:00:55.233   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:00:55.234   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:00:55.234   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:00:55.235   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:00:55.235   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:00:55.242   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:00:55.244   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:00:55.247   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:00:55.250   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:00:55.252   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:00:55.256   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:00:55.256   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:00:55.256   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:00:55.267   626  2132 D ActivityManager: sync unfroze 24693 com.google.android.apps.messaging for 7
+03-27 20:00:55.286  1591  2332 I BugleRcsEngine: No RCS Configuration was found in Bugle for simID: redacted-pii:sim_id[chars:20,last3:897] [CONTEXT log_prefix="ProvisioningEngineDataRetriever" thread_id=60 ]
+03-27 20:00:57.935  1554  1715 I BistoHotwordHelper: (REDACTED) getHotwordActive::active query: %s, watch: %s, devices connected: %s
+03-27 20:01:00.006  1529  1784 I AiAiEcho: Predicting[0]:  [CONTEXT sampling_count=5 ]
+03-27 20:01:00.006  1529  1784 I AiAiEcho: EchoTargets: 
+03-27 20:01:00.006  1529  1784 I AiAiEcho: Filtered by AiAi flag check: 
+03-27 20:01:00.006  1529  1784 I AiAiEcho: [CONTEXT ratelimit_period="10 SECONDS" ]
+03-27 20:01:00.006  1529  1784 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata:  [CONTEXT ratelimit_period="10 SECONDS" ]
+03-27 20:01:00.006  1529  1784 I AiAiEcho: #remoteViewsTwiddler: feature disabled.
+03-27 20:01:00.007  1529  1784 I AiAiEcho: Predicting[0]:  [CONTEXT sampling_count=5 ]
+03-27 20:01:00.007  1529  1784 I AiAiEcho: EchoTargets: 
+03-27 20:01:00.007  1529  1784 I AiAiEcho: Filtered by AiAi flag check: 
+03-27 20:01:00.007  1529  1784 I AiAiEcho: [CONTEXT ratelimit_period="10 SECONDS" ]
+03-27 20:01:00.007  1529  1784 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata:  [CONTEXT ratelimit_period="10 SECONDS" ]
+03-27 20:01:00.007  1529  1784 I AiAiEcho: #remoteViewsTwiddler: feature disabled.
+03-27 20:01:00.008  1529  1784 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface lockscreen with targets# 0 (types=[])
+03-27 20:01:00.010  1529  1784 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface home with targets# 0 (types=[])
+03-27 20:01:00.015  1185  1185 D SsBaseTemplateCard: No text view can be set up
+03-27 20:01:00.015  1185  1185 D SsBaseTemplateCard: Passed-in item info is null
+03-27 20:01:00.015  1185  1185 D SsBaseTemplateCard: Passed-in item info is null
+03-27 20:01:00.016  1185  1185 D SsBaseTemplateCard: Passed-in item info is null
+03-27 20:01:00.016  1185  1185 I SsBaseTemplateCard: Secondary card pane is null
+03-27 20:01:00.025   940   940 W PageIndicator: Total number of pages invalid: 0. Assuming 1 page.
+03-27 20:01:00.031   940  1076 D EGL_emulation: app_time_stats: avg=792.64ms min=3.12ms max=10941.92ms count=14
+03-27 20:01:00.276   626  1697 W ProcessStats: Tracking association SourceState{f9d24b4 com.google.android.calendar/10150 BTop #27074} whose proc state 2 is better than process ProcessState{64b9698 com.google.android.gms.persistent/10144 pkg=com.google.android.gms} proc state 4 (19 skipped)
+03-27 20:01:08.424   940  1076 D EGL_emulation: app_time_stats: avg=8392.71ms min=8392.71ms max=8392.71ms count=1
+03-27 20:01:10.958   626  1697 W ProcessStats: Tracking association SourceState{f9d24b4 com.google.android.calendar/10150 BTop #27077} whose proc state 2 is better than process ProcessState{64b9698 com.google.android.gms.persistent/10144 pkg=com.google.android.gms} proc state 4 (5 skipped)
+03-27 20:01:18.447   626  1697 W BatteryExternalStatsWorker: error reading Bluetooth stats: 11
+03-27 20:01:20.412  1042 30438 D ApfFilter: (wlan0): Adding RA fe80::2 -> ff02::1 1800s fec0::/64 86400s/14400s 
+03-27 20:01:25.335  1591  2020 I BugleRcsEngine: Connected state: [1], networkType: [WIFI] [CONTEXT thread_id=55 ]
+03-27 20:01:25.336  1591  2332 I BugleRcsEngine: handleMessage processing message:[NOTIFY_UPTIME_IGNORE_STATE_CHANGED] with [non-null]:RcsEngineImpl reference [CONTEXT log_prefix="RcsEngineImpl[DUAL_REG]:[3992289e-38d6]>Handler" thread_id=60 ]
+03-27 20:01:25.338   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:01:25.338   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:01:25.340   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:01:25.346   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:01:25.346   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:01:25.346   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:01:25.346   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:01:25.346   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:01:25.347   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:01:25.349   626  1697 W ProcessStats: Tracking association SourceState{f9d24b4 com.google.android.calendar/10150 BTop #27078} whose proc state 2 is better than process ProcessState{64b9698 com.google.android.gms.persistent/10144 pkg=com.google.android.gms} proc state 4 (1 skipped)
+03-27 20:01:25.353   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:01:25.354  1270  1631 I NullBinder: NullBinder for android.net.action.RECOMMEND_NETWORKS triggering remote TransactionTooLargeException due to Service without Chimera impl, calling uid: 1000, calling pid: 0
+03-27 20:01:25.354  1270  1631 W .gms.persistent: Large reply transaction of 1056768 bytes, interface descriptor , code 1
+03-27 20:01:25.355   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:01:25.356   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:01:25.360   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:01:25.363  1591  2332 I BugleRcsEngine: No RCS Configuration was found in Bugle for simID: redacted-pii:sim_id[chars:20,last3:897] [CONTEXT log_prefix="ProvisioningEngineDataRetriever" thread_id=60 ]
+03-27 20:01:25.363   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:01:25.367   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:01:25.367   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:01:25.367   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:01:28.459   940  1076 D EGL_emulation: app_time_stats: avg=20035.10ms min=20035.10ms max=20035.10ms count=1
+03-27 20:01:31.377   626  1697 D WifiNl80211Manager: Scan result ready event
+03-27 20:01:31.377   626  1697 D WifiNative: Scan result ready event
+03-27 20:01:31.413   626   818 I HalDevMgr: bestIfaceCreationProposal is null, requestIface=STA, existingIface=[name=wlan0 type=STA]
+03-27 20:01:34.399  1591  2332 I BugleRcsEngine: handleMessage processing message:[NOTIFY_UPTIME_IGNORE_STATE_CHANGED] with [non-null]:RcsEngineImpl reference [CONTEXT log_prefix="RcsEngineImpl[DUAL_REG]:[3992289e-38d6]>Handler" thread_id=60 ]
+03-27 20:01:34.400  1270  1612 I NullBinder: NullBinder for android.net.action.RECOMMEND_NETWORKS triggering remote TransactionTooLargeException due to Service without Chimera impl, calling uid: 1000, calling pid: 0
+03-27 20:01:34.400  1270  1612 W .gms.persistent: Large reply transaction of 1056768 bytes, interface descriptor , code 1
+03-27 20:01:34.402  1591  2020 I BugleRcsEngine: Connected state: [1], networkType: [WIFI] [CONTEXT thread_id=55 ]
+03-27 20:01:34.407   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:01:34.410   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:01:34.410   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:01:34.413   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:01:34.413   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:01:34.414   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:01:34.414   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:01:34.414   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:01:34.416   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:01:34.418   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:01:34.422   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:01:34.424  1591  2332 I BugleRcsEngine: No RCS Configuration was found in Bugle for simID: redacted-pii:sim_id[chars:20,last3:897] [CONTEXT log_prefix="ProvisioningEngineDataRetriever" thread_id=60 ]
+03-27 20:01:34.425   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:01:34.428   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:01:34.432   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:01:34.433   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:01:34.435   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:01:34.436   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:01:37.018   626   669 W ProcessStats: Tracking association SourceState{f9d24b4 com.google.android.calendar/10150 BTop #27081} whose proc state 2 is better than process ProcessState{64b9698 com.google.android.gms.persistent/10144 pkg=com.google.android.gms} proc state 4 (5 skipped)
+03-27 20:01:37.621   626  2307 W AppOps  : Noting op not finished: uid 10144 pkg com.google.android.gms code 113 startTime of in progress event=1774619748598
+03-27 20:01:37.635   626  1697 W AppOps  : Noting op not finished: uid 10144 pkg com.google.android.gms code 113 startTime of in progress event=1774619748598
+03-27 20:01:37.643   626  2307 W AppOps  : Noting op not finished: uid 10144 pkg com.google.android.gms code 113 startTime of in progress event=1774619748598
+03-27 20:01:37.652   626  2131 W AppOps  : Noting op not finished: uid 10144 pkg com.google.android.gms code 79 startTime of in progress event=1774619748598
+03-27 20:01:37.658   626  2307 W AppOps  : Noting op not finished: uid 10144 pkg com.google.android.gms code 113 startTime of in progress event=1774619748598
+03-27 20:01:37.663  1270  1969 I ActivityScheduler: nextTriggerTime: 46688282, in 238099ms, detectorType: 39, FULL_TYPE alarmWindowMillis: 80000
+03-27 20:01:40.418  1270  1631 I NullBinder: NullBinder for android.net.action.RECOMMEND_NETWORKS triggering remote TransactionTooLargeException due to Service without Chimera impl, calling uid: 1000, calling pid: 0
+03-27 20:01:40.419  1270  1631 W .gms.persistent: Large reply transaction of 1056768 bytes, interface descriptor , code 1
+03-27 20:01:40.423  1591  2332 I BugleRcsEngine: handleMessage processing message:[NOTIFY_UPTIME_IGNORE_STATE_CHANGED] with [non-null]:RcsEngineImpl reference [CONTEXT log_prefix="RcsEngineImpl[DUAL_REG]:[3992289e-38d6]>Handler" thread_id=60 ]
+03-27 20:01:40.426   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:01:40.426   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:01:40.426   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:01:40.426  1591  2020 I BugleRcsEngine: Connected state: [1], networkType: [WIFI] [CONTEXT thread_id=55 ]
+03-27 20:01:40.433   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:01:40.434   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:01:40.434   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:01:40.434   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:01:40.434   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:01:40.434   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:01:40.438   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:01:40.441   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:01:40.444   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:01:40.446  1591  2332 I BugleRcsEngine: No RCS Configuration was found in Bugle for simID: redacted-pii:sim_id[chars:20,last3:897] [CONTEXT log_prefix="ProvisioningEngineDataRetriever" thread_id=60 ]
+03-27 20:01:40.448   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:01:40.451   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:01:40.455   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:01:40.456   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:01:40.456   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:01:42.894  1270 32546 W jndk    : [{0}] Failed to resolve name. status={1}
+03-27 20:01:43.438  1270  1629 I NullBinder: NullBinder for android.net.action.RECOMMEND_NETWORKS triggering remote TransactionTooLargeException due to Service without Chimera impl, calling uid: 1000, calling pid: 0
+03-27 20:01:43.438  1270  1629 W .gms.persistent: Large reply transaction of 1056768 bytes, interface descriptor , code 1
+03-27 20:01:43.441   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:01:43.442   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:01:43.442   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:01:43.446   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:01:43.446   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:01:43.448   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:01:43.448   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:01:43.452   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:01:43.452  1591  2332 I BugleRcsEngine: handleMessage processing message:[NOTIFY_UPTIME_IGNORE_STATE_CHANGED] with [non-null]:RcsEngineImpl reference [CONTEXT log_prefix="RcsEngineImpl[DUAL_REG]:[3992289e-38d6]>Handler" thread_id=60 ]
+03-27 20:01:43.453  1591  2020 I BugleRcsEngine: Connected state: [1], networkType: [WIFI] [CONTEXT thread_id=55 ]
+03-27 20:01:43.457   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:01:43.460   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:01:43.466   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:01:43.469   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:01:43.473   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:01:43.473   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:01:43.473   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:01:43.474   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:01:43.474   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:01:43.475  1591  2332 I BugleRcsEngine: No RCS Configuration was found in Bugle for simID: redacted-pii:sim_id[chars:20,last3:897] [CONTEXT log_prefix="ProvisioningEngineDataRetriever" thread_id=60 ]
+03-27 20:01:48.416   940  1076 D EGL_emulation: app_time_stats: avg=19956.40ms min=19956.40ms max=19956.40ms count=1
+03-27 20:01:57.939  1554  1942 I BistoHotwordHelper: (REDACTED) getHotwordActive::active query: %s, watch: %s, devices connected: %s
+03-27 20:02:00.039  1529  1784 I AiAiEcho: Predicting[0]:  [CONTEXT sampling_count=5 ]
+03-27 20:02:00.039  1529  1784 I AiAiEcho: EchoTargets: 
+03-27 20:02:00.039  1529  1784 I AiAiEcho: Filtered by AiAi flag check: 
+03-27 20:02:00.039  1529  1784 I AiAiEcho: [CONTEXT ratelimit_period="10 SECONDS" ]
+03-27 20:02:00.040  1529  1784 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata:  [CONTEXT ratelimit_period="10 SECONDS" ]
+03-27 20:02:00.040  1529  1784 I AiAiEcho: #remoteViewsTwiddler: feature disabled.
+03-27 20:02:00.040  1529  1784 I AiAiEcho: Predicting[0]:  [CONTEXT sampling_count=5 ]
+03-27 20:02:00.040  1529  1784 I AiAiEcho: EchoTargets: 
+03-27 20:02:00.040  1529  1784 I AiAiEcho: Filtered by AiAi flag check: 
+03-27 20:02:00.040  1529  1784 I AiAiEcho: [CONTEXT ratelimit_period="10 SECONDS" ]
+03-27 20:02:00.040  1529  1784 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata:  [CONTEXT ratelimit_period="10 SECONDS" ]
+03-27 20:02:00.041  1529  1784 I AiAiEcho: #remoteViewsTwiddler: feature disabled.
+03-27 20:02:00.043  1529  1784 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface lockscreen with targets# 0 (types=[])
+03-27 20:02:00.046  1529  1784 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface home with targets# 0 (types=[])
+03-27 20:02:00.051  1185  1185 D SsBaseTemplateCard: No text view can be set up
+03-27 20:02:00.051  1185  1185 D SsBaseTemplateCard: Passed-in item info is null
+03-27 20:02:00.051  1185  1185 D SsBaseTemplateCard: Passed-in item info is null
+03-27 20:02:00.051  1185  1185 D SsBaseTemplateCard: Passed-in item info is null
+03-27 20:02:00.051  1185  1185 I SsBaseTemplateCard: Secondary card pane is null
+03-27 20:02:00.063   940   940 W PageIndicator: Total number of pages invalid: 0. Assuming 1 page.
+03-27 20:02:00.077   940  1076 D EGL_emulation: app_time_stats: avg=11659.73ms min=11659.73ms max=11659.73ms count=1
+03-27 20:02:01.814  1554  1559 I hbox:interactor: Background concurrent mark compact GC freed 11MB AllocSpace bytes, 7(116KB) LOS objects, 49% free, 11MB/22MB, paused 3.647ms,32.411ms total 3.858s
+03-27 20:02:01.814  1554  1559 W hbox:interactor: Reducing the number of considered missed Gc histogram windows from 1877 to 100
+03-27 20:02:02.076  1554 16599 V ClearcutMetricXmitter: Transmission is done.
+03-27 20:02:08.440   940  1076 D EGL_emulation: app_time_stats: avg=8359.89ms min=8359.89ms max=8359.89ms count=1
+03-27 20:02:16.603  1591  2332 I BugleRcsEngine: handleMessage processing message:[NOTIFY_UPTIME_IGNORE_STATE_CHANGED] with [non-null]:RcsEngineImpl reference [CONTEXT log_prefix="RcsEngineImpl[DUAL_REG]:[3992289e-38d6]>Handler" thread_id=60 ]
+03-27 20:02:16.604   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:02:16.604   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:02:16.604   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:02:16.606  1591  2020 I BugleRcsEngine: Connected state: [1], networkType: [WIFI] [CONTEXT thread_id=55 ]
+03-27 20:02:16.609   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:02:16.610   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:02:16.612   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:02:16.612   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:02:16.614   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:02:16.614   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:02:16.619   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:02:16.631   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:02:16.634   626  2307 W ProcessStats: Tracking association SourceState{f9d24b4 com.google.android.calendar/10150 BTop #27096} whose proc state 2 is better than process ProcessState{64b9698 com.google.android.gms.persistent/10144 pkg=com.google.android.gms} proc state 4 (29 skipped)
+03-27 20:02:16.638   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:02:16.639   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:02:16.640   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:02:16.641   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:02:16.645   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:02:16.647  1591  2332 I BugleRcsEngine: No RCS Configuration was found in Bugle for simID: redacted-pii:sim_id[chars:20,last3:897] [CONTEXT log_prefix="ProvisioningEngineDataRetriever" thread_id=60 ]
+03-27 20:02:16.646   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:02:16.647  1270  3704 I NullBinder: NullBinder for android.net.action.RECOMMEND_NETWORKS triggering remote TransactionTooLargeException due to Service without Chimera impl, calling uid: 1000, calling pid: 0
+03-27 20:02:16.648  1270  3704 W .gms.persistent: Large reply transaction of 1056768 bytes, interface descriptor , code 1
+03-27 20:02:46.699  1270  3704 I NullBinder: NullBinder for android.net.action.RECOMMEND_NETWORKS triggering remote TransactionTooLargeException due to Service without Chimera impl, calling uid: 1000, calling pid: 0
+03-27 20:02:46.701  1270  3704 W .gms.persistent: Large reply transaction of 1056768 bytes, interface descriptor , code 1
+03-27 20:02:46.705  1591  2020 I BugleRcsEngine: Connected state: [1], networkType: [WIFI] [CONTEXT thread_id=55 ]
+03-27 20:02:46.705   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:02:46.706   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:02:46.706   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:02:46.710  1591  2332 I BugleRcsEngine: handleMessage processing message:[NOTIFY_UPTIME_IGNORE_STATE_CHANGED] with [non-null]:RcsEngineImpl reference [CONTEXT log_prefix="RcsEngineImpl[DUAL_REG]:[3992289e-38d6]>Handler" thread_id=60 ]
+03-27 20:02:46.715   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:02:46.715   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:02:46.715   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:02:46.716   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:02:46.716   626  1058 W ProcessStats: Tracking association SourceState{f9d24b4 com.google.android.calendar/10150 BTop #27099} whose proc state 2 is better than process ProcessState{64b9698 com.google.android.gms.persistent/10144 pkg=com.google.android.gms} proc state 4 (5 skipped)
+03-27 20:02:46.716   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:02:46.716   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:02:46.719   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:02:46.722   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:02:46.723   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:02:46.723  1591  2332 I BugleRcsEngine: No RCS Configuration was found in Bugle for simID: redacted-pii:sim_id[chars:20,last3:897] [CONTEXT log_prefix="ProvisioningEngineDataRetriever" thread_id=60 ]
+03-27 20:02:46.724   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:02:46.727   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:02:46.731   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:02:46.731   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:02:46.731   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:02:57.941  1554  1942 I BistoHotwordHelper: (REDACTED) getHotwordActive::active query: %s, watch: %s, devices connected: %s
+03-27 20:03:00.004  1529  1784 I AiAiEcho: Predicting[0]:  [CONTEXT sampling_count=5 ]
+03-27 20:03:00.004  1529  1784 I AiAiEcho: EchoTargets: 
+03-27 20:03:00.004  1529  1784 I AiAiEcho: Filtered by AiAi flag check: 
+03-27 20:03:00.004  1529  1784 I AiAiEcho: [CONTEXT ratelimit_period="10 SECONDS" ]
+03-27 20:03:00.004  1529  1784 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata:  [CONTEXT ratelimit_period="10 SECONDS" ]
+03-27 20:03:00.005  1529  1784 I AiAiEcho: #remoteViewsTwiddler: feature disabled.
+03-27 20:03:00.005  1529  1784 I AiAiEcho: Predicting[0]:  [CONTEXT sampling_count=5 ]
+03-27 20:03:00.005  1529  1784 I AiAiEcho: EchoTargets: 
+03-27 20:03:00.005  1529  1784 I AiAiEcho: Filtered by AiAi flag check: 
+03-27 20:03:00.005  1529  1784 I AiAiEcho: [CONTEXT ratelimit_period="10 SECONDS" ]
+03-27 20:03:00.005  1529  1784 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata:  [CONTEXT ratelimit_period="10 SECONDS" ]
+03-27 20:03:00.006  1529  1784 I AiAiEcho: #remoteViewsTwiddler: feature disabled.
+03-27 20:03:00.007  1529  1784 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface lockscreen with targets# 0 (types=[])
+03-27 20:03:00.009  1529  1784 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface home with targets# 0 (types=[])
+03-27 20:03:00.021  1185  1185 D SsBaseTemplateCard: No text view can be set up
+03-27 20:03:00.021  1185  1185 D SsBaseTemplateCard: Passed-in item info is null
+03-27 20:03:00.021  1185  1185 D SsBaseTemplateCard: Passed-in item info is null
+03-27 20:03:00.021  1185  1185 D SsBaseTemplateCard: Passed-in item info is null
+03-27 20:03:00.021  1185  1185 I SsBaseTemplateCard: Secondary card pane is null
+03-27 20:03:00.027   940   940 W PageIndicator: Total number of pages invalid: 0. Assuming 1 page.
+03-27 20:03:00.038   940  1076 D EGL_emulation: app_time_stats: avg=51597.26ms min=51597.26ms max=51597.26ms count=1
+03-27 20:03:16.822  1591  2020 I BugleRcsEngine: Connected state: [1], networkType: [WIFI] [CONTEXT thread_id=55 ]
+03-27 20:03:16.822  1591  2332 I BugleRcsEngine: handleMessage processing message:[NOTIFY_UPTIME_IGNORE_STATE_CHANGED] with [non-null]:RcsEngineImpl reference [CONTEXT log_prefix="RcsEngineImpl[DUAL_REG]:[3992289e-38d6]>Handler" thread_id=60 ]
+03-27 20:03:16.823   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:03:16.823   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:03:16.823   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:03:16.825   626  2307 W ProcessStats: Tracking association SourceState{f9d24b4 com.google.android.calendar/10150 BTop #27101} whose proc state 2 is better than process ProcessState{64b9698 com.google.android.gms.persistent/10144 pkg=com.google.android.gms} proc state 4 (3 skipped)
+03-27 20:03:16.825   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:03:16.827   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:03:16.827   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:03:16.827   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:03:16.827   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:03:16.828   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:03:16.828  1270  2468 I NullBinder: NullBinder for android.net.action.RECOMMEND_NETWORKS triggering remote TransactionTooLargeException due to Service without Chimera impl, calling uid: 1000, calling pid: 0
+03-27 20:03:16.828  1270  2468 W .gms.persistent: Large reply transaction of 1056768 bytes, interface descriptor , code 1
+03-27 20:03:16.831   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:03:16.835   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:03:16.836  1591  2332 I BugleRcsEngine: No RCS Configuration was found in Bugle for simID: redacted-pii:sim_id[chars:20,last3:897] [CONTEXT log_prefix="ProvisioningEngineDataRetriever" thread_id=60 ]
+03-27 20:03:16.838   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:03:16.842   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:03:16.847   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:03:16.850   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:03:16.850   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:03:16.851   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:03:49.939  1591  2020 I BugleRcsEngine: Connected state: [1], networkType: [WIFI] [CONTEXT thread_id=55 ]
+03-27 20:03:49.940   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:03:49.941   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:03:49.942   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:03:49.943  1591  2332 I BugleRcsEngine: handleMessage processing message:[NOTIFY_UPTIME_IGNORE_STATE_CHANGED] with [non-null]:RcsEngineImpl reference [CONTEXT log_prefix="RcsEngineImpl[DUAL_REG]:[3992289e-38d6]>Handler" thread_id=60 ]
+03-27 20:03:49.944  1270  1612 I NullBinder: NullBinder for android.net.action.RECOMMEND_NETWORKS triggering remote TransactionTooLargeException due to Service without Chimera impl, calling uid: 1000, calling pid: 0
+03-27 20:03:49.945   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:03:49.945   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:03:49.945   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:03:49.945   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:03:49.945   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:03:49.945   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:03:49.950  1270  1612 W .gms.persistent: Large reply transaction of 1056768 bytes, interface descriptor , code 1
+03-27 20:03:49.952   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:03:49.955   626  1058 W ProcessStats: Tracking association SourceState{f9d24b4 com.google.android.calendar/10150 BTop #27104} whose proc state 2 is better than process ProcessState{64b9698 com.google.android.gms.persistent/10144 pkg=com.google.android.gms} proc state 4 (5 skipped)
+03-27 20:03:49.955   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:03:49.958   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:03:49.961   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:03:49.962   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:03:49.964   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:03:49.966  1591  2332 I BugleRcsEngine: No RCS Configuration was found in Bugle for simID: redacted-pii:sim_id[chars:20,last3:897] [CONTEXT log_prefix="ProvisioningEngineDataRetriever" thread_id=60 ]
+03-27 20:03:49.966   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:03:49.966   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:03:53.267   626   905 D androidtc: Initializing SystemTextClassifier, type = System
+03-27 20:03:53.297  1529  1529 I AiAiTextClassifier: onCreateTextClassificationSession = TextClassificationSessionId {cb2d78a4-3953-4568-b8fc-41d6c2ab7d75}
+03-27 20:03:53.346   940   940 I ClipboardListener: Clipboard overlay suppressed.
+03-27 20:03:53.359  1529  1850 I AiAiTranslate: C2T - not in a conversation
+03-27 20:03:53.686  1529  1893 I AiAiTextClassifier: GenerateLinks did not find valid links, returning empty result
+03-27 20:03:53.710   940   940 I ClipboardListener: Clipboard overlay suppressed.
+03-27 20:03:53.721  1529  1893 I AiAiTextClassifier: GenerateLinks did not find valid links, returning empty result
+03-27 20:03:57.933  1554  1715 I BistoHotwordHelper: (REDACTED) getHotwordActive::active query: %s, watch: %s, devices connected: %s
+03-27 20:04:00.008  1529  1784 I AiAiEcho: Predicting[0]:  [CONTEXT sampling_count=5 ]
+03-27 20:04:00.008  1529  1784 I AiAiEcho: EchoTargets: 
+03-27 20:04:00.008  1529  1784 I AiAiEcho: Filtered by AiAi flag check: 
+03-27 20:04:00.008  1529  1784 I AiAiEcho: [CONTEXT ratelimit_period="10 SECONDS" ]
+03-27 20:04:00.009  1529  1784 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata:  [CONTEXT ratelimit_period="10 SECONDS" ]
+03-27 20:04:00.010  1529  1784 I AiAiEcho: #remoteViewsTwiddler: feature disabled.
+03-27 20:04:00.011  1529  1784 I AiAiEcho: Predicting[0]:  [CONTEXT sampling_count=5 ]
+03-27 20:04:00.011  1529  1784 I AiAiEcho: EchoTargets: 
+03-27 20:04:00.011  1529  1784 I AiAiEcho: Filtered by AiAi flag check: 
+03-27 20:04:00.011  1529  1784 I AiAiEcho: [CONTEXT ratelimit_period="10 SECONDS" ]
+03-27 20:04:00.013  1529  1784 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata:  [CONTEXT ratelimit_period="10 SECONDS" ]
+03-27 20:04:00.013  1529  1784 I AiAiEcho: #remoteViewsTwiddler: feature disabled.
+03-27 20:04:00.017  1529  1784 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface lockscreen with targets# 0 (types=[])
+03-27 20:04:00.018  1529  1784 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface home with targets# 0 (types=[])
+03-27 20:04:00.020  1185  1185 D SsBaseTemplateCard: No text view can be set up
+03-27 20:04:00.020  1185  1185 D SsBaseTemplateCard: Passed-in item info is null
+03-27 20:04:00.020  1185  1185 D SsBaseTemplateCard: Passed-in item info is null
+03-27 20:04:00.020  1185  1185 D SsBaseTemplateCard: Passed-in item info is null
+03-27 20:04:00.020  1185  1185 I SsBaseTemplateCard: Secondary card pane is null
+03-27 20:04:00.027   940   940 W PageIndicator: Total number of pages invalid: 0. Assuming 1 page.
+03-27 20:04:00.028   940  1076 D EGL_emulation: app_time_stats: avg=59990.39ms min=59990.39ms max=59990.39ms count=1
+03-27 20:04:08.422   940  1076 D EGL_emulation: app_time_stats: avg=8393.89ms min=8393.89ms max=8393.89ms count=1
+03-27 20:04:11.318   626  1697 D WifiNl80211Manager: Scan result ready event
+03-27 20:04:11.318   626  1697 D WifiNative: Scan result ready event
+03-27 20:04:11.334   626   818 I HalDevMgr: bestIfaceCreationProposal is null, requestIface=STA, existingIface=[name=wlan0 type=STA]
+03-27 20:04:12.828  1270 32559 W jndk    : [{0}] Failed to resolve name. status={1}
+03-27 20:04:14.042  1591  2020 I BugleRcsEngine: Connected state: [1], networkType: [WIFI] [CONTEXT thread_id=55 ]
+03-27 20:04:14.044  1270  2129 I NullBinder: NullBinder for android.net.action.RECOMMEND_NETWORKS triggering remote TransactionTooLargeException due to Service without Chimera impl, calling uid: 1000, calling pid: 0
+03-27 20:04:14.044  1270  2129 W .gms.persistent: Large reply transaction of 1056768 bytes, interface descriptor , code 1
+03-27 20:04:14.044  1591  2332 I BugleRcsEngine: handleMessage processing message:[NOTIFY_UPTIME_IGNORE_STATE_CHANGED] with [non-null]:RcsEngineImpl reference [CONTEXT log_prefix="RcsEngineImpl[DUAL_REG]:[3992289e-38d6]>Handler" thread_id=60 ]
+03-27 20:04:14.050   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:04:14.051   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:04:14.052   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:04:14.057   626  1697 W ProcessStats: Tracking association SourceState{f9d24b4 com.google.android.calendar/10150 BTop #27106} whose proc state 2 is better than process ProcessState{64b9698 com.google.android.gms.persistent/10144 pkg=com.google.android.gms} proc state 4 (3 skipped)
+03-27 20:04:14.057   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:04:14.060   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:04:14.060   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:04:14.063   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:04:14.063   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:04:14.063   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:04:14.067   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:04:14.069   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:04:14.072   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:04:14.072  1591  2332 I BugleRcsEngine: No RCS Configuration was found in Bugle for simID: redacted-pii:sim_id[chars:20,last3:897] [CONTEXT log_prefix="ProvisioningEngineDataRetriever" thread_id=60 ]
+03-27 20:04:14.077   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:04:14.079   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:04:14.082   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:04:14.083   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:04:14.085   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:04:28.428   940  1076 D EGL_emulation: app_time_stats: avg=20004.96ms min=20004.96ms max=20004.96ms count=1
+03-27 20:04:44.170  1270  2468 I NullBinder: NullBinder for android.net.action.RECOMMEND_NETWORKS triggering remote TransactionTooLargeException due to Service without Chimera impl, calling uid: 1000, calling pid: 0
+03-27 20:04:44.170  1270  2468 W .gms.persistent: Large reply transaction of 1056768 bytes, interface descriptor , code 1
+03-27 20:04:44.170  1591  2332 I BugleRcsEngine: handleMessage processing message:[NOTIFY_UPTIME_IGNORE_STATE_CHANGED] with [non-null]:RcsEngineImpl reference [CONTEXT log_prefix="RcsEngineImpl[DUAL_REG]:[3992289e-38d6]>Handler" thread_id=60 ]
+03-27 20:04:44.171  1591  2020 I BugleRcsEngine: Connected state: [1], networkType: [WIFI] [CONTEXT thread_id=55 ]
+03-27 20:04:44.175   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:04:44.175   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:04:44.176   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:04:44.178   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:04:44.178   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:04:44.178   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:04:44.178   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:04:44.178   626  2132 W ProcessStats: Tracking association SourceState{f9d24b4 com.google.android.calendar/10150 BTop #27108} whose proc state 2 is better than process ProcessState{64b9698 com.google.android.gms.persistent/10144 pkg=com.google.android.gms} proc state 4 (3 skipped)
+03-27 20:04:44.178   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:04:44.179   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:04:44.181   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:04:44.183   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:04:44.190  1591  2332 I BugleRcsEngine: No RCS Configuration was found in Bugle for simID: redacted-pii:sim_id[chars:20,last3:897] [CONTEXT log_prefix="ProvisioningEngineDataRetriever" thread_id=60 ]
+03-27 20:04:44.190   626   827 E IPCThreadState: Binder transaction failure. id: 16897247, BR_*: 29201, error: -28 (No space left on device)
+03-27 20:04:44.196   626   827 W ActivityManager: pid 626 system sent binder code 1 with flags 1 to frozen apps and got error -2147483646
+03-27 20:04:44.198   626   827 E JavaBinder: !!! FAILED BINDER TRANSACTION !!!  (parcel size = 1132)
+03-27 20:04:44.208   626   827 E ConnectivityService: RemoteException caught trying to send a callback msg for NetworkRequest [ TRACK_DEFAULT id=615, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED Uid: 10166 RequestorUid: 10166 RequestorPkg: com.google.android.youtube UnderlyingNetworks: Null] ]
+03-27 20:04:44.214   626   827 E IPCThreadState: Binder transaction failure. id: 16897256, BR_*: 29201, error: -28 (No space left on device)
+03-27 20:04:44.214   626   827 W ActivityManager: pid 626 system sent binder code 1 with flags 1 to frozen apps and got error -2147483646
+03-27 20:04:44.217   626   827 D ActivityManager: Too many transaction errors, throttling freezer binder callback.
+03-27 20:04:44.217   626   827 E JavaBinder: !!! FAILED BINDER TRANSACTION !!!  (parcel size = 1132)
+03-27 20:04:44.217   626   827 E ConnectivityService: RemoteException caught trying to send a callback msg for NetworkRequest [ TRACK_DEFAULT id=617, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED Uid: 10166 RequestorUid: 10166 RequestorPkg: com.google.android.youtube UnderlyingNetworks: Null] ]
+03-27 20:04:44.222   626   827 E IPCThreadState: Binder transaction failure. id: 16897258, BR_*: 29201, error: -28 (No space left on device)
+03-27 20:04:44.222   626   827 W ActivityManager: pid 626 system sent binder code 1 with flags 1 to frozen apps and got error -2147483646
+03-27 20:04:44.222   626   827 D ActivityManager: Too many transaction errors, throttling freezer binder callback.
+03-27 20:04:44.222   626   827 E JavaBinder: !!! FAILED BINDER TRANSACTION !!!  (parcel size = 1132)
+03-27 20:04:44.222   626   827 E ConnectivityService: RemoteException caught trying to send a callback msg for NetworkRequest [ TRACK_DEFAULT id=619, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED Uid: 10166 RequestorUid: 10166 RequestorPkg: com.google.android.youtube UnderlyingNetworks: Null] ]
+03-27 20:04:44.226   626   827 E IPCThreadState: Binder transaction failure. id: 16897259, BR_*: 29201, error: -28 (No space left on device)
+03-27 20:04:44.227   626   827 W ActivityManager: pid 626 system sent binder code 1 with flags 1 to frozen apps and got error -2147483646
+03-27 20:04:44.227   626   827 D ActivityManager: Too many transaction errors, throttling freezer binder callback.
+03-27 20:04:44.227   626   827 E JavaBinder: !!! FAILED BINDER TRANSACTION !!!  (parcel size = 1132)
+03-27 20:04:44.227   626   827 E ConnectivityService: RemoteException caught trying to send a callback msg for NetworkRequest [ TRACK_DEFAULT id=621, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED Uid: 10166 RequestorUid: 10166 RequestorPkg: com.google.android.youtube UnderlyingNetworks: Null] ]
+03-27 20:04:44.228   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:04:44.230   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:04:44.282   626   762 W ActivityManager: pid 31747 has 456 free async space, killing
+03-27 20:04:44.284   626   669 I ActivityManager: Killing 31747:com.google.android.youtube/u0a166 (adj 975): Async binder space running out while frozen
+03-27 20:04:45.453   626   827 D ConnectivityService: releasing NetworkRequest [ REQUEST id=613, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED Uid: 10166 RequestorUid: 10166 RequestorPkg: com.google.android.youtube UnderlyingNetworks: Null] ] (release request)
+03-27 20:04:45.483   626   827 D ConnectivityService: releasing NetworkRequest [ REQUEST id=622, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED Uid: 10166 RequestorUid: 10166 RequestorPkg: com.google.android.youtube UnderlyingNetworks: Null] ] (release request)
+03-27 20:04:45.483   626   827 D ConnectivityService: releasing NetworkRequest [ REQUEST id=618, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED Uid: 10166 RequestorUid: 10166 RequestorPkg: com.google.android.youtube UnderlyingNetworks: Null] ] (release request)
+03-27 20:04:45.484   626   827 D ConnectivityService: releasing NetworkRequest [ REQUEST id=616, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED Uid: 10166 RequestorUid: 10166 RequestorPkg: com.google.android.youtube UnderlyingNetworks: Null] ] (release request)
+03-27 20:04:45.485   626   827 D ConnectivityService: releasing NetworkRequest [ REQUEST id=620, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED Uid: 10166 RequestorUid: 10166 RequestorPkg: com.google.android.youtube UnderlyingNetworks: Null] ] (release request)
+03-27 20:04:45.489   626  1058 D ActivityManager: sync unfroze 31888 com.android.chrome for 5
+03-27 20:04:45.508   369   369 I Zygote  : Process 31747 exited due to signal 9 (Killed)
+03-27 20:04:45.534   626   671 I libprocessgroup: Removed cgroup /sys/fs/cgroup/uid_10166/pid_31747
+03-27 20:04:45.541   626   657 D DisplayManagerService: Drop pending events for gone uid 10166
+03-27 20:04:45.615 31888 31888 D ActivityThread: Package [com.tannu.edureach] reported as REPLACED, but missing application info. Assuming REMOVED.
+03-27 20:04:45.628 31888 31888 D ActivityThread: Package [com.tannu.edureach] reported as REPLACED, but missing application info. Assuming REMOVED.
+03-27 20:04:45.859 31888 31894 W .android.chrome: Reducing the number of considered missed Gc histogram windows from 229 to 100
+03-27 20:04:48.427   940  1076 D EGL_emulation: app_time_stats: avg=19998.09ms min=19998.09ms max=19998.09ms count=1
+03-27 20:04:50.718   626   827 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET, states=14
+03-27 20:04:50.718   626   827 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET6, states=14
+03-27 20:04:50.718   626   827 D InetDiagMessage: Destroyed live tcp sockets for uids={10146} in 7ms
+03-27 20:04:50.719   626   827 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET, states=14
+03-27 20:04:50.721   626   827 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET6, states=14
+03-27 20:04:50.721   626   827 D InetDiagMessage: Destroyed live tcp sockets for uids={20146} in 3ms
+03-27 20:04:54.514   626  1058 W ProcessStats: Tracking association SourceState{2b33adc com.google.android.calendar/10150 BTop #27112} whose proc state 2 is better than process ProcessState{64b9698 com.google.android.gms.persistent/10144 pkg=com.google.android.gms} proc state 4 (5 skipped)
+03-27 20:04:55.749   626   762 D ActivityManager: freezing 31888 com.android.chrome
+03-27 20:04:55.755   626   827 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET, states=14
+03-27 20:04:55.759   626   827 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET6, states=14
+03-27 20:04:55.760   626   827 D InetDiagMessage: Destroyed live tcp sockets for uids={10146} in 6ms
+03-27 20:04:57.932  1554  1715 I BistoHotwordHelper: (REDACTED) getHotwordActive::active query: %s, watch: %s, devices connected: %s
+03-27 20:05:00.009  1529  1784 I AiAiEcho: Predicting[0]:  [CONTEXT sampling_count=5 ]
+03-27 20:05:00.010  1529  1784 I AiAiEcho: EchoTargets: 
+03-27 20:05:00.010  1529  1784 I AiAiEcho: Filtered by AiAi flag check: 
+03-27 20:05:00.010  1529  1784 I AiAiEcho: [CONTEXT ratelimit_period="10 SECONDS" ]
+03-27 20:05:00.011  1529  1784 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata:  [CONTEXT ratelimit_period="10 SECONDS" ]
+03-27 20:05:00.011  1529  1784 I AiAiEcho: #remoteViewsTwiddler: feature disabled.
+03-27 20:05:00.013  1529  1784 I AiAiEcho: Predicting[0]:  [CONTEXT sampling_count=5 ]
+03-27 20:05:00.013  1529  1784 I AiAiEcho: EchoTargets: 
+03-27 20:05:00.013  1529  1784 I AiAiEcho: Filtered by AiAi flag check: 
+03-27 20:05:00.013  1529  1784 I AiAiEcho: [CONTEXT ratelimit_period="10 SECONDS" ]
+03-27 20:05:00.013  1529  1784 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata:  [CONTEXT ratelimit_period="10 SECONDS" ]
+03-27 20:05:00.013  1529  1784 I AiAiEcho: #remoteViewsTwiddler: feature disabled.
+03-27 20:05:00.016  1529  1784 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface lockscreen with targets# 0 (types=[])
+03-27 20:05:00.020  1529  1784 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface home with targets# 0 (types=[])
+03-27 20:05:00.023  1185  1185 D SsBaseTemplateCard: No text view can be set up
+03-27 20:05:00.023  1185  1185 D SsBaseTemplateCard: Passed-in item info is null
+03-27 20:05:00.023  1185  1185 D SsBaseTemplateCard: Passed-in item info is null
+03-27 20:05:00.023  1185  1185 D SsBaseTemplateCard: Passed-in item info is null
+03-27 20:05:00.023  1185  1185 I SsBaseTemplateCard: Secondary card pane is null
+03-27 20:05:00.031   940   940 W PageIndicator: Total number of pages invalid: 0. Assuming 1 page.
+03-27 20:05:00.038   940  1076 D EGL_emulation: app_time_stats: avg=11611.19ms min=11611.19ms max=11611.19ms count=1
+03-27 20:05:01.861   626   905 D androidtc: Initializing SystemTextClassifier, type = System
+03-27 20:05:01.866  1529  1529 I AiAiTextClassifier: onCreateTextClassificationSession = TextClassificationSessionId {61cbfd09-5ce9-4283-9bb0-d9fdf2be1562}
+03-27 20:05:01.873  1529  1850 I AiAiTranslate: C2T - not in a conversation
+03-27 20:05:01.873   940   940 I ClipboardListener: Clipboard overlay suppressed.
+03-27 20:05:01.985   940   940 I ClipboardListener: Clipboard overlay suppressed.
+03-27 20:05:08.421   940  1076 D EGL_emulation: app_time_stats: avg=8382.29ms min=8382.29ms max=8382.29ms count=1
+03-27 20:05:34.319  1270 22963 I FusedLocation: (REDACTED) location delivery to %s blocked - too close
+03-27 20:05:34.320  1270 22963 I FusedLocation: (REDACTED) location delivery to %s blocked - too close
+03-27 20:05:34.387   626  1058 W ProcessStats: Tracking association SourceState{2b33adc com.google.android.calendar/10150 BTop #27113} whose proc state 2 is better than process ProcessState{64b9698 com.google.android.gms.persistent/10144 pkg=com.google.android.gms} proc state 4 (0 skipped)
+03-27 20:05:34.397  1270 30464 W GLSUser : [DeviceKeyStore] Cannot load key: Device key file not found.
+03-27 20:05:34.470   626  1058 D ActivityManager: sync unfroze 28086 com.google.android.gms.unstable for 6
+03-27 20:05:34.520 28086 28086 D ActivityThread: Package [com.tannu.edureach] reported as REPLACED, but missing application info. Assuming REMOVED.
+03-27 20:05:34.524 28086 28086 D ActivityThread: Package [com.tannu.edureach] reported as REPLACED, but missing application info. Assuming REMOVED.
+03-27 20:05:34.702   626   905 D androidtc: Initializing SystemTextClassifier, type = System
+03-27 20:05:34.708  1529  1529 I AiAiTextClassifier: onCreateTextClassificationSession = TextClassificationSessionId {172028cb-e6d0-4038-8bf9-141e286c7572}
+03-27 20:05:34.723   940   940 I ClipboardListener: Clipboard overlay suppressed.
+03-27 20:05:34.724  1529  1850 I AiAiTranslate: C2T - not in a conversation
+03-27 20:05:34.786   940   940 I ClipboardListener: Clipboard overlay suppressed.
+03-27 20:05:35.117 28086 28094 D TrafficStats: tagSocket(100) with statsTag=0x1809, statsUid=-1
+03-27 20:05:35.273   626  2131 D FileUtils: Rounded bytes from 3123515392 to 4000000000
+03-27 20:05:35.355 28086 28094 W libc    : Access denied finding property "persist.adb.tls_server.enable"
+03-27 20:05:35.357 28086 28094 W libc    : Access denied finding property "service.adb.tls.port"
+03-27 20:05:35.348 28086 28086 W binder:28086_1: type=1400 audit(0.0:4465): avc:  denied  { read } for  name="u:object_r:system_adbd_prop:s0" dev="tmpfs" ino=313 scontext=u:r:gmscore_app:s0:c512,c768 tcontext=u:object_r:system_adbd_prop:s0 tclass=file permissive=0 app=com.google.android.gms
+03-27 20:05:35.352 28086 28086 W binder:28086_1: type=1400 audit(0.0:4466): avc:  denied  { read } for  name="u:object_r:adbd_prop:s0" dev="tmpfs" ino=58 scontext=u:r:gmscore_app:s0:c512,c768 tcontext=u:object_r:adbd_prop:s0 tclass=file permissive=0 app=com.google.android.gms
+03-27 20:05:35.465  1270  1270 D BoundBrokerSvc: onRebind: Intent { act=com.google.android.gms.common.telemetry.service.START dat=chimera-action:/... cmp=com.google.android.gms/.chimera.PersistentApiService }
+03-27 20:05:35.576  1270 30464 W GmsUrlRequestImpl: [https://android.googleapis.com/auth/devicekey] Content-Type header is overwritten.
+03-27 20:05:35.617  1270 30464 W GLSUser : [AppCertManager] Exception while requesting key: 
+03-27 20:05:35.617  1270 30464 W GLSUser : java.util.concurrent.ExecutionException: cwpt: Failed to process request
+03-27 20:05:35.617  1270 30464 W GLSUser : 	at hggl.j(:com.google.android.gms@261133038@26.11.33 (260800-887465546):21)
+03-27 20:05:35.617  1270 30464 W GLSUser : 	at hggu.u(:com.google.android.gms@261133038@26.11.33 (260800-887465546):71)
+03-27 20:05:35.617  1270 30464 W GLSUser : 	at amch.b(:com.google.android.gms@261133038@26.11.33 (260800-887465546):439)
+03-27 20:05:35.617  1270 30464 W GLSUser : 	at amcf.a(:com.google.android.gms@261133038@26.11.33 (260800-887465546):67)
+03-27 20:05:35.617  1270 30464 W GLSUser : 	at amcb.a(:com.google.android.gms@261133038@26.11.33 (260800-887465546):3)
+03-27 20:05:35.617  1270 30464 W GLSUser : 	at amcd.a(:com.google.android.gms@261133038@26.11.33 (260800-887465546):58)
+03-27 20:05:35.617  1270 30464 W GLSUser : 	at amcd.b(:com.google.android.gms@261133038@26.11.33 (260800-887465546):21)
+03-27 20:05:35.617  1270 30464 W GLSUser : 	at bidg.m(:com.google.android.gms@261133038@26.11.33 (260800-887465546):13)
+03-27 20:05:35.617  1270 30464 W GLSUser : 	at bidv.f(:com.google.android.gms@261133038@26.11.33 (260800-887465546):10)
+03-27 20:05:35.617  1270 30464 W GLSUser : 	at gnmk.a(:com.google.android.gms@261133038@26.11.33 (260800-887465546):45)
+03-27 20:05:35.617  1270 30464 W GLSUser : 	at gnme.b(:com.google.android.gms@261133038@26.11.33 (260800-887465546):271)
+03-27 20:05:35.617  1270 30464 W GLSUser : 	at gook.g(:com.google.android.gms@261133038@26.11.33 (260800-887465546):15)
+03-27 20:05:35.617  1270 30464 W GLSUser : 	at goog.run(:com.google.android.gms@261133038@26.11.33 (260800-887465546):163)
+03-27 20:05:35.617  1270 30464 W GLSUser : 	at bikh.c(:com.google.android.gms@261133038@26.11.33 (260800-887465546):50)
+03-27 20:05:35.617  1270 30464 W GLSUser : 	at bikh.run(:com.google.android.gms@261133038@26.11.33 (260800-887465546):73)
+03-27 20:05:35.617  1270 30464 W GLSUser : 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+03-27 20:05:35.617  1270 30464 W GLSUser : 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:644)
+03-27 20:05:35.617  1270 30464 W GLSUser : 	at bipy.run(:com.google.android.gms@261133038@26.11.33 (260800-887465546):8)
+03-27 20:05:35.617  1270 30464 W GLSUser : 	at java.lang.Thread.run(Thread.java:1012)
+03-27 20:05:35.617  1270 30464 W GLSUser : Caused by: cwpt: Failed to process request
+03-27 20:05:35.617  1270 30464 W GLSUser : 	at cwqa.a(:com.google.android.gms@261133038@26.11.33 (260800-887465546):23)
+03-27 20:05:35.617  1270 30464 W GLSUser : 	at cwtx.b(:com.google.android.gms@261133038@26.11.33 (260800-887465546):15)
+03-27 20:05:35.617  1270 30464 W GLSUser : 	at cwsw.a(:com.google.android.gms@261133038@26.11.33 (260800-887465546):82)
+03-27 20:05:35.617  1270 30464 W GLSUser : 	at lay.a(:com.google.android.gms@261133038@26.11.33 (260800-887465546):19)
+03-27 20:05:35.617  1270 30464 W GLSUser : 	at cwtd.a(:com.google.android.gms@261133038@26.11.33 (260800-887465546):6)
+03-27 20:05:35.617  1270 30464 W GLSUser : 	at bzfv.a(:com.google.android.gms@261133038@26.11.33 (260800-887465546):9)
+03-27 20:05:35.617  1270 30464 W GLSUser : 	at cwrm.a(:com.google.android.gms@261133038@26.11.33 (260800-887465546):29)
+03-27 20:05:35.617  1270 30464 W GLSUser : 	at bzfy.a(:com.google.android.gms@261133038@26.11.33 (260800-887465546):9)
+03-27 20:05:35.617  1270 30464 W GLSUser : 	at agkl.b(:com.google.android.gms@261133038@26.11.33 (260800-887465546):13)
+03-27 20:05:35.617  1270 30464 W GLSUser : 	at aors.c(:com.google.android.gms@261133038@26.11.33 (260800-887465546):163)
+03-27 20:05:35.617  1270 30464 W GLSUser : 	at amch.b(:com.google.android.gms@261133038@26.11.33 (260800-887465546):433)
+03-27 20:05:35.617  1270 30464 W GLSUser : 	... 16 more
+03-27 20:05:35.617  1270 30464 W GLSUser : Caused by: cwsz: Connectivity error
+03-27 20:05:35.617  1270 30464 W GLSUser : 	at cwsw.a(:com.google.android.gms@261133038@26.11.33 (260800-887465546):76)
+03-27 20:05:35.617  1270 30464 W GLSUser : 	... 24 more
+03-27 20:05:35.617  1270 30464 W GLSUser : Caused by: java.io.IOException
+03-27 20:05:35.617  1270 30464 W GLSUser : 	at cwsw.a(:com.google.android.gms@261133038@26.11.33 (260800-887465546):73)
+03-27 20:05:35.617  1270 30464 W GLSUser : 	... 24 more
+03-27 20:05:35.623  1270 30464 W GLSUser : [DeviceKeyStore] Cannot load key: Device key file not found.
+03-27 20:05:35.684  1270 30464 W GmsWeatherProviderContr: Failed to fetch weather tile
+03-27 20:05:35.762  1270  1270 D BoundBrokerSvc: onRebind: Intent { act=com.google.android.gms.libs.gmscorelogger.service.START dat=chimera-action:/... cmp=com.google.android.gms/.chimera.PersistentDirectBootAwareApiService }
+03-27 20:05:40.518  1270  1270 D BoundBrokerSvc: onUnbind: Intent { act=com.google.android.gms.common.telemetry.service.START dat=chimera-action:/... cmp=com.google.android.gms/.chimera.PersistentApiService }
+03-27 20:05:49.027  1133  1149 I m.android.phone: Background concurrent mark compact GC freed 5164KB AllocSpace bytes, 0(0B) LOS objects, 49% free, 3774KB/7549KB, paused 1.252ms,10.654ms total 615.031ms
+03-27 20:05:49.835   626  2131 W ProcessStats: Tracking association SourceState{2b33adc com.google.android.calendar/10150 BTop #27120} whose proc state 2 is better than process ProcessState{64b9698 com.google.android.gms.persistent/10144 pkg=com.google.android.gms} proc state 4 (9 skipped)
+03-27 20:05:50.568   626   762 D ActivityManager: freezing 28086 com.google.android.gms.unstable
+03-27 20:05:53.462  1591  2332 I BugleRcsEngine: handleMessage processing message:[NOTIFY_UPTIME_IGNORE_STATE_CHANGED] with [non-null]:RcsEngineImpl reference [CONTEXT log_prefix="RcsEngineImpl[DUAL_REG]:[3992289e-38d6]>Handler" thread_id=60 ]
+03-27 20:05:53.463  1591  2020 I BugleRcsEngine: Connected state: [1], networkType: [WIFI] [CONTEXT thread_id=55 ]
+03-27 20:05:53.466  1270  2129 I NullBinder: NullBinder for android.net.action.RECOMMEND_NETWORKS triggering remote TransactionTooLargeException due to Service without Chimera impl, calling uid: 1000, calling pid: 0
+03-27 20:05:53.466  1270  2129 W .gms.persistent: Large reply transaction of 1056768 bytes, interface descriptor , code 1
+03-27 20:05:53.471   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:05:53.473   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:05:53.474   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:05:53.482   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:05:53.482   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:05:53.482   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:05:53.483  1591  2332 I BugleRcsEngine: No RCS Configuration was found in Bugle for simID: redacted-pii:sim_id[chars:20,last3:897] [CONTEXT log_prefix="ProvisioningEngineDataRetriever" thread_id=60 ]
+03-27 20:05:53.483   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:05:53.485   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:05:53.485   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:05:53.485   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:05:53.485   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:05:54.847   626   905 D androidtc: Initializing SystemTextClassifier, type = System
+03-27 20:05:54.852  1529  1529 I AiAiTextClassifier: onCreateTextClassificationSession = TextClassificationSessionId {ea596a22-5cb6-49bc-bd84-e7e67cafa6b4}
+03-27 20:05:54.856   940   940 I ClipboardListener: Clipboard overlay suppressed.
+03-27 20:05:54.862  1529  1850 I AiAiTranslate: C2T - not in a conversation
+03-27 20:05:54.895  1529  1893 I AiAiTextClassifier: GenerateLinks did not find valid links, returning empty result
+03-27 20:05:54.900   940   940 I ClipboardListener: Clipboard overlay suppressed.
+03-27 20:05:54.920  1529  1893 I AiAiTextClassifier: GenerateLinks did not find valid links, returning empty result
+03-27 20:05:57.932  1554  1715 I BistoHotwordHelper: (REDACTED) getHotwordActive::active query: %s, watch: %s, devices connected: %s
+03-27 20:06:00.018  1529  1784 I AiAiEcho: Predicting[0]:  [CONTEXT sampling_count=5 ]
+03-27 20:06:00.018  1529  1784 I AiAiEcho: EchoTargets: 
+03-27 20:06:00.018  1529  1784 I AiAiEcho: Filtered by AiAi flag check: 
+03-27 20:06:00.018  1529  1784 I AiAiEcho: [CONTEXT ratelimit_period="10 SECONDS" ]
+03-27 20:06:00.019  1529  1784 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata:  [CONTEXT ratelimit_period="10 SECONDS" ]
+03-27 20:06:00.019  1529  1784 I AiAiEcho: #remoteViewsTwiddler: feature disabled.
+03-27 20:06:00.019  1529  1784 I AiAiEcho: Predicting[0]:  [CONTEXT sampling_count=5 ]
+03-27 20:06:00.019  1529  1784 I AiAiEcho: EchoTargets: 
+03-27 20:06:00.019  1529  1784 I AiAiEcho: Filtered by AiAi flag check: 
+03-27 20:06:00.019  1529  1784 I AiAiEcho: [CONTEXT ratelimit_period="10 SECONDS" ]
+03-27 20:06:00.019  1529  1784 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata:  [CONTEXT ratelimit_period="10 SECONDS" ]
+03-27 20:06:00.019  1529  1784 I AiAiEcho: #remoteViewsTwiddler: feature disabled.
+03-27 20:06:00.025  1529  1784 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface lockscreen with targets# 0 (types=[])
+03-27 20:06:00.026  1529  1784 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface home with targets# 0 (types=[])
+03-27 20:06:00.027  1185  1185 D SsBaseTemplateCard: No text view can be set up
+03-27 20:06:00.027  1185  1185 D SsBaseTemplateCard: Passed-in item info is null
+03-27 20:06:00.027  1185  1185 D SsBaseTemplateCard: Passed-in item info is null
+03-27 20:06:00.027  1185  1185 D SsBaseTemplateCard: Passed-in item info is null
+03-27 20:06:00.027  1185  1185 I SsBaseTemplateCard: Secondary card pane is null
+03-27 20:06:00.044   940   940 W PageIndicator: Total number of pages invalid: 0. Assuming 1 page.
+03-27 20:06:00.049   940  1076 D EGL_emulation: app_time_stats: avg=51627.22ms min=51627.22ms max=51627.22ms count=1
+03-27 20:06:08.937   626   905 D androidtc: Initializing SystemTextClassifier, type = System
+03-27 20:06:08.939  1529  1529 I AiAiTextClassifier: onCreateTextClassificationSession = TextClassificationSessionId {f572e3bf-f23c-4131-99a2-cf9bcc6cc94b}
+03-27 20:06:08.946   940   940 I ClipboardListener: Clipboard overlay suppressed.
+03-27 20:06:08.952  1529  1850 I AiAiTranslate: C2T - not in a conversation
+03-27 20:06:08.970  1529  1893 I AiAiTextClassifier: GenerateLinks did not find valid links, returning empty result
+03-27 20:06:08.978   940   940 I ClipboardListener: Clipboard overlay suppressed.
+03-27 20:06:08.998  1529  1893 I AiAiTextClassifier: GenerateLinks did not find valid links, returning empty result
+03-27 20:06:14.538  1270  2129 I NullBinder: NullBinder for android.net.action.RECOMMEND_NETWORKS triggering remote TransactionTooLargeException due to Service without Chimera impl, calling uid: 1000, calling pid: 0
+03-27 20:06:14.538  1270  2129 W .gms.persistent: Large reply transaction of 1056768 bytes, interface descriptor , code 1
+03-27 20:06:14.540  1591  2332 I BugleRcsEngine: handleMessage processing message:[NOTIFY_UPTIME_IGNORE_STATE_CHANGED] with [non-null]:RcsEngineImpl reference [CONTEXT log_prefix="RcsEngineImpl[DUAL_REG]:[3992289e-38d6]>Handler" thread_id=60 ]
+03-27 20:06:14.540  1591  2020 I BugleRcsEngine: Connected state: [1], networkType: [WIFI] [CONTEXT thread_id=55 ]
+03-27 20:06:14.541   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:06:14.542   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:06:14.542   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:06:14.545   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:06:14.546   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:06:14.546   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:06:14.547   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:06:14.547   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:06:14.552   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:06:14.555   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:06:14.556   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:06:14.558   626  2307 W ProcessStats: Tracking association SourceState{2b33adc com.google.android.calendar/10150 BTop #27123} whose proc state 2 is better than process ProcessState{64b9698 com.google.android.gms.persistent/10144 pkg=com.google.android.gms} proc state 4 (2 skipped)
+03-27 20:06:14.568  1591  2332 I BugleRcsEngine: No RCS Configuration was found in Bugle for simID: redacted-pii:sim_id[chars:20,last3:897] [CONTEXT log_prefix="ProvisioningEngineDataRetriever" thread_id=60 ]
+03-27 20:06:20.557  1270  2129 I NullBinder: NullBinder for android.net.action.RECOMMEND_NETWORKS triggering remote TransactionTooLargeException due to Service without Chimera impl, calling uid: 1000, calling pid: 0
+03-27 20:06:20.558  1270  2129 W .gms.persistent: Large reply transaction of 1056768 bytes, interface descriptor , code 1
+03-27 20:06:20.564   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:06:20.565  1591  2020 I BugleRcsEngine: Connected state: [1], networkType: [WIFI] [CONTEXT thread_id=55 ]
+03-27 20:06:20.566   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:06:20.566   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:06:20.569  1591  2332 I BugleRcsEngine: handleMessage processing message:[NOTIFY_UPTIME_IGNORE_STATE_CHANGED] with [non-null]:RcsEngineImpl reference [CONTEXT log_prefix="RcsEngineImpl[DUAL_REG]:[3992289e-38d6]>Handler" thread_id=60 ]
+03-27 20:06:20.569   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:06:20.571   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:06:20.571   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:06:20.572   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:06:20.574   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:06:20.574   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:06:20.576   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:06:20.576   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:06:20.584  1591  2332 I BugleRcsEngine: No RCS Configuration was found in Bugle for simID: redacted-pii:sim_id[chars:20,last3:897] [CONTEXT log_prefix="ProvisioningEngineDataRetriever" thread_id=60 ]
+03-27 20:06:22.831  1270 32572 W jndk    : [{0}] Failed to resolve name. status={1}
+03-27 20:06:23.575  1270  2129 I NullBinder: NullBinder for android.net.action.RECOMMEND_NETWORKS triggering remote TransactionTooLargeException due to Service without Chimera impl, calling uid: 1000, calling pid: 0
+03-27 20:06:23.579  1270  2129 W .gms.persistent: Large reply transaction of 1056768 bytes, interface descriptor , code 1
+03-27 20:06:23.583  1591  2020 I BugleRcsEngine: Connected state: [1], networkType: [WIFI] [CONTEXT thread_id=55 ]
+03-27 20:06:23.583   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:06:23.584   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:06:23.584   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:06:23.584  1591  2332 I BugleRcsEngine: handleMessage processing message:[NOTIFY_UPTIME_IGNORE_STATE_CHANGED] with [non-null]:RcsEngineImpl reference [CONTEXT log_prefix="RcsEngineImpl[DUAL_REG]:[3992289e-38d6]>Handler" thread_id=60 ]
+03-27 20:06:23.585   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:06:23.585   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:06:23.586   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:06:23.586   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:06:23.591   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:06:23.592   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:06:23.593   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:06:23.593   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:06:23.602  1591  2332 I BugleRcsEngine: No RCS Configuration was found in Bugle for simID: redacted-pii:sim_id[chars:20,last3:897] [CONTEXT log_prefix="ProvisioningEngineDataRetriever" thread_id=60 ]
+03-27 20:06:26.599   626   668 W ProcessStats: Tracking association SourceState{2b33adc com.google.android.calendar/10150 BTop #27124} whose proc state 2 is better than process ProcessState{64b9698 com.google.android.gms.persistent/10144 pkg=com.google.android.gms} proc state 4 (0 skipped)
+03-27 20:06:49.643   940   940 I ClipboardListener: Clipboard overlay suppressed.
+03-27 20:06:49.643  1529  1850 I AiAiTranslate: C2T - not in a conversation
+03-27 20:06:50.795   626  2131 W ProcessStats: Tracking association SourceState{2b33adc com.google.android.calendar/10150 BTop #27125} whose proc state 2 is better than process ProcessState{64b9698 com.google.android.gms.persistent/10144 pkg=com.google.android.gms} proc state 4 (0 skipped)
+03-27 20:06:51.334   626  2131 D WifiNl80211Manager: Scan result ready event
+03-27 20:06:51.334   626  2131 D WifiNative: Scan result ready event
+03-27 20:06:51.350   626   818 I HalDevMgr: bestIfaceCreationProposal is null, requestIface=STA, existingIface=[name=wlan0 type=STA]
+03-27 20:06:53.686  1591  2020 I BugleRcsEngine: Connected state: [1], networkType: [WIFI] [CONTEXT thread_id=55 ]
+03-27 20:06:53.686  1591  2332 I BugleRcsEngine: handleMessage processing message:[NOTIFY_UPTIME_IGNORE_STATE_CHANGED] with [non-null]:RcsEngineImpl reference [CONTEXT log_prefix="RcsEngineImpl[DUAL_REG]:[3992289e-38d6]>Handler" thread_id=60 ]
+03-27 20:06:53.689   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:06:53.689   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:06:53.692   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:06:53.694  1270  1612 I NullBinder: NullBinder for android.net.action.RECOMMEND_NETWORKS triggering remote TransactionTooLargeException due to Service without Chimera impl, calling uid: 1000, calling pid: 0
+03-27 20:06:53.694  1270  1612 W .gms.persistent: Large reply transaction of 1056768 bytes, interface descriptor , code 1
+03-27 20:06:53.697   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:06:53.697   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:06:53.698   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:06:53.698   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:06:53.698   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:06:53.698   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:06:53.698   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:06:53.699   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:06:53.707  1591  2332 I BugleRcsEngine: No RCS Configuration was found in Bugle for simID: redacted-pii:sim_id[chars:20,last3:897] [CONTEXT log_prefix="ProvisioningEngineDataRetriever" thread_id=60 ]
+03-27 20:06:56.343   626  1697 W AppOps  : Noting op not finished: uid 10144 pkg com.google.android.gms code 113 startTime of in progress event=1774619748598
+03-27 20:06:56.352   626  1697 W AppOps  : Noting op not finished: uid 10144 pkg com.google.android.gms code 113 startTime of in progress event=1774619748598
+03-27 20:06:56.358   626  1766 W AppOps  : Noting op not finished: uid 10144 pkg com.google.android.gms code 113 startTime of in progress event=1774619748598
+03-27 20:06:56.369   626  1697 W AppOps  : Noting op not finished: uid 10144 pkg com.google.android.gms code 79 startTime of in progress event=1774619748598
+03-27 20:06:56.378   626  2131 W AppOps  : Noting op not finished: uid 10144 pkg com.google.android.gms code 113 startTime of in progress event=1774619748598
+03-27 20:06:56.385  1270  1969 I ActivityScheduler: nextTriggerTime: 47007004, in 238099ms, detectorType: 39, FULL_TYPE alarmWindowMillis: 80000
+03-27 20:06:57.935  1554  1934 I BistoHotwordHelper: (REDACTED) getHotwordActive::active query: %s, watch: %s, devices connected: %s
+03-27 20:07:00.017  1529  1784 I AiAiEcho: Predicting[0]:  [CONTEXT sampling_count=5 ]
+03-27 20:07:00.017  1529  1784 I AiAiEcho: EchoTargets: 
+03-27 20:07:00.017  1529  1784 I AiAiEcho: Filtered by AiAi flag check: 
+03-27 20:07:00.017  1529  1784 I AiAiEcho: [CONTEXT ratelimit_period="10 SECONDS" ]
+03-27 20:07:00.017  1529  1784 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata:  [CONTEXT ratelimit_period="10 SECONDS" ]
+03-27 20:07:00.018  1529  1784 I AiAiEcho: #remoteViewsTwiddler: feature disabled.
+03-27 20:07:00.018  1529  1784 I AiAiEcho: Predicting[0]:  [CONTEXT sampling_count=5 ]
+03-27 20:07:00.018  1529  1784 I AiAiEcho: EchoTargets: 
+03-27 20:07:00.018  1529  1784 I AiAiEcho: Filtered by AiAi flag check: 
+03-27 20:07:00.018  1529  1784 I AiAiEcho: [CONTEXT ratelimit_period="10 SECONDS" ]
+03-27 20:07:00.018  1529  1784 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata:  [CONTEXT ratelimit_period="10 SECONDS" ]
+03-27 20:07:00.018  1529  1784 I AiAiEcho: #remoteViewsTwiddler: feature disabled.
+03-27 20:07:00.020  1529  1784 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface lockscreen with targets# 0 (types=[])
+03-27 20:07:00.022  1529  1784 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface home with targets# 0 (types=[])
+03-27 20:07:00.023  1185  1185 D SsBaseTemplateCard: No text view can be set up
+03-27 20:07:00.024  1185  1185 D SsBaseTemplateCard: Passed-in item info is null
+03-27 20:07:00.024  1185  1185 D SsBaseTemplateCard: Passed-in item info is null
+03-27 20:07:00.025  1185  1185 D SsBaseTemplateCard: Passed-in item info is null
+03-27 20:07:00.025  1185  1185 I SsBaseTemplateCard: Secondary card pane is null
+03-27 20:07:00.026   940   940 W PageIndicator: Total number of pages invalid: 0. Assuming 1 page.
+03-27 20:07:00.034   940  1076 D EGL_emulation: app_time_stats: avg=59985.62ms min=59985.62ms max=59985.62ms count=1
+03-27 20:07:03.406   626  1766 W ProcessStats: Tracking association SourceState{2b33adc com.google.android.calendar/10150 BTop #27139} whose proc state 2 is better than process ProcessState{64b9698 com.google.android.gms.persistent/10144 pkg=com.google.android.gms} proc state 4 (13 skipped)
+03-27 20:07:08.422   940  1076 D EGL_emulation: app_time_stats: avg=8387.52ms min=8387.52ms max=8387.52ms count=1
+03-27 20:07:27.739   626  1766 W BatteryExternalStatsWorker: error reading Bluetooth stats: 11
+03-27 20:07:27.789   626  1697 D TelephonyManager: requestModemActivityInfo: Sending result to app: ModemActivityInfo{ mTimestamp=46800299 mSleepTimeMs=0 mIdleTimeMs=45765090 mActivityStatsTechSpecificInfo=[{mRat=UNKNOWN,mFrequencyRange=UNKNOWN,mTxTimeMs[]=[0, 0, 0, 0, 0],mRxTimeMs=0}]}
+03-27 20:07:28.428   940  1076 D EGL_emulation: app_time_stats: avg=20005.38ms min=20005.38ms max=20005.38ms count=1
+03-27 20:07:48.426   940  1076 D EGL_emulation: app_time_stats: avg=19998.20ms min=19998.20ms max=19998.20ms count=1
+03-27 20:07:56.955  1270  2129 I NullBinder: NullBinder for android.net.action.RECOMMEND_NETWORKS triggering remote TransactionTooLargeException due to Service without Chimera impl, calling uid: 1000, calling pid: 0
+03-27 20:07:56.955  1270  2129 W .gms.persistent: Large reply transaction of 1056768 bytes, interface descriptor , code 1
+03-27 20:07:56.957   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:07:56.957   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:07:56.957   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:07:56.957  1591  2020 I BugleRcsEngine: Connected state: [1], networkType: [WIFI] [CONTEXT thread_id=55 ]
+03-27 20:07:56.958   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:07:56.959  1591  2332 I BugleRcsEngine: handleMessage processing message:[NOTIFY_UPTIME_IGNORE_STATE_CHANGED] with [non-null]:RcsEngineImpl reference [CONTEXT log_prefix="RcsEngineImpl[DUAL_REG]:[3992289e-38d6]>Handler" thread_id=60 ]
+03-27 20:07:56.963   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:07:56.965   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:07:56.966   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:07:56.967   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:07:56.968   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:07:56.969   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:07:56.969   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:07:56.974   626  1766 W ProcessStats: Tracking association SourceState{2b33adc com.google.android.calendar/10150 BTop #27140} whose proc state 2 is better than process ProcessState{64b9698 com.google.android.gms.persistent/10144 pkg=com.google.android.gms} proc state 4 (0 skipped)
+03-27 20:07:56.979  1591  2332 I BugleRcsEngine: No RCS Configuration was found in Bugle for simID: redacted-pii:sim_id[chars:20,last3:897] [CONTEXT log_prefix="ProvisioningEngineDataRetriever" thread_id=60 ]
+03-27 20:07:57.932  1554  1934 I BistoHotwordHelper: (REDACTED) getHotwordActive::active query: %s, watch: %s, devices connected: %s
+03-27 20:08:00.007  1529  1784 I AiAiEcho: Predicting[0]:  [CONTEXT sampling_count=5 ]
+03-27 20:08:00.007  1529  1784 I AiAiEcho: EchoTargets: 
+03-27 20:08:00.007  1529  1784 I AiAiEcho: Filtered by AiAi flag check: 
+03-27 20:08:00.007  1529  1784 I AiAiEcho: [CONTEXT ratelimit_period="10 SECONDS" ]
+03-27 20:08:00.008  1529  1784 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata:  [CONTEXT ratelimit_period="10 SECONDS" ]
+03-27 20:08:00.008  1529  1784 I AiAiEcho: #remoteViewsTwiddler: feature disabled.
+03-27 20:08:00.008  1529  1784 I AiAiEcho: Predicting[0]:  [CONTEXT sampling_count=5 ]
+03-27 20:08:00.008  1529  1784 I AiAiEcho: EchoTargets: 
+03-27 20:08:00.008  1529  1784 I AiAiEcho: Filtered by AiAi flag check: 
+03-27 20:08:00.008  1529  1784 I AiAiEcho: [CONTEXT ratelimit_period="10 SECONDS" ]
+03-27 20:08:00.008  1529  1784 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata:  [CONTEXT ratelimit_period="10 SECONDS" ]
+03-27 20:08:00.008  1529  1784 I AiAiEcho: #remoteViewsTwiddler: feature disabled.
+03-27 20:08:00.010  1529  1784 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface lockscreen with targets# 0 (types=[])
+03-27 20:08:00.011  1529  1784 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface home with targets# 0 (types=[])
+03-27 20:08:00.014  1185  1185 D SsBaseTemplateCard: No text view can be set up
+03-27 20:08:00.014  1185  1185 D SsBaseTemplateCard: Passed-in item info is null
+03-27 20:08:00.014  1185  1185 D SsBaseTemplateCard: Passed-in item info is null
+03-27 20:08:00.014  1185  1185 D SsBaseTemplateCard: Passed-in item info is null
+03-27 20:08:00.014  1185  1185 I SsBaseTemplateCard: Secondary card pane is null
+03-27 20:08:00.023   940   940 W PageIndicator: Total number of pages invalid: 0. Assuming 1 page.
+03-27 20:08:00.028   940  1076 D EGL_emulation: app_time_stats: avg=11601.25ms min=11601.25ms max=11601.25ms count=1
+03-27 20:08:08.438   940  1076 D EGL_emulation: app_time_stats: avg=8410.30ms min=8410.30ms max=8410.30ms count=1
+03-27 20:08:11.406  1042 32580 D TrafficStats: tagSocket(125) with statsTag=0xffffff81, statsUid=-1
+03-27 20:08:11.407  1042 32581 D TrafficStats: tagSocket(126) with statsTag=0xffffff81, statsUid=-1
+03-27 20:08:11.417  1042 32580 D TrafficStats: tagSocket(125) with statsTag=0xffffff81, statsUid=-1
+03-27 20:08:11.417  1042 32581 D TrafficStats: tagSocket(126) with statsTag=0xffffff81, statsUid=-1
+03-27 20:08:15.042  1270  2927 I NullBinder: NullBinder for android.net.action.RECOMMEND_NETWORKS triggering remote TransactionTooLargeException due to Service without Chimera impl, calling uid: 1000, calling pid: 0
+03-27 20:08:15.042  1591  2332 I BugleRcsEngine: handleMessage processing message:[NOTIFY_UPTIME_IGNORE_STATE_CHANGED] with [non-null]:RcsEngineImpl reference [CONTEXT log_prefix="RcsEngineImpl[DUAL_REG]:[3992289e-38d6]>Handler" thread_id=60 ]
+03-27 20:08:15.042  1270  2927 W .gms.persistent: Large reply transaction of 1056768 bytes, interface descriptor , code 1
+03-27 20:08:15.043  1591  2020 I BugleRcsEngine: Connected state: [1], networkType: [WIFI] [CONTEXT thread_id=55 ]
+03-27 20:08:15.047   626  1697 W ProcessStats: Tracking association SourceState{2b33adc com.google.android.calendar/10150 BTop #27142} whose proc state 2 is better than process ProcessState{64b9698 com.google.android.gms.persistent/10144 pkg=com.google.android.gms} proc state 4 (1 skipped)
+03-27 20:08:15.052   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:08:15.052   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:08:15.052   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:08:15.059   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:08:15.060  1591  2332 I BugleRcsEngine: No RCS Configuration was found in Bugle for simID: redacted-pii:sim_id[chars:20,last3:897] [CONTEXT log_prefix="ProvisioningEngineDataRetriever" thread_id=60 ]
+03-27 20:08:15.061   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:08:15.061   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:08:15.062   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:08:15.062   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:08:15.062   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:08:15.062   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:08:15.064   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:08:18.048  1591  2332 I BugleRcsEngine: handleMessage processing message:[NOTIFY_UPTIME_IGNORE_STATE_CHANGED] with [non-null]:RcsEngineImpl reference [CONTEXT log_prefix="RcsEngineImpl[DUAL_REG]:[3992289e-38d6]>Handler" thread_id=60 ]
+03-27 20:08:18.049  1270  3704 I NullBinder: NullBinder for android.net.action.RECOMMEND_NETWORKS triggering remote TransactionTooLargeException due to Service without Chimera impl, calling uid: 1000, calling pid: 0
+03-27 20:08:18.049  1270  3704 W .gms.persistent: Large reply transaction of 1056768 bytes, interface descriptor , code 1
+03-27 20:08:18.051  1591  2020 I BugleRcsEngine: Connected state: [1], networkType: [WIFI] [CONTEXT thread_id=55 ]
+03-27 20:08:18.058   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:08:18.059   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:08:18.059   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:08:18.061   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:08:18.062   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:08:18.063   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:08:18.063   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:08:18.065   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:08:18.065   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:08:18.065   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:08:18.065   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:08:18.068  1591  2332 I BugleRcsEngine: No RCS Configuration was found in Bugle for simID: redacted-pii:sim_id[chars:20,last3:897] [CONTEXT log_prefix="ProvisioningEngineDataRetriever" thread_id=60 ]
+03-27 20:08:21.061  1591  2332 I BugleRcsEngine: handleMessage processing message:[NOTIFY_UPTIME_IGNORE_STATE_CHANGED] with [non-null]:RcsEngineImpl reference [CONTEXT log_prefix="RcsEngineImpl[DUAL_REG]:[3992289e-38d6]>Handler" thread_id=60 ]
+03-27 20:08:21.061  1591  2020 I BugleRcsEngine: Connected state: [1], networkType: [WIFI] [CONTEXT thread_id=55 ]
+03-27 20:08:21.066   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:08:21.066  1270  2927 I NullBinder: NullBinder for android.net.action.RECOMMEND_NETWORKS triggering remote TransactionTooLargeException due to Service without Chimera impl, calling uid: 1000, calling pid: 0
+03-27 20:08:21.066  1270  2927 W .gms.persistent: Large reply transaction of 1056768 bytes, interface descriptor , code 1
+03-27 20:08:21.066  1591  2332 I BugleRcsEngine: No RCS Configuration was found in Bugle for simID: redacted-pii:sim_id[chars:20,last3:897] [CONTEXT log_prefix="ProvisioningEngineDataRetriever" thread_id=60 ]
+03-27 20:08:21.066   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:08:21.066   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:08:21.070   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:08:21.071   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:08:21.071   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:08:21.071   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:08:21.071   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:08:21.071   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:08:21.072   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:08:21.074   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:08:21.447  1042  1042 W DnsResolver: resNetworkResult:android.system.ErrnoException: resNetworkResult failed: ETIMEDOUT (Connection timed out)
+03-27 20:08:21.448  1042  1042 W DnsResolver: resNetworkResult:android.system.ErrnoException: resNetworkResult failed: ETIMEDOUT (Connection timed out)
+03-27 20:08:21.448  1042  1042 W DnsResolver: resNetworkResult:android.system.ErrnoException: resNetworkResult failed: ETIMEDOUT (Connection timed out)
+03-27 20:08:21.458  1042  1042 W DnsResolver: resNetworkResult:android.system.ErrnoException: resNetworkResult failed: ETIMEDOUT (Connection timed out)
+03-27 20:08:21.464  1042 32581 D NetworkMonitor/143: PROBE_DNS connectivitycheck.gstatic.com 10064ms FAIL in type ADDRCONFIG android.net.DnsResolver$DnsException: android.system.ErrnoException: resNetworkResult failed: ETIMEDOUT (Connection timed out)
+03-27 20:08:21.465  1042 32580 D NetworkMonitor/143: PROBE_DNS www.google.com 10063ms FAIL in type ADDRCONFIG android.net.DnsResolver$DnsException: android.system.ErrnoException: resNetworkResult failed: ETIMEDOUT (Connection timed out)
+03-27 20:08:21.506  1042 32581 D NetworkMonitor/143: PROBE_HTTP http://connectivitycheck.gstatic.com/generate_204 Probe failed with exception java.net.UnknownHostException: Unable to resolve host "connectivitycheck.gstatic.com": No address associated with hostname
+03-27 20:08:21.506  1042 32580 D NetworkMonitor/143: PROBE_HTTPS https://www.google.com/generate_204 Probe failed with exception java.net.UnknownHostException: Unable to resolve host "www.google.com": No address associated with hostname
+03-27 20:08:21.879  1042 30438 D ApfFilter: (wlan0): Adding RA fe80::2 -> ff02::1 1800s fec0::/64 86400s/14400s 
+03-27 20:08:24.071  1270  2129 I NullBinder: NullBinder for android.net.action.RECOMMEND_NETWORKS triggering remote TransactionTooLargeException due to Service without Chimera impl, calling uid: 1000, calling pid: 0
+03-27 20:08:24.072  1270  2129 W .gms.persistent: Large reply transaction of 1056768 bytes, interface descriptor , code 1
+03-27 20:08:24.073  1591  2020 I BugleRcsEngine: Connected state: [1], networkType: [WIFI] [CONTEXT thread_id=55 ]
+03-27 20:08:24.075  1591  2332 I BugleRcsEngine: handleMessage processing message:[NOTIFY_UPTIME_IGNORE_STATE_CHANGED] with [non-null]:RcsEngineImpl reference [CONTEXT log_prefix="RcsEngineImpl[DUAL_REG]:[3992289e-38d6]>Handler" thread_id=60 ]
+03-27 20:08:24.080  1591  2332 I BugleRcsEngine: No RCS Configuration was found in Bugle for simID: redacted-pii:sim_id[chars:20,last3:897] [CONTEXT log_prefix="ProvisioningEngineDataRetriever" thread_id=60 ]
+03-27 20:08:24.080   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:08:24.080   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:08:24.081   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:08:24.088   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:08:24.088   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:08:24.088   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:08:24.090   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:08:24.090   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:08:24.091   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:08:24.091   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:08:24.091   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:08:24.419  1042 32579 D NetworkMonitor/143: PROBE_FALLBACK http://play.googleapis.com/generate_204 Probe failed with exception java.net.UnknownHostException: Unable to resolve host "play.googleapis.com": No address associated with hostname
+03-27 20:08:24.421  1042 32579 D NetworkMonitor/143: isCaptivePortal: isSuccessful()=false isPortal()=false RedirectUrl=null isPartialConnectivity()=false Time=13044ms
+03-27 20:08:24.434   626   827 D ConnectivityService: [143 WIFI] validation failed
+03-27 20:08:24.737   626   748 I UsageStatsService: User[0] Flushing usage stats to disk
+03-27 20:08:27.071   626   668 W ProcessStats: Tracking association SourceState{2b33adc com.google.android.calendar/10150 BTop #27143} whose proc state 2 is better than process ProcessState{64b9698 com.google.android.gms.persistent/10144 pkg=com.google.android.gms} proc state 4 (0 skipped)
+03-27 20:08:38.449   626   905 D androidtc: Initializing SystemTextClassifier, type = System
+03-27 20:08:38.457  1529  1529 I AiAiTextClassifier: onCreateTextClassificationSession = TextClassificationSessionId {2d7c01de-6ca9-4d6c-b822-0c9507313ebc}
+03-27 20:08:38.467   940   940 I ClipboardListener: Clipboard overlay suppressed.
+03-27 20:08:38.470  1529  1850 I AiAiTranslate: C2T - not in a conversation
+03-27 20:08:38.493   940   940 I ClipboardListener: Clipboard overlay suppressed.
+03-27 20:08:47.947  1270 32595 W jndk    : [{0}] Failed to resolve name. status={1}
+03-27 20:08:51.801   626  1058 D FileUtils: Rounded bytes from 3123515392 to 4000000000
+03-27 20:08:51.836  1554 16599 V ClearcutMetricXmitter: Transmission is done.
+03-27 20:08:55.405  1591 32605 W BugleRcsEngine: Unable to send diagnostic log [CONTEXT thread_id=96 ]
+03-27 20:08:57.932  1554  1715 I BistoHotwordHelper: (REDACTED) getHotwordActive::active query: %s, watch: %s, devices connected: %s
+03-27 20:09:00.016  1529  1784 I AiAiEcho: Predicting[0]:  [CONTEXT sampling_count=5 ]
+03-27 20:09:00.017  1529  1784 I AiAiEcho: EchoTargets: 
+03-27 20:09:00.017  1529  1784 I AiAiEcho: Filtered by AiAi flag check: 
+03-27 20:09:00.017  1529  1784 I AiAiEcho: [CONTEXT ratelimit_period="10 SECONDS" ]
+03-27 20:09:00.017  1529  1784 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata:  [CONTEXT ratelimit_period="10 SECONDS" ]
+03-27 20:09:00.017  1529  1784 I AiAiEcho: #remoteViewsTwiddler: feature disabled.
+03-27 20:09:00.017  1529  1784 I AiAiEcho: Predicting[0]:  [CONTEXT sampling_count=5 ]
+03-27 20:09:00.018  1529  1784 I AiAiEcho: EchoTargets: 
+03-27 20:09:00.018  1529  1784 I AiAiEcho: Filtered by AiAi flag check: 
+03-27 20:09:00.018  1529  1784 I AiAiEcho: [CONTEXT ratelimit_period="10 SECONDS" ]
+03-27 20:09:00.018  1529  1784 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata:  [CONTEXT ratelimit_period="10 SECONDS" ]
+03-27 20:09:00.018  1529  1784 I AiAiEcho: #remoteViewsTwiddler: feature disabled.
+03-27 20:09:00.019  1529  1784 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface lockscreen with targets# 0 (types=[])
+03-27 20:09:00.019  1529  1784 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface home with targets# 0 (types=[])
+03-27 20:09:00.023  1185  1185 D SsBaseTemplateCard: No text view can be set up
+03-27 20:09:00.023  1185  1185 D SsBaseTemplateCard: Passed-in item info is null
+03-27 20:09:00.023  1185  1185 D SsBaseTemplateCard: Passed-in item info is null
+03-27 20:09:00.023  1185  1185 D SsBaseTemplateCard: Passed-in item info is null
+03-27 20:09:00.023  1185  1185 I SsBaseTemplateCard: Secondary card pane is null
+03-27 20:09:00.031   940  1076 D EGL_emulation: app_time_stats: avg=51592.22ms min=51592.22ms max=51592.22ms count=1
+03-27 20:09:00.031   940   940 W PageIndicator: Total number of pages invalid: 0. Assuming 1 page.
+03-27 20:09:06.893   626  1697 W ProcessStats: Tracking association SourceState{2b33adc com.google.android.calendar/10150 BTop #27144} whose proc state 2 is better than process ProcessState{64b9698 com.google.android.gms.persistent/10144 pkg=com.google.android.gms} proc state 4 (0 skipped)
+03-27 20:09:16.797  1529  1850 I AiAiStatsd: No op: the most recent atoms from the date 2026-03-26 have been uploaded.
+03-27 20:09:21.311  1270  3704 I NullBinder: NullBinder for android.net.action.RECOMMEND_NETWORKS triggering remote TransactionTooLargeException due to Service without Chimera impl, calling uid: 1000, calling pid: 0
+03-27 20:09:21.312  1270  3704 W .gms.persistent: Large reply transaction of 1056768 bytes, interface descriptor , code 1
+03-27 20:09:21.321   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:09:21.321   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:09:21.322   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:09:21.322  1591  2332 I BugleRcsEngine: handleMessage processing message:[NOTIFY_UPTIME_IGNORE_STATE_CHANGED] with [non-null]:RcsEngineImpl reference [CONTEXT log_prefix="RcsEngineImpl[DUAL_REG]:[3992289e-38d6]>Handler" thread_id=60 ]
+03-27 20:09:21.322  1591  2020 I BugleRcsEngine: Connected state: [1], networkType: [WIFI] [CONTEXT thread_id=55 ]
+03-27 20:09:21.329   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:09:21.330   626  1766 W ProcessStats: Tracking association SourceState{2b33adc com.google.android.calendar/10150 BTop #27146} whose proc state 2 is better than process ProcessState{64b9698 com.google.android.gms.persistent/10144 pkg=com.google.android.gms} proc state 4 (1 skipped)
+03-27 20:09:21.331   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:09:21.335   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:09:21.336   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:09:21.336   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:09:21.337   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:09:21.338   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:09:21.339   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:09:21.346  1591  2332 I BugleRcsEngine: No RCS Configuration was found in Bugle for simID: redacted-pii:sim_id[chars:20,last3:897] [CONTEXT log_prefix="ProvisioningEngineDataRetriever" thread_id=60 ]
+03-27 20:09:31.331   626  1058 D WifiNl80211Manager: Scan result ready event
+03-27 20:09:31.331   626  1058 D WifiNative: Scan result ready event
+03-27 20:09:31.351   626   818 I HalDevMgr: bestIfaceCreationProposal is null, requestIface=STA, existingIface=[name=wlan0 type=STA]
+03-27 20:09:33.364  1270  2927 I NullBinder: NullBinder for android.net.action.RECOMMEND_NETWORKS triggering remote TransactionTooLargeException due to Service without Chimera impl, calling uid: 1000, calling pid: 0
+03-27 20:09:33.364  1270  2927 W .gms.persistent: Large reply transaction of 1056768 bytes, interface descriptor , code 1
+03-27 20:09:33.371  1591  2020 I BugleRcsEngine: Connected state: [1], networkType: [WIFI] [CONTEXT thread_id=55 ]
+03-27 20:09:33.373   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:09:33.373  1591  2332 I BugleRcsEngine: handleMessage processing message:[NOTIFY_UPTIME_IGNORE_STATE_CHANGED] with [non-null]:RcsEngineImpl reference [CONTEXT log_prefix="RcsEngineImpl[DUAL_REG]:[3992289e-38d6]>Handler" thread_id=60 ]
+03-27 20:09:33.375   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:09:33.377   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:09:33.382   626  1766 W ProcessStats: Tracking association SourceState{2b33adc com.google.android.calendar/10150 BTop #27148} whose proc state 2 is better than process ProcessState{64b9698 com.google.android.gms.persistent/10144 pkg=com.google.android.gms} proc state 4 (1 skipped)
+03-27 20:09:33.385   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:09:33.385   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:09:33.386   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:09:33.387   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:09:33.388   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:09:33.390   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:09:33.390   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:09:33.391   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:09:33.396  1591  2332 I BugleRcsEngine: No RCS Configuration was found in Bugle for simID: redacted-pii:sim_id[chars:20,last3:897] [CONTEXT log_prefix="ProvisioningEngineDataRetriever" thread_id=60 ]
+03-27 20:09:40.120 28162 28187 E bluetooth: system/gd/os/linux_generic/files.cc:223 FileCreatedTime: unable to read '/data/misc/bluetooth/logs/btsnooz_hci.log' file metadata, error: No such file or directory
+03-27 20:09:57.933  1554  1942 I BistoHotwordHelper: (REDACTED) getHotwordActive::active query: %s, watch: %s, devices connected: %s
+03-27 20:10:00.008  1529  1784 I AiAiEcho: Predicting[0]:  [CONTEXT sampling_count=5 ]
+03-27 20:10:00.008  1529  1784 I AiAiEcho: EchoTargets: 
+03-27 20:10:00.008  1529  1784 I AiAiEcho: Filtered by AiAi flag check: 
+03-27 20:10:00.008  1529  1784 I AiAiEcho: [CONTEXT ratelimit_period="10 SECONDS" ]
+03-27 20:10:00.008  1529  1784 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata:  [CONTEXT ratelimit_period="10 SECONDS" ]
+03-27 20:10:00.008  1529  1784 I AiAiEcho: #remoteViewsTwiddler: feature disabled.
+03-27 20:10:00.010  1529  1784 I AiAiEcho: Predicting[0]:  [CONTEXT sampling_count=5 ]
+03-27 20:10:00.010  1529  1784 I AiAiEcho: EchoTargets: 
+03-27 20:10:00.010  1529  1784 I AiAiEcho: Filtered by AiAi flag check: 
+03-27 20:10:00.010  1529  1784 I AiAiEcho: [CONTEXT ratelimit_period="10 SECONDS" ]
+03-27 20:10:00.010  1529  1784 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata:  [CONTEXT ratelimit_period="10 SECONDS" ]
+03-27 20:10:00.011  1529  1784 I AiAiEcho: #remoteViewsTwiddler: feature disabled.
+03-27 20:10:00.013  1529  1784 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface lockscreen with targets# 0 (types=[])
+03-27 20:10:00.014  1529  1784 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface home with targets# 0 (types=[])
+03-27 20:10:00.016  1185  1185 D SsBaseTemplateCard: No text view can be set up
+03-27 20:10:00.017  1185  1185 D SsBaseTemplateCard: Passed-in item info is null
+03-27 20:10:00.017  1185  1185 D SsBaseTemplateCard: Passed-in item info is null
+03-27 20:10:00.017  1185  1185 D SsBaseTemplateCard: Passed-in item info is null
+03-27 20:10:00.017  1185  1185 I SsBaseTemplateCard: Secondary card pane is null
+03-27 20:10:00.031   940  1076 D EGL_emulation: app_time_stats: avg=60000.07ms min=60000.07ms max=60000.07ms count=1
+03-27 20:10:00.041   940   940 W PageIndicator: Total number of pages invalid: 0. Assuming 1 page.
+03-27 20:10:08.439   940  1076 D EGL_emulation: app_time_stats: avg=8407.69ms min=8407.69ms max=8407.69ms count=1
+03-27 20:10:10.481   940   940 D ZenModeController: Added callback class com.android.systemui.qs.tiles.DndTile$3
+03-27 20:10:10.489   940   940 D ZenModeController: Removed callback class com.android.systemui.qs.tiles.DndTile$3
+03-27 20:10:10.835   940  1043 I QuickAccessWalletTile: QAW service is unavailable, recreating the wallet client.
+03-27 20:10:10.880   626  1697 W ProcessStats: Tracking association SourceState{2b33adc com.google.android.calendar/10150 BTop #27150} whose proc state 2 is better than process ProcessState{64b9698 com.google.android.gms.persistent/10144 pkg=com.google.android.gms} proc state 4 (1 skipped)
+03-27 20:10:10.898   940  1043 D ControlsListingControllerImpl: Subscribing callback, service count: 0
+03-27 20:10:10.910   940  1043 D ControlsListingControllerImpl: Unsubscribing callback
+03-27 20:10:28.427   940  1076 D EGL_emulation: app_time_stats: avg=19987.49ms min=19987.49ms max=19987.49ms count=1
+03-27 20:10:48.444   940  1076 D EGL_emulation: app_time_stats: avg=20017.61ms min=20017.61ms max=20017.61ms count=1
+03-27 20:10:48.739  1270  2468 I NullBinder: NullBinder for android.net.action.RECOMMEND_NETWORKS triggering remote TransactionTooLargeException due to Service without Chimera impl, calling uid: 1000, calling pid: 0
+03-27 20:10:48.739  1270  2468 W .gms.persistent: Large reply transaction of 1056768 bytes, interface descriptor , code 1
+03-27 20:10:48.745  1591  2332 I BugleRcsEngine: handleMessage processing message:[NOTIFY_UPTIME_IGNORE_STATE_CHANGED] with [non-null]:RcsEngineImpl reference [CONTEXT log_prefix="RcsEngineImpl[DUAL_REG]:[3992289e-38d6]>Handler" thread_id=60 ]
+03-27 20:10:48.747  1591  2020 I BugleRcsEngine: Connected state: [1], networkType: [WIFI] [CONTEXT thread_id=55 ]
+03-27 20:10:48.754   626  1766 W ProcessStats: Tracking association SourceState{2b33adc com.google.android.calendar/10150 BTop #27151} whose proc state 2 is better than process ProcessState{64b9698 com.google.android.gms.persistent/10144 pkg=com.google.android.gms} proc state 4 (0 skipped)
+03-27 20:10:48.760   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:10:48.761   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:10:48.762   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:10:48.767  1591  2332 I BugleRcsEngine: No RCS Configuration was found in Bugle for simID: redacted-pii:sim_id[chars:20,last3:897] [CONTEXT log_prefix="ProvisioningEngineDataRetriever" thread_id=60 ]
+03-27 20:10:48.768   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:10:48.768   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:10:48.768   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:10:48.768   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:10:48.770   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:10:48.773   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:10:48.774   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:10:48.774   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:10:50.693  1270 32607 W jndk    : [{0}] Failed to resolve name. status={1}
+03-27 20:10:57.933  1554  1919 I BistoHotwordHelper: (REDACTED) getHotwordActive::active query: %s, watch: %s, devices connected: %s
+03-27 20:11:00.008  1529  1784 I AiAiEcho: Predicting[0]:  [CONTEXT sampling_count=5 ]
+03-27 20:11:00.008  1529  1784 I AiAiEcho: EchoTargets: 
+03-27 20:11:00.008  1529  1784 I AiAiEcho: Filtered by AiAi flag check: 
+03-27 20:11:00.008  1529  1784 I AiAiEcho: [CONTEXT ratelimit_period="10 SECONDS" ]
+03-27 20:11:00.008  1529  1784 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata:  [CONTEXT ratelimit_period="10 SECONDS" ]
+03-27 20:11:00.008  1529  1784 I AiAiEcho: #remoteViewsTwiddler: feature disabled.
+03-27 20:11:00.008  1529  1784 I AiAiEcho: Predicting[0]:  [CONTEXT sampling_count=5 ]
+03-27 20:11:00.008  1529  1784 I AiAiEcho: EchoTargets: 
+03-27 20:11:00.008  1529  1784 I AiAiEcho: Filtered by AiAi flag check: 
+03-27 20:11:00.008  1529  1784 I AiAiEcho: [CONTEXT ratelimit_period="10 SECONDS" ]
+03-27 20:11:00.008  1529  1784 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata:  [CONTEXT ratelimit_period="10 SECONDS" ]
+03-27 20:11:00.008  1529  1784 I AiAiEcho: #remoteViewsTwiddler: feature disabled.
+03-27 20:11:00.010  1529  1784 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface lockscreen with targets# 0 (types=[])
+03-27 20:11:00.011  1529  1784 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface home with targets# 0 (types=[])
+03-27 20:11:00.015  1185  1185 D SsBaseTemplateCard: No text view can be set up
+03-27 20:11:00.015  1185  1185 D SsBaseTemplateCard: Passed-in item info is null
+03-27 20:11:00.015  1185  1185 D SsBaseTemplateCard: Passed-in item info is null
+03-27 20:11:00.015  1185  1185 D SsBaseTemplateCard: Passed-in item info is null
+03-27 20:11:00.015  1185  1185 I SsBaseTemplateCard: Secondary card pane is null
+03-27 20:11:00.024   940   940 W PageIndicator: Total number of pages invalid: 0. Assuming 1 page.
+03-27 20:11:00.031   940  1076 D EGL_emulation: app_time_stats: avg=11585.70ms min=11585.70ms max=11585.70ms count=1
+03-27 20:11:08.466   940  1076 D EGL_emulation: app_time_stats: avg=8435.56ms min=8435.56ms max=8435.56ms count=1
+03-27 20:11:10.885   626  1058 W ProcessStats: Tracking association SourceState{2b33adc com.google.android.calendar/10150 BTop #27153} whose proc state 2 is better than process ProcessState{64b9698 com.google.android.gms.persistent/10144 pkg=com.google.android.gms} proc state 4 (1 skipped)
+03-27 20:11:17.464   626   905 D androidtc: Initializing SystemTextClassifier, type = System
+03-27 20:11:17.466  1529  1529 I AiAiTextClassifier: onCreateTextClassificationSession = TextClassificationSessionId {75dfc8a1-602c-495f-86b6-28bff13c1d11}
+03-27 20:11:17.477   940   940 I ClipboardListener: Clipboard overlay suppressed.
+03-27 20:11:17.478  1529  1850 I AiAiTranslate: C2T - not in a conversation
+03-27 20:11:17.539   940   940 I ClipboardListener: Clipboard overlay suppressed.
+03-27 20:11:24.974  1270  2468 I NullBinder: NullBinder for android.net.action.RECOMMEND_NETWORKS triggering remote TransactionTooLargeException due to Service without Chimera impl, calling uid: 1000, calling pid: 0
+03-27 20:11:24.974  1270  2468 W .gms.persistent: Large reply transaction of 1056768 bytes, interface descriptor , code 1
+03-27 20:11:24.975  1591  2332 I BugleRcsEngine: handleMessage processing message:[NOTIFY_UPTIME_IGNORE_STATE_CHANGED] with [non-null]:RcsEngineImpl reference [CONTEXT log_prefix="RcsEngineImpl[DUAL_REG]:[3992289e-38d6]>Handler" thread_id=60 ]
+03-27 20:11:24.975  1591  2020 I BugleRcsEngine: Connected state: [1], networkType: [WIFI] [CONTEXT thread_id=55 ]
+03-27 20:11:24.982   626  1766 W ProcessStats: Tracking association SourceState{2b33adc com.google.android.calendar/10150 BTop #27154} whose proc state 2 is better than process ProcessState{64b9698 com.google.android.gms.persistent/10144 pkg=com.google.android.gms} proc state 4 (0 skipped)
+03-27 20:11:24.987   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:11:24.988   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:11:24.988   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:11:24.993   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:11:24.994   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:11:24.994   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:11:24.994   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:11:24.994  1591  2332 I BugleRcsEngine: No RCS Configuration was found in Bugle for simID: redacted-pii:sim_id[chars:20,last3:897] [CONTEXT log_prefix="ProvisioningEngineDataRetriever" thread_id=60 ]
+03-27 20:11:24.995   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:11:24.997   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:11:24.998   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:11:25.000   626   827 W IPCThreadState: Sending oneway calls to frozen process.
+03-27 20:11:39.258   626   905 D androidtc: Initializing SystemTextClassifier, type = System
+03-27 20:11:39.268  1529  1529 I AiAiTextClassifier: onCreateTextClassificationSession = TextClassificationSessionId {164a306e-2e2f-4d30-8b87-aa072d08091f}
+03-27 20:11:39.272   940   940 I ClipboardListener: Clipboard overlay suppressed.
+03-27 20:11:39.276  1529  1850 I AiAiTranslate: C2T - not in a conversation
+03-27 20:11:39.331   940   940 I ClipboardListener: Clipboard overlay suppressed.
+03-27 20:11:52.436  1529  1850 I AiAiTranslate: C2T - not in a conversation
+03-27 20:11:52.437   940   940 I ClipboardListener: Clipboard overlay suppressed.
+03-27 20:11:52.768  1529  1850 I AiAiTranslate: C2T - not in a conversation
+03-27 20:11:52.769   940   940 I ClipboardListener: Clipboard overlay suppressed.
+03-27 20:11:57.942  1554  1934 I BistoHotwordHelper: (REDACTED) getHotwordActive::active query: %s, watch: %s, devices connected: %s
+03-27 20:12:00.011  1529  1784 I AiAiEcho: Predicting[0]:  [CONTEXT sampling_count=5 ]
+03-27 20:12:00.011  1529  1784 I AiAiEcho: EchoTargets: 
+03-27 20:12:00.011  1529  1784 I AiAiEcho: Filtered by AiAi flag check: 
+03-27 20:12:00.011  1529  1784 I AiAiEcho: [CONTEXT ratelimit_period="10 SECONDS" ]
+03-27 20:12:00.011  1529  1784 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata:  [CONTEXT ratelimit_period="10 SECONDS" ]
+03-27 20:12:00.012  1529  1784 I AiAiEcho: #remoteViewsTwiddler: feature disabled.
+03-27 20:12:00.013  1529  1784 I AiAiEcho: Predicting[0]:  [CONTEXT sampling_count=5 ]
+03-27 20:12:00.014  1529  1784 I AiAiEcho: EchoTargets: 
+03-27 20:12:00.014  1529  1784 I AiAiEcho: Filtered by AiAi flag check: 
+03-27 20:12:00.014  1529  1784 I AiAiEcho: [CONTEXT ratelimit_period="10 SECONDS" ]
+03-27 20:12:00.014  1529  1784 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata:  [CONTEXT ratelimit_period="10 SECONDS" ]
+03-27 20:12:00.014  1529  1784 I AiAiEcho: #remoteViewsTwiddler: feature disabled.
+03-27 20:12:00.019  1529  1784 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface lockscreen with targets# 0 (types=[])
+03-27 20:12:00.020  1529  1784 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface home with targets# 0 (types=[])
+03-27 20:12:00.022  1185  1185 D SsBaseTemplateCard: No text view can be set up
+03-27 20:12:00.022  1185  1185 D SsBaseTemplateCard: Passed-in item info is null
+03-27 20:12:00.022  1185  1185 D SsBaseTemplateCard: Passed-in item info is null
+03-27 20:12:00.023  1185  1185 D SsBaseTemplateCard: Passed-in item info is null
+03-27 20:12:00.023  1185  1185 I SsBaseTemplateCard: Secondary card pane is null
+03-27 20:12:00.034   940  1076 D EGL_emulation: app_time_stats: avg=51567.91ms min=51567.91ms max=51567.91ms count=1
+03-27 20:12:00.049   940   940 W PageIndicator: Total number of pages invalid: 0. Assuming 1 page.

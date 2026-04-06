@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#E0F2F1"
+    android:gravity="center"
+    android:padding="24dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="🐸 Frog Addition"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        android:textColor="#00796B"
+        android:layout_marginBottom="40dp"/>
+
+    <TextView
+        android:id="@+id/tvEquation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2 + 3 = ?"
+        android:textSize="48sp"
+        android:textStyle="bold"
+        android:textColor="#333333"
+        android:layout_marginBottom="60dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/btnOpt1"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:text="4"
+            android:textSize="32sp"
+            android:layout_margin="10dp"
+            android:backgroundTint="#4DB6AC"
+            android:textColor="#FFFFFF"/>
+
+        <Button
+            android:id="@+id/btnOpt2"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:text="5"
+            android:textSize="32sp"
+            android:layout_margin="10dp"
+            android:backgroundTint="#4DB6AC"
+            android:textColor="#FFFFFF"/>
+
+        <Button
+            android:id="@+id/btnOpt3"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:text="6"
+            android:textSize="32sp"
+            android:layout_margin="10dp"
+            android:backgroundTint="#4DB6AC"
+            android:textColor="#FFFFFF"/>
+
+    </LinearLayout>
+
+</LinearLayout>

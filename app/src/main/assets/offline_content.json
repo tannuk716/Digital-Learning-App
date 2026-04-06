@@ -1,0 +1,194 @@
+{
+  "classes": [
+    {
+      "id": 1,
+      "name": "Class 1",
+      "subjects": [
+        {
+          "name": "Mathematics",
+          "icon": "📗",
+          "units": [
+            {
+              "id": "c1_m1",
+              "title": "Unit 1: Numbers (Ginti)",
+              "explanation": "Numbers help us count objects. (Numbers hume batate hain ki koi cheez kitni hai). Start counting from One!",
+              "notes": [
+                "1 is One (Ek)",
+                "2 is Two (Do)",
+                "3 is Three (Teen)"
+              ],
+              "examples": [
+                "🍎 = 1 Apple",
+                "🍎🍎 = 2 Apples",
+                "🍎🍎🍎 = 3 Apples"
+              ],
+              "videoUrl": "https://www.youtube.com/watch?v=D0Ajq682yrA",
+              "quiz": [
+                {
+                  "question": "How many fingers are on one hand? (Ek haath mein kitni ungliya hoti hain?)",
+                  "options": ["2", "5", "10"],
+                  "correctIndex": 1
+                },
+                {
+                  "question": "Count: ⭐️⭐️⭐️ (Yeh kitne taare hain?)",
+                  "options": ["1", "2", "3"],
+                  "correctIndex": 2
+                }
+              ]
+            },
+            {
+              "id": "c1_m2",
+              "title": "Unit 2: Addition (Jodna)",
+              "explanation": "Addition means putting things together. (Jodna matlab do cheezon ko ek saath milana). The symbol is '+'.",
+              "notes": [
+                "Read '+' as Plus.",
+                "1 + 1 becomes 2.",
+                "2 + 1 becomes 3."
+              ],
+              "examples": [
+                "🍎 + 🍎 = 🍎🍎 (1 + 1 = 2)",
+                "🚗 + 🚗🚗 = 🚗🚗🚗 (1 + 2 = 3)"
+              ],
+              "videoUrl": "https://www.youtube.com/watch?v=uK7V3fG6O5E",
+              "quiz": [
+                {
+                  "question": "What is 1 + 2 ?",
+                  "options": ["2", "3", "4"],
+                  "correctIndex": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "English",
+          "icon": "📘",
+          "units": [
+            {
+              "id": "c1_e1",
+              "title": "Unit 1: The Alphabet",
+              "explanation": "English has 26 letters! (Angrezi mein 26 akshar hote hain). From A to Z.",
+              "notes": [
+                "A for Apple",
+                "B for Ball",
+                "C for Cat"
+              ],
+              "examples": [
+                "A is the first letter.",
+                "Z is the last letter."
+              ],
+              "videoUrl": "https://www.youtube.com/watch?v=hq3yfQnllfQ",
+              "quiz": [
+                {
+                  "question": "What comes after 'A'? (A ke baad kya aata hai?)",
+                  "options": ["C", "B", "D"],
+                  "correctIndex": 1
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Class 5",
+      "subjects": [
+        {
+          "name": "Mathematics",
+          "icon": "📗",
+          "units": [
+            {
+              "id": "c5_m1",
+              "title": "Unit 1: Fractions (Bhinn)",
+              "explanation": "A fraction shows a part of a whole. (Fraction ek poori cheez ka hissa dikhata hai). It has a numerator (top) and denominator (bottom).",
+              "notes": [
+                "1/2 means half (Aadha).",
+                "Top number = Numerator.",
+                "Bottom number = Denominator."
+              ],
+              "examples": [
+                "If you cut a roti into 2 parts, one part is 1/2.",
+                "If you cut an apple into 4 parts, one part is 1/4."
+              ],
+              "videoUrl": "",
+              "quiz": [
+                {
+                  "question": "In 3/4, what is the numerator? (3/4 mein numerator kon sa hai?)",
+                  "options": ["4", "3", "7"],
+                  "correctIndex": 1
+                },
+                {
+                  "question": "What does 1/2 represent?",
+                  "options": ["One Third", "Whole", "Half"],
+                  "correctIndex": 2
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Science",
+          "icon": "🔬",
+          "units": [
+            {
+              "id": "c5_s1",
+              "title": "Unit 1: Plants Food",
+              "explanation": "Plants make their own food using sunlight. This is called Photosynthesis. (Paudhe dhoop ki madad se apna khaana banate hain jise Photosynthesis kehte hain).",
+              "notes": [
+                "Plants need Sunlight, Water, and Carbon Dioxide.",
+                "Leaves are the kitchen of the plant.",
+                "Chlorophyll makes leaves green."
+              ],
+              "examples": [
+                "A sunflower turns towards the sun to get light for food."
+              ],
+              "videoUrl": "",
+              "quiz": [
+                {
+                  "question": "What makes plant leaves green? (Paudho ke patte hare kyu hote hain?)",
+                  "options": ["Water", "Chlorophyll", "Sunlight"],
+                  "correctIndex": 1
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "name": "Class 10",
+      "subjects": [
+        {
+          "name": "Science",
+          "icon": "🔬",
+          "units": [
+            {
+              "id": "c10_s1",
+              "title": "Unit 1: Chemical Reactions",
+              "explanation": "A chemical reaction happens when substances change into new substances. (Jab purani cheezein mil kar nayi cheezein banati hain).",
+              "notes": [
+                "Reactants = Left side of equation.",
+                "Products = Right side of equation.",
+                "Law of Conservation of Mass: Mass cannot be created or destroyed."
+              ],
+              "examples": [
+                "Iron rusting (Lohe mein zang lagna).",
+                "Milk turning into curd (Doodh ka dahi banna)."
+              ],
+              "videoUrl": "",
+              "quiz": [
+                {
+                  "question": "Milk turning to curd is which type of change?",
+                  "options": ["Physical", "Chemical", "Biological"],
+                  "correctIndex": 1
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

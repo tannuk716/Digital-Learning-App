@@ -1,0 +1,53 @@
+<resources>
+    <string name="app_name">ऐडूरीच (EduReach)</string>
+    <string-array name="class_options">
+        <item>कक्षा चुनें</item>
+        <item>कक्षा 1</item>
+        <item>कक्षा 2</item>
+        <item>कक्षा 3</item>
+        <item>कक्षा 4</item>
+    </string-array>
+    <string-array name="subject_options">
+        <item>विषय चुनें</item>
+        <item>अंग्रेज़ी</item>
+        <item>गणित</item>
+        <item>पर्यावरण</item>
+        <item>विज्ञान</item>
+        <item>हिन्दी</item>
+        <item>पंजाबी</item>
+    </string-array>
+    <string-array name="unit_options">
+        <item>इकाई चुनें</item>
+        <item>इकाई 1</item>
+        <item>इकाई 2</item>
+        <item>इकाई 3</item>
+        <item>इकाई 4</item>
+    </string-array>
+
+    <!-- Student Dashboard -->
+    <string name="student_dashboard_title">डैशबोर्ड</string>
+    <string name="student_dashboard_greeting">नमस्ते खोजकर्ता!</string>
+    <string name="student_dashboard_subjects">आपके विषय 📚</string>
+    <string name="student_dashboard_tools">शिक्षण उपकरण 🛠️</string>
+    
+    <string name="tool_games">खेल</string>
+    <string name="tool_games_desc">अभी खेलें</string>
+    <string name="tool_quizzes">क्विज़</string>
+    <string name="tool_quizzes_desc">खुद को परखें</string>
+    <string name="tool_notes">नोट्स</string>
+    <string name="tool_notes_desc">अध्ययन सामग्री पढ़ें</string>
+    <string name="tool_ai">एआई ट्यूटर</string>
+    <string name="tool_ai_desc">प्रश्न पूछें</string>
+    
+    <string name="recent_uploads_section">हाल ही में जोड़ा गया ⏱️</string>
+    <string name="recent_uploads_empty">हाल में कोई नई सामग्री नहीं।</string>
+
+    <!-- Teacher Dashboard -->
+    <string name="teacher_dashboard_title">शिक्षक डैशबोर्ड</string>
+    <string name="teacher_subject_label">विषय:</string>
+    <string name="btn_add_content">नई सामग्री जोड़ें ➕</string>
+    <string name="btn_add_game">नया खेल जोड़ें 🎮</string>
+    <string name="teacher_uploaded_section">आपकी अपलोड की गई सामग्री</string>
+    <string name="teacher_empty_state_title">कोई सामग्री अपलोड नहीं 📚</string>
+    <string name="teacher_empty_state_desc">शुरू करने के लिए नई सामग्री जोड़ें।</string>
+</resources>

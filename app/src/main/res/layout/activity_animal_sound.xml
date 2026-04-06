@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FFEBEE"
+    android:gravity="center"
+    android:padding="24dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="🦁 Animal Sound"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        android:textColor="#C62828"
+        android:layout_marginBottom="40dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Who makes this sound?"
+        android:textSize="20sp"
+        android:textColor="#4E342E"
+        android:layout_marginBottom="20dp"/>
+
+    <TextView
+        android:id="@+id/tvSound"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ROAR!"
+        android:textSize="48sp"
+        android:textStyle="bold"
+        android:textColor="#333333"
+        android:layout_marginBottom="60dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/btnOpt1"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:text="🐒"
+            android:textSize="32sp"
+            android:layout_margin="10dp"
+            android:backgroundTint="#FFCC80"
+            android:textColor="#FFFFFF"/>
+
+        <Button
+            android:id="@+id/btnOpt2"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:text="🦁"
+            android:textSize="32sp"
+            android:layout_margin="10dp"
+            android:backgroundTint="#FFCC80"
+            android:textColor="#FFFFFF"/>
+
+        <Button
+            android:id="@+id/btnOpt3"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:text="🐍"
+            android:textSize="32sp"
+            android:layout_margin="10dp"
+            android:backgroundTint="#FFCC80"
+            android:textColor="#FFFFFF"/>
+
+    </LinearLayout>
+
+</LinearLayout>

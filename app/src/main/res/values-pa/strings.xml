@@ -1,0 +1,53 @@
+<resources>
+    <string name="app_name">ਐਜੂਰੀਚ (EduReach)</string>
+    <string-array name="class_options">
+        <item>ਕਲਾਸ ਚੁਣੋ</item>
+        <item>ਕਲਾਸ 1</item>
+        <item>ਕਲਾਸ 2</item>
+        <item>ਕਲਾਸ 3</item>
+        <item>ਕਲਾਸ 4</item>
+    </string-array>
+    <string-array name="subject_options">
+        <item>ਵਿਸ਼ਾ ਚੁਣੋ</item>
+        <item>ਅੰਗਰੇਜ਼ੀ</item>
+        <item>ਗਣਿਤ</item>
+        <item>ਵਾਤਾਵਰਣ</item>
+        <item>ਵਿਗਿਆਨ</item>
+        <item>ਹਿੰਦੀ</item>
+        <item>ਪੰਜਾਬੀ</item>
+    </string-array>
+    <string-array name="unit_options">
+        <item>ਯੂਨਿਟ ਚੁਣੋ</item>
+        <item>ਯੂਨਿਟ 1</item>
+        <item>ਯੂਨਿਟ 2</item>
+        <item>ਯੂਨਿਟ 3</item>
+        <item>ਯੂਨਿਟ 4</item>
+    </string-array>
+
+    <!-- Student Dashboard -->
+    <string name="student_dashboard_title">ਡੈਸ਼ਬੋਰਡ</string>
+    <string name="student_dashboard_greeting">ਸਤਿ ਸ਼੍ਰੀ ਅਕਾਲ ਖੋਜੀ!</string>
+    <string name="student_dashboard_subjects">ਤੁਹਾਡੇ ਵਿਸ਼ੇ 📚</string>
+    <string name="student_dashboard_tools">ਸਿੱਖਣ ਵਾਲੇ ਟੂਲ 🛠️</string>
+    
+    <string name="tool_games">ਖੇਡਾਂ</string>
+    <string name="tool_games_desc">ਹੁਣੇ ਖੇਡੋ</string>
+    <string name="tool_quizzes">ਕੁਇਜ਼</string>
+    <string name="tool_quizzes_desc">ਆਪਣੇ ਆਪ ਨੂੰ ਪਰਖੋ</string>
+    <string name="tool_notes">ਨੋਟਸ</string>
+    <string name="tool_notes_desc">ਅਧਿਐਨ ਸਮੱਗਰੀ ਪੜ੍ਹੋ</string>
+    <string name="tool_ai">ਏਆਈ ਟਿਊਟਰ</string>
+    <string name="tool_ai_desc">ਸਵਾਲ ਪੁੱਛੋ</string>
+    
+    <string name="recent_uploads_section">ਹਾਲ ਹੀ ਵਿੱਚ ਸ਼ਾਮਲ ਕੀਤਾ ⏱️</string>
+    <string name="recent_uploads_empty">ਹਾਲ ਹੀ ਵਿੱਚ ਕੋਈ ਨਵੀਂ ਸਮੱਗਰੀ ਨਹੀਂ।</string>
+
+    <!-- Teacher Dashboard -->
+    <string name="teacher_dashboard_title">ਅਧਿਆਪਕ ਡੈਸ਼ਬੋਰਡ</string>
+    <string name="teacher_subject_label">ਵਿਸ਼ਾ:</string>
+    <string name="btn_add_content">ਨਵੀਂ ਸਮੱਗਰੀ ਸ਼ਾਮਲ ਕਰੋ ➕</string>
+    <string name="btn_add_game">ਨਵੀਂ ਖੇਡ ਸ਼ਾਮਲ ਕਰੋ 🎮</string>
+    <string name="teacher_uploaded_section">ਤੁਹਾਡੀ ਅੱਪਲੋਡ ਕੀਤੀ ਸਮੱਗਰੀ</string>
+    <string name="teacher_empty_state_title">ਅਜੇ ਤੱਕ ਕੋਈ ਸਮੱਗਰੀ ਨਹੀਂ 📚</string>
+    <string name="teacher_empty_state_desc">ਸ਼ੁਰੂ ਕਰਨ ਲਈ ਨਵੀਂ ਸਮੱਗਰੀ ਸ਼ਾਮਲ ਕਰੋ।</string>
+</resources>

@@ -1,0 +1,75 @@
+<resources>
+    <string name="app_name">EduReach</string>
+    <string-array name="class_options">
+        <item>Select Class</item>
+        <item>Class 1</item>
+        <item>Class 2</item>
+        <item>Class 3</item>
+        <item>Class 4</item>
+        <item>Class 5</item>
+        <item>Class 6</item>
+        <item>Class 7</item>
+        <item>Class 8</item>
+        <item>Class 9</item>
+        <item>Class 10</item>
+    </string-array>
+    <string-array name="subject_options">
+        <item>Select Subject</item>
+        <item>English</item>
+        <item>Math</item>
+        <item>EVS</item>
+        <item>Science</item>
+        <item>Hindi</item>
+        <item>Punjabi</item>
+    </string-array>
+    <string-array name="unit_options">
+        <item>Select Unit</item>
+        <item>Unit 1</item>
+        <item>Unit 2</item>
+        <item>Unit 3</item>
+        <item>Unit 4</item>
+        <item>Unit 5</item>
+        <item>Unit 6</item>
+        <item>Unit 7</item>
+        <item>Unit 8</item>
+        <item>Unit 9</item>
+        <item>Unit 10</item>
+        <item>Unit 11</item>
+        <item>Unit 12</item>
+        <item>Unit 13</item>
+        <item>Unit 14</item>
+        <item>Unit 15</item>
+        <item>Unit 16</item>
+        <item>Unit 17</item>
+        <item>Unit 18</item>
+        <item>Unit 19</item>
+        <item>Unit 20</item>
+    </string-array>
+
+    <!-- Student Dashboard -->
+    <string name="student_dashboard_title">Dashboard</string>
+    <string name="student_dashboard_greeting">Hello Explorer!</string>
+    <string name="student_dashboard_subjects">Your Subjects 📚</string>
+    <string name="student_dashboard_tools">Learning Tools 🛠️</string>
+    
+    <string name="tool_games">Games</string>
+    <string name="tool_games_desc">Play now</string>
+    <string name="tool_quizzes">Quizzes</string>
+    <string name="tool_quizzes_desc">Test yourself</string>
+    <string name="tool_notes">Notes</string>
+    <string name="tool_notes_desc">Read material</string>
+    <string name="tool_ai">AI Tutor</string>
+    <string name="tool_ai_desc">Ask questions</string>
+    
+    <string name="recent_uploads_section">Recently Added ⏱️</string>
+    <string name="recent_uploads_empty">No new content recently.</string>
+
+    <!-- Teacher Dashboard -->
+    <string name="teacher_dashboard_title">Teacher Dashboard</string>
+    <string name="teacher_subject_label">Subject:</string>
+    <string name="btn_add_content">Add New Content ➕</string>
+    <string name="btn_add_game">Add New Game 🎮</string>
+    <string name="teacher_uploaded_section">Your Uploaded Content</string>
+    <string name="teacher_empty_state_title">No content uploaded yet 📚</string>
+    <string name="teacher_empty_state_desc">Click \'Add New Content\' to start.</string>
+</resources>

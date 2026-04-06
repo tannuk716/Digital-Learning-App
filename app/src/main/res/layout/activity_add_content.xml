@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E8F5E9">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add Content 📚"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:textColor="#2E7D32"
+            android:layout_marginBottom="24dp"
+            android:layout_marginTop="10dp"/>
+
+        <Spinner
+            android:id="@+id/spinnerClass"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:entries="@array/class_options"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/rounded_input"
+            android:padding="10dp"/>
+
+        <Spinner
+            android:id="@+id/spinnerSubject"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:entries="@array/subject_options"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/rounded_input"
+            android:padding="10dp"/>
+
+        <Spinner
+            android:id="@+id/spinnerUnit"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:entries="@array/unit_options"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/rounded_input"
+            android:padding="10dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Select Content Type:"
+            android:textSize="16sp"
+            android:textColor="#333"
+            android:layout_marginBottom="8dp"/>
+
+        <RadioGroup
+            android:id="@+id/radioGroupType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="16dp">
+
+            <RadioButton
+                android:id="@+id/rbVideo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Video"
+                android:checked="true"
+                android:buttonTint="#4CAF50"/>
+
+            <RadioButton
+                android:id="@+id/rbNote"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Notes"
+                android:layout_marginStart="16dp"
+                android:buttonTint="#4CAF50"/>
+
+            <RadioButton
+                android:id="@+id/rbQuiz"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Quiz"
+                android:layout_marginStart="16dp"
+                android:buttonTint="#4CAF50"/>
+        </RadioGroup>
+
+        <LinearLayout
+            android:id="@+id/layoutDataInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/etContentTitle"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@drawable/rounded_input"
+                android:hint="Content Title (e.g. Intro to Algebra)"
+                android:padding="16dp"
+                android:layout_marginBottom="16dp"/>
+
+            <EditText
+                android:id="@+id/etContentUrl"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@drawable/rounded_input"
+                android:hint="Enter YouTube or Google Drive link"
+                android:padding="16dp"
+                android:inputType="textUri"
+                android:layout_marginBottom="16dp"/>
+            
+            <ProgressBar
+                android:id="@+id/progressValidation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:layout_marginBottom="8dp"/>
+            
+            <TextView
+                android:id="@+id/tvValidationStatus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="14sp"
+                android:textColor="#555"
+                android:layout_marginBottom="8dp"
+                android:gravity="center"
+                android:visibility="gone"/>
+                
+            <EditText
+                android:id="@+id/etContentDesc"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="@drawable/rounded_input"
+                android:hint="Description (optional)"
+                android:gravity="top|start"
+                android:padding="16dp"
+                android:layout_marginBottom="24dp"/>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnSaveContent"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="Upload / Continue"
+            android:textSize="18sp"
+            android:backgroundTint="#4CAF50"
+            android:layout_marginBottom="30dp"/>
+
+    </LinearLayout>
+</ScrollView>

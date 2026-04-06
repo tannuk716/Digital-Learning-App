@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="128dp"
+    android:height="128dp"
+    android:viewportWidth="128"
+    android:viewportHeight="128">
+    
+    <!-- Background Circle (Blue gradient effect) -->
+    <path
+        android:fillColor="#4FC3F7"
+        android:pathData="M64,8 A56,56 0 1,1 64,120 A56,56 0 1,1 64,8"/>
+    
+    <!-- Robot Head (White/Light) -->
+    <path
+        android:fillColor="#E3F2FD"
+        android:pathData="M40,45 L88,45 Q92,45 92,49 L92,75 Q92,79 88,79 L40,79 Q36,79 36,75 L36,49 Q36,45 40,45"/>
+    
+    <!-- Antenna -->
+    <path
+        android:fillColor="#E3F2FD"
+        android:pathData="M62,35 L66,35 L66,45 L62,45 Z"/>
+    
+    <!-- Antenna Ball (Glowing) -->
+    <path
+        android:fillColor="#FF6B9D"
+        android:pathData="M64,32 A4,4 0 1,1 64,32"/>
+    
+    <!-- Left Eye Background (White) -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M48,56 A6,6 0 1,1 48,56"/>
+    
+    <!-- Left Eye (Blue) -->
+    <path
+        android:fillColor="#1976D2"
+        android:pathData="M48,56 A4,4 0 1,1 48,56"/>
+    
+    <!-- Left Eye Shine -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M46,54 A2,2 0 1,1 46,54"/>
+    
+    <!-- Right Eye Background (White) -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M80,56 A6,6 0 1,1 80,56"/>
+    
+    <!-- Right Eye (Blue) -->
+    <path
+        android:fillColor="#1976D2"
+        android:pathData="M80,56 A4,4 0 1,1 80,56"/>
+    
+    <!-- Right Eye Shine -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M78,54 A2,2 0 1,1 78,54"/>
+    
+    <!-- Smile -->
+    <path
+        android:fillColor="@android:color/transparent"
+        android:pathData="M50,66 Q64,72 78,66"
+        android:strokeWidth="3"
+        android:strokeColor="#90CAF9"
+        android:strokeLineCap="round"/>
+    
+    <!-- Robot Body -->
+    <path
+        android:fillColor="#E3F2FD"
+        android:pathData="M44,79 L84,79 Q88,79 88,83 L88,100 Q88,104 84,104 L44,104 Q40,104 40,100 L40,83 Q40,79 44,79"/>
+    
+    <!-- Body Screen/Button (Blue) -->
+    <path
+        android:fillColor="#42A5F5"
+        android:pathData="M56,86 L72,86 Q74,86 74,88 L74,94 Q74,96 72,96 L56,96 Q54,96 54,94 L54,88 Q54,86 56,86"/>
+    
+    <!-- Left Arm -->
+    <path
+        android:fillColor="#E3F2FD"
+        android:pathData="M32,82 L36,82 L36,98 L32,98 Z"
+        android:strokeWidth="1"
+        android:strokeColor="#90CAF9"/>
+    
+    <!-- Right Arm -->
+    <path
+        android:fillColor="#E3F2FD"
+        android:pathData="M92,82 L96,82 L96,98 L92,98 Z"
+        android:strokeWidth="1"
+        android:strokeColor="#90CAF9"/>
+    
+    <!-- Left Leg -->
+    <path
+        android:fillColor="#E3F2FD"
+        android:pathData="M50,104 L58,104 L58,114 L50,114 Z"
+        android:strokeWidth="1"
+        android:strokeColor="#90CAF9"/>
+    
+    <!-- Right Leg -->
+    <path
+        android:fillColor="#E3F2FD"
+        android:pathData="M70,104 L78,104 L78,114 L70,114 Z"
+        android:strokeWidth="1"
+        android:strokeColor="#90CAF9"/>
+    
+    <!-- Chat Bubble Icon -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M85,50 L95,50 Q97,50 97,52 L97,58 Q97,60 95,60 L92,60 L92,63 L89,60 L85,60 Q83,60 83,58 L83,52 Q83,50 85,50"/>
+</vector>
