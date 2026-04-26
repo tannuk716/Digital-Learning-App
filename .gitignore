@@ -88,3 +88,35 @@ app/.jqwik-database
 
 # Keystore directory
 tannukey/
+
+# IDE folders
+.vscode/
+.kotlin/
+
+# Build and log files
+build_err*.txt
+build_log*.txt
+build_output.*
+build_trace*.txt
+crash_log.txt
+log*.txt
+logcat*.txt
+recent_logcat*.txt
+list_of_kt_files.txt
+plain_build.txt
+gradle_error*.txt
+
+# Scripts (except gradlew)
+rebuild_and_install.bat
+rebuild_and_install.sh
+test_*.bat
+test_*.sh
+
+# Verify scripts
+verify_*.kt
+
+# Content uploader (non-runtime)
+content_uploader/
+
+# Unused JSON
+notion_content_links.json
