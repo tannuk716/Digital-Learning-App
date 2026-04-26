@@ -51,3 +51,40 @@ output.json
 # Local configuration
 local.properties
 
+
+# Kiro IDE files
+.kiro/
+
+# Documentation (except README)
+*_DOCUMENTATION.md
+*_GUIDE.md
+*_FIX.md
+*_SUMMARY.md
+*_REPORT.md
+*_CHECKLIST.md
+*_INSTRUCTIONS.md
+*_SPEECH.md
+*_VERIFICATION.md
+SECURITY_*.md
+API_KEY_*.md
+GET_*.md
+TEST_*.md
+PDF_*.md
+QUOTA_*.md
+CONTENT_*.md
+DASHBOARD_*.md
+GEMINI_*.md
+AI_*.md
+GITHUB_*.md
+PRESENTATION_*.md
+PRE_*.md
+PROJECT_*.md
+
+# Temp and debug files
+*.tmp
+*.temp
+.jqwik-database
+app/.jqwik-database
+
+# Keystore directory
+tannukey/
