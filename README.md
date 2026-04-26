@@ -152,7 +152,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 For issues or questions:
 - Create an issue on GitHub
-- Contact: [Your Contact Information]
+- Mail Id - tannuk716@gmail.com
 
 ## 🔗 Links
 
