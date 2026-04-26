@@ -2,11 +2,11 @@
 
 A comprehensive Android educational application designed for rural learning, featuring AI-powered tutoring, interactive games, and multi-language support.
 
-## ⚠️ SECURITY NOTICE
+⚠️ Security Notice
 
-**This repository was recently cleaned of exposed API keys. All previous API keys have been compromised and must be regenerated.**
+This repository has been updated to follow secure practices. Sensitive configuration values such as API keys are no longer stored in the codebase.
 
-Please read [SECURITY_SETUP.md](SECURITY_SETUP.md) for complete setup instructions.
+Please configure your own API keys using local configuration files (e.g., local.properties or environment variables) before running the project.
 
 ## 🚀 Features
 
