@@ -42,25 +42,23 @@ class EducationalWebActivity : AppCompatActivity() {
         android.util.Log.d("EducationalWeb", "Loading: $title")
         android.util.Log.d("EducationalWeb", "Original URL: $url")
 
-        // Convert Google Drive URLs to direct download format first
         if (GoogleDriveUrlHelper.isGoogleDriveUrl(url)) {
             val convertedUrl = GoogleDriveUrlHelper.convertToDirectUrl(url)
             android.util.Log.d("EducationalWeb", "Converted URL: $convertedUrl")
             url = convertedUrl
         }
 
-        // If the URL is a direct PDF link, use Google Drive's preview mode instead of download
         if (url.lowercase().endsWith(".pdf") || url.contains(".pdf?alt=media", ignoreCase = true) || 
             url.contains("drive.google.com/uc?export=download", ignoreCase = true)) {
             
-            // Extract file ID from Google Drive URL
+
             val fileId = GoogleDriveUrlHelper.extractFileId(url)
             if (fileId != null) {
-                // Use Google Drive's built-in preview instead of download
+
                 url = "https://drive.google.com/file/d/$fileId/preview"
                 android.util.Log.d("EducationalWeb", "Using Google Drive preview: $url")
             } else {
-                // Fallback to Google Docs viewer
+
                 url = "https://docs.google.com/gview?embedded=true&url=$url"
                 android.util.Log.d("EducationalWeb", "Using Google Docs viewer: $url")
             }
@@ -69,7 +67,6 @@ class EducationalWebActivity : AppCompatActivity() {
         android.util.Log.d("EducationalWeb", "Final URL: $url")
         android.util.Log.d("EducationalWeb", "========================================")
 
-        // Update learning streak
         com.tannu.edureach.utils.ProgressManager.updateStreak()
 
         tvWebTitle.text = title
@@ -90,7 +87,7 @@ class EducationalWebActivity : AppCompatActivity() {
         webSettings.allowContentAccess = true
         webSettings.mixedContentMode = WebSettings.MIXED_CONTENT_ALWAYS_ALLOW
         
-        // Enable caching for better performance
+
         webSettings.cacheMode = WebSettings.LOAD_DEFAULT
 
         webView.webViewClient = object : WebViewClient() {

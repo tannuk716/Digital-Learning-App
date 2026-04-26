@@ -58,7 +58,6 @@ data class UserProfile(
     val timestamp: Long = System.currentTimeMillis()
 )
 
-// Add the missing data classes for offline content
 data class OfflineData(
     val classes: List<OfflineClass> = emptyList()
 )

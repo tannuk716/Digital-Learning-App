@@ -37,7 +37,7 @@ class SubjectNotesActivity : AppCompatActivity() {
     private fun loadSubjects() {
         android.util.Log.d("SubjectNotes", "Loading subjects for class: $currentClassId")
         
-        // Define all available subjects with icons
+
         val allSubjects = listOf(
             SubjectItem("Maths", "maths", "📗"),
             SubjectItem("English", "english", "📘"),
@@ -55,7 +55,7 @@ class SubjectNotesActivity : AppCompatActivity() {
             intent.putExtra("CLASS_ID", currentClassId)
             intent.putExtra("SUBJECT_ID", subject.id)
             intent.putExtra("SUBJECT_NAME", subject.name)
-            intent.putExtra("TEACHER_ONLY", true) // Only show teacher-uploaded content
+            intent.putExtra("TEACHER_ONLY", true)
             startActivity(intent)
         }
         rvSubjects.adapter = adapter
@@ -99,7 +99,6 @@ class SubjectNotesActivity : AppCompatActivity() {
             
             holder.tvSubjectName.text = subject.name
             holder.tvSubjectIcon.text = subject.icon
-            // tvSubjectDesc is now a LinearLayout, so we don't set text on it
 
             val bgRes = colorGradients[position % colorGradients.size]
             holder.rootLayout.setBackgroundResource(bgRes)

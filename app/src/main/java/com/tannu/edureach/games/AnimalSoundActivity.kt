@@ -21,7 +21,7 @@ class AnimalSoundActivity : AppCompatActivity() {
         Pair("ROAR!", listOf("🐒", "🦁", "🐍") to 1),
         Pair("HISS!", listOf("🐍", "🐘", "🦅") to 0),
         Pair("TRUMPET!", listOf("🐅", "🦒", "🐘") to 2),
-        Pair("SQUEAK!", listOf("🐒", "🦜", "🐊") to 0) // Monkey chatters/squeaks
+        Pair("SQUEAK!", listOf("🐒", "🦜", "🐊") to 0)
     )
 
     private var currentIndex = 0

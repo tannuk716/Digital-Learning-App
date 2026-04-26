@@ -13,11 +13,11 @@ object LanguageManager {
         config.setLocale(locale)
         context.resources.updateConfiguration(config, context.resources.displayMetrics)
         
-        // Save to preferences immediately
+
         val prefs = context.getSharedPreferences("AppPrefs", Context.MODE_PRIVATE)
         prefs.edit().putString("APP_LANG", languageCode).commit()
         
-        // Globally update the UI utilizing AndroidX Application Locales
+
         androidx.appcompat.app.AppCompatDelegate.setApplicationLocales(
             androidx.core.os.LocaleListCompat.forLanguageTags(languageCode)
         )

@@ -12,7 +12,6 @@ class LanguageSelectionActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.dialog_language_selection)
 
-        // Retrieve target activity from intent or default to StudentDashboard
         val targetClassName = intent.getStringExtra("TARGET_ACTIVITY") ?: StudentDashboardActivity::class.java.name
 
         findViewById<Button>(R.id.btnEnglish).setOnClickListener {
@@ -29,10 +28,10 @@ class LanguageSelectionActivity : AppCompatActivity() {
     }
 
     private fun selectLanguageAndNavigate(langCode: String, targetClassName: String) {
-        // 1. Save and apply the locale
+
         LanguageManager.setLocale(this, langCode)
         
-        // 2. Navigate to the next screen instead of just recreating this one
+
         try {
             val targetClass = Class.forName(targetClassName)
             val intent = Intent(this, targetClass)
@@ -40,7 +39,7 @@ class LanguageSelectionActivity : AppCompatActivity() {
             startActivity(intent)
             finish()
         } catch (e: Exception) {
-            // Fallback to Student Dashboard if class loading fails
+
             startActivity(Intent(this, StudentDashboardActivity::class.java))
             finish()
         }

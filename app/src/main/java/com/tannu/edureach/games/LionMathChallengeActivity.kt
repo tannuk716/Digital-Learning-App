@@ -45,7 +45,7 @@ class LionMathChallengeActivity : AppCompatActivity() {
         if (selectedAns == correctAns) {
             Toast.makeText(this, "Roar! Correct! +10 Points", Toast.LENGTH_SHORT).show()
             Handler(Looper.getMainLooper()).postDelayed({
-                finish() // End game simulation
+                finish()
             }, 1000)
         } else {
             Toast.makeText(this, "Oops! Try again.", Toast.LENGTH_SHORT).show()

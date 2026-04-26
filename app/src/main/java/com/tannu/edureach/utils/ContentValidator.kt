@@ -3,9 +3,6 @@ package com.tannu.edureach.utils
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.coroutines.tasks.await
 
-/**
- * Utility to validate and fix content that's in wrong class/subject/unit
- */
 object ContentValidator {
     
     private val db = FirebaseFirestore.getInstance()
@@ -19,28 +16,27 @@ object ContentValidator {
         val suggestedClass: String? = null,
         val suggestedSubject: String? = null,
         val suggestedUnit: String? = null,
-        val issueType: String // "wrong_class", "wrong_subject", "wrong_unit", "duplicate"
+        val issueType: String
     )
     
-    /**
-     * Scan all content and identify potential issues
-     */
+    
+
     suspend fun scanForIssues(): List<ContentIssue> {
         val issues = mutableListOf<ContentIssue>()
         
-        // Scan classes 1-10
+
         for (classNum in 1..10) {
             val classId = "class_$classNum"
             
-            // Scan subjects
+
             val subjects = listOf("english", "hindi", "maths", "math", "science", "social_science")
             for (subjectId in subjects) {
                 
-                // Scan units 1-20
+
                 for (unitNum in 1..20) {
                     val unitId = "unit_$unitNum"
                     
-                    // Check notes
+
                     try {
                         val notes = db.collection("classes").document(classId)
                             .collection("subjects").document(subjectId)
@@ -53,7 +49,7 @@ object ContentValidator {
                             val title = doc.getString("title") ?: ""
                             val url = doc.getString("fileUrl") ?: ""
                             
-                            // Check if title suggests wrong class
+
                             val titleLower = title.lowercase()
                             for (checkClass in 1..10) {
                                 if (checkClass != classNum && 
@@ -72,7 +68,7 @@ object ContentValidator {
                                 }
                             }
                             
-                            // Check if title suggests wrong subject
+
                             if (subjectId == "maths" || subjectId == "math") {
                                 if (titleLower.contains("english") || titleLower.contains("grammar")) {
                                     issues.add(ContentIssue(
@@ -109,10 +105,10 @@ object ContentValidator {
                             }
                         }
                     } catch (e: Exception) {
-                        // Continue scanning
+
                     }
                     
-                    // Check videos
+
                     try {
                         val videos = db.collection("classes").document(classId)
                             .collection("subjects").document(subjectId)
@@ -125,7 +121,7 @@ object ContentValidator {
                             val title = doc.getString("title") ?: ""
                             val titleLower = title.lowercase()
                             
-                            // Similar checks for videos
+
                             for (checkClass in 1..10) {
                                 if (checkClass != classNum && 
                                     (titleLower.contains("class $checkClass") || 
@@ -143,7 +139,7 @@ object ContentValidator {
                             }
                         }
                     } catch (e: Exception) {
-                        // Continue scanning
+
                     }
                 }
             }
@@ -152,12 +148,11 @@ object ContentValidator {
         return issues
     }
     
-    /**
-     * Move content to correct location
-     */
+    
+
     suspend fun moveContent(
         contentId: String,
-        contentType: String, // "note" or "video"
+        contentType: String,
         fromClass: String,
         fromSubject: String,
         fromUnit: String,
@@ -168,7 +163,7 @@ object ContentValidator {
         return try {
             val collectionName = if (contentType == "note") "notes" else "videos"
             
-            // Get the content
+
             val sourceDoc = db.collection("classes").document(fromClass)
                 .collection("subjects").document(fromSubject)
                 .collection("units").document(fromUnit)
@@ -183,7 +178,7 @@ object ContentValidator {
             
             val data = sourceDoc.data ?: return false
             
-            // Add to new location
+
             db.collection("classes").document(toClass)
                 .collection("subjects").document(toSubject)
                 .collection("units").document(toUnit)
@@ -191,7 +186,7 @@ object ContentValidator {
                 .add(data)
                 .await()
             
-            // Delete from old location
+
             sourceDoc.reference.delete().await()
             
             true
@@ -201,9 +196,8 @@ object ContentValidator {
         }
     }
     
-    /**
-     * Delete duplicate content
-     */
+    
+
     suspend fun deleteDuplicate(
         contentId: String,
         contentType: String,

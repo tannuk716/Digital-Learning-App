@@ -38,7 +38,6 @@ class VideoPlayerActivity : AppCompatActivity() {
 
         initializePlayer(videoUrl, isOffline)
 
-        // Update learning streak
         com.tannu.edureach.utils.ProgressManager.updateStreak()
 
         sensorManager = getSystemService(Context.SENSOR_SERVICE) as SensorManager
@@ -67,7 +66,7 @@ class VideoPlayerActivity : AppCompatActivity() {
             if (event?.sensor?.type == Sensor.TYPE_PROXIMITY) {
                 val distance = event.values[0]
                 if (distance < 5f && distance < (proximitySensor?.maximumRange ?: 5f)) {
-                    // Object is close, pause video
+
                     player?.pause()
                 } else {
                     player?.play()

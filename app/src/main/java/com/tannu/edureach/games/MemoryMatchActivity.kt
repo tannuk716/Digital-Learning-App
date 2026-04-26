@@ -27,7 +27,6 @@ class MemoryMatchActivity : AppCompatActivity() {
             findViewById(R.id.btnCard3)
         )
 
-        // 2 pairs of identical cards
         val images = mutableListOf("🐶", "🐶", "🐱", "🐱")
         images.shuffle()
         cards = images
@@ -43,16 +42,16 @@ class MemoryMatchActivity : AppCompatActivity() {
     private fun updateModels(position: Int) {
         val button = buttons[position]
         if (button.text != "?") {
-            // Invalid move if card is already face up
+
             return
         }
 
         if (indexOfSingleSelectedCard == null) {
-            // 0 or 2 cards previously selected
+
             restoreCards()
             indexOfSingleSelectedCard = position
         } else {
-            // exactly 1 card previously selected
+
             checkForMatch(indexOfSingleSelectedCard!!, position)
             indexOfSingleSelectedCard = null
         }
@@ -88,7 +87,7 @@ class MemoryMatchActivity : AppCompatActivity() {
         if (isWon) {
             Toast.makeText(this, "You won! +50 Points", Toast.LENGTH_SHORT).show()
             Handler(Looper.getMainLooper()).postDelayed({
-                finish() // Simulated exit
+                finish()
             }, 1500)
         }
     }

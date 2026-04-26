@@ -155,7 +155,7 @@ class BluetoothActivity : AppCompatActivity() {
         try {
             unregisterReceiver(receiver)
         } catch (e: Exception) {
-            // Receiver might not be registered
+
         }
     }
 }

@@ -24,11 +24,11 @@ class AnimatedBackgroundView @JvmOverloads constructor(
 
     init {
         val typedValue = android.util.TypedValue()
-        // Use android.R.attr.colorPrimary as it's defined in the base themes
+
         val hasColor = context.theme.resolveAttribute(android.R.attr.colorPrimary, typedValue, true)
         if (hasColor) {
             particlePaint.color = typedValue.data
-            particlePaint.alpha = 100 // Semi-transparent
+            particlePaint.alpha = 100
         } else {
             particlePaint.color = Color.parseColor("#88FFFFFF")
         }
@@ -38,8 +38,7 @@ class AnimatedBackgroundView @JvmOverloads constructor(
     private var parallaxY = 0f
 
     fun updateParallaxOffset(roll: Float, pitch: Float) {
-        // roll and pitch are typically in radians or degrees. 
-        // We will scale them to pixel offsets.
+
         parallaxX = roll * 20f
         parallaxY = pitch * 20f
     }
@@ -50,7 +49,7 @@ class AnimatedBackgroundView @JvmOverloads constructor(
         super.onSizeChanged(w, h, oldw, oldh)
         
         if (!initialized) {
-            // Create 60 floating bubble particles
+
             for (i in 0..60) {
                 particles.add(
                     Particle(
@@ -84,20 +83,19 @@ class AnimatedBackgroundView @JvmOverloads constructor(
         super.onDraw(canvas)
         
         canvas.save()
-        // Apply Parallax Translation
+
         canvas.translate(parallaxX, parallaxY)
 
-        // Time-based wobble
         val time = System.currentTimeMillis() / 1000f
 
         for (p in particles) {
             canvas.drawCircle(p.x, p.y, p.radius, particlePaint)
             
             p.y -= p.speed
-            // Smooth sinus wobble
+
             p.x += Math.sin((time * p.speed + p.wobblePhase).toDouble()).toFloat() * 2f
             
-            // Touch Repulsion
+
             if (touchX > 0 && touchY > 0) {
                 val dx = p.x - touchX
                 val dy = p.y - touchY
@@ -109,7 +107,6 @@ class AnimatedBackgroundView @JvmOverloads constructor(
                 }
             }
 
-            // Reset if out of bounds (incorporating parallax offset bounds loosely)
             if (p.y < -p.radius - 100f) {
                 p.y = height.toFloat() + p.radius + 100f
                 p.x = random.nextFloat() * width
@@ -122,7 +119,6 @@ class AnimatedBackgroundView @JvmOverloads constructor(
         
         canvas.restore()
 
-        // Loop animation safely and cleanly
         postInvalidateOnAnimation() 
     }
 }

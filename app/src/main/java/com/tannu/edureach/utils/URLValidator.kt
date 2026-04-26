@@ -2,9 +2,6 @@ package com.tannu.edureach.utils
 
 import android.util.Log
 
-/**
- * URLValidator - Utility class for validating YouTube and Google Drive URLs
- */
 object URLValidator {
     
     data class ValidationResult(
@@ -14,10 +11,10 @@ object URLValidator {
     )
     
     enum class URLType {
-        YOUTUBE, GOOGLE_DRIVE, INVALID
+        YOUTUBE, GOOGLE_DRIVE, WEB_URL, INVALID
     }
     
-    // Improved YouTube patterns to handle tracking params like ?si=
+
     private val youtubePatterns = listOf(
         Regex("""^https?://(?:www\.)?youtube\.com/watch\?.*v=([a-zA-Z0-9_-]{11}).*$"""),
         Regex("""^https?://(?:www\.)?youtu\.be/([a-zA-Z0-9_-]{11})(?:\?.*)?$"""),
@@ -28,6 +25,8 @@ object URLValidator {
         Regex("""^https?://drive\.google\.com/file/d/([a-zA-Z0-9_-]+).*$"""),
         Regex("""^https?://drive\.google\.com/open\?id=([a-zA-Z0-9_-]+).*$""")
     )
+    
+    private val webUrlPattern = Regex("""^https?://[a-zA-Z0-9\-._~:/?#\[\]@!$&'()*+,;=%]+$""")
     
     fun validateURL(url: String): ValidationResult {
         if (url.isBlank()) {
@@ -48,10 +47,14 @@ object URLValidator {
             }
         }
         
+        if (webUrlPattern.matches(cleanUrl)) {
+            return ValidationResult(true, URLType.WEB_URL)
+        }
+        
         return ValidationResult(
             false, 
             URLType.INVALID, 
-            "Invalid URL format. Please enter a valid YouTube or Google Drive link"
+            "Invalid URL format. Please enter a valid web link (must start with http:// or https://)"
         )
     }
     
@@ -66,12 +69,8 @@ object URLValidator {
         return null
     }
 
-    /**
-     * Extracts the file ID from a Google Drive URL
-     * 
-     * @param url The Google Drive URL
-     * @return The file ID if found, null otherwise
-     */
+    
+
     fun extractGoogleDriveFileId(url: String): String? {
         if (url.isBlank()) return null
         

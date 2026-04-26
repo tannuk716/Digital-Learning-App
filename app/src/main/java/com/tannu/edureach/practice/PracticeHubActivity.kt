@@ -22,7 +22,6 @@ class PracticeHubActivity : AppCompatActivity() {
         val rvPracticeSubjects = findViewById<RecyclerView>(R.id.rvPracticeSubjects)
         rvPracticeSubjects.layoutManager = LinearLayoutManager(this)
 
-        // Generate dynamic mock categories based on the QuizRepository
         val categories = listOf(
             PracticeCategory("English", "📘", QuizRepository.getAllQuestions().count { it.category == "English" }),
             PracticeCategory("Mathematics", "📗", QuizRepository.getAllQuestions().count { it.category == "Math" }),
@@ -51,7 +50,7 @@ class PracticeHubActivity : AppCompatActivity() {
         }
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PracticeViewHolder {
-            // Reusing item_subject.xml for consistent Jungle UI
+
             val view = LayoutInflater.from(parent.context)
                 .inflate(R.layout.item_subject, parent, false)
             return PracticeViewHolder(view)

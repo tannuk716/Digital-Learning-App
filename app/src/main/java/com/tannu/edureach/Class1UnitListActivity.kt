@@ -26,6 +26,8 @@ class Class1UnitListActivity : AppCompatActivity() {
     private lateinit var tvSubjectTitle: TextView
     private lateinit var tvEmptyState: TextView
     
+    private var currentSubjectName: String = ""
+    
     private val STORAGE_PERMISSION_CODE = 101
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,18 +35,17 @@ class Class1UnitListActivity : AppCompatActivity() {
         setContentView(R.layout.activity_unit_list)
 
         val subjectId = intent.getStringExtra("SUBJECT_ID") ?: ""
-        val subjectName = intent.getStringExtra("SUBJECT_NAME") ?: "Subject"
+        currentSubjectName = intent.getStringExtra("SUBJECT_NAME") ?: "Subject"
 
         rvUnits = findViewById(R.id.rvUnits)
         tvSubjectTitle = findViewById(R.id.tvSubjectTitle)
         tvEmptyState = findViewById(R.id.tvEmptyState)
 
-        tvSubjectTitle.text = "$subjectName - Units"
+        tvSubjectTitle.text = "$currentSubjectName - Units"
 
         findViewById<View>(R.id.btnBack)?.setOnClickListener { finish() }
 
         rvUnits.layoutManager = LinearLayoutManager(this)
-
 
         checkStoragePermission()
         
@@ -52,7 +53,7 @@ class Class1UnitListActivity : AppCompatActivity() {
     }
     
     private fun checkStoragePermission() {
-        // For Android 10+ (API 29+), we don't need WRITE_EXTERNAL_STORAGE for downloads
+
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.Q) {
             if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)
                 != PackageManager.PERMISSION_GRANTED) {
@@ -82,7 +83,7 @@ class Class1UnitListActivity : AppCompatActivity() {
 
     private fun loadUnits(subjectId: String) {
         android.util.Log.d("Class1Unit", "loadUnits called with subjectId=$subjectId")
-        val subjectContent = Class1ContentProvider.getSubjectContent(subjectId)
+        val subjectContent = Class1ContentProvider.getSubjectContent(this, subjectId)
         android.util.Log.d("Class1Unit", "Found subject: ${subjectContent?.subjectName}, units count: ${subjectContent?.units?.size}")
 
         if (subjectContent != null && subjectContent.units.isNotEmpty()) {
@@ -108,16 +109,17 @@ class Class1UnitListActivity : AppCompatActivity() {
         }
         
 
-        DownloadHelper.downloadContent(this, pdfUrl, unitName, isVideo = false)
+        DownloadHelper.downloadContent(this, pdfUrl, unitName, isVideo = false, subjectName = currentSubjectName)
     }
 
     private fun openPdf(pdfUrl: String, unitName: String) {
-        android.util.Log.d("Class10Unit", "========================================")
-        android.util.Log.d("Class10Unit", "Opening PDF: $unitName")
-        android.util.Log.d("Class10Unit", "URL: $pdfUrl")
-        android.util.Log.d("Class10Unit", "========================================")
+        android.util.Log.d("Class1Unit", "========================================")
+        android.util.Log.d("Class1Unit", "Opening PDF: $unitName")
+        android.util.Log.d("Class1Unit", "Subject: $currentSubjectName")
+        android.util.Log.d("Class1Unit", "URL: $pdfUrl")
+        android.util.Log.d("Class1Unit", "========================================")
 
-        val localUri = DownloadHelper.getLocalFileUri(this, unitName, false)
+        val localUri = DownloadHelper.getLocalFileUri(this, unitName, false, subjectName = currentSubjectName)
         if (localUri != null) {
             android.util.Log.d("Class10Unit", "Found local file, opening offline")
             try {
@@ -132,7 +134,7 @@ class Class1UnitListActivity : AppCompatActivity() {
             }
         }
         
-        // File not downloaded or error opening, open online
+
         android.util.Log.d("Class10Unit", "Opening online via EducationalWebActivity")
         try {
             val webIntent = Intent(this, com.tannu.edureach.utils.EducationalWebActivity::class.java)
@@ -176,7 +178,6 @@ class Class1UnitListActivity : AppCompatActivity() {
             holder.btnDownload.setOnClickListener {
                 onDownloadClick(unit)
             }
-
 
             holder.itemView.setOnTouchListener { view, event ->
                 when (event.action) {

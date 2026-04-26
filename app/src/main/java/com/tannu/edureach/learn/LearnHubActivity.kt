@@ -19,7 +19,6 @@ class LearnHubActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_learn_hub)
 
-        // Find or add a Back Button if it exists in layout
         val btnBack = findViewById<ImageView>(R.id.btnBack)
         if (btnBack != null) {
             btnBack.setOnClickListener { finish() }
@@ -34,7 +33,7 @@ class LearnHubActivity : AppCompatActivity() {
         val classes = OfflineDataLoader.loadOfflineData(this)
         val currentClassObj = classes.find { it.id == userClass }
         
-        // Fallback to class 1 if class 5 isn't fully sketched out yet in generated mock JSON
+
         val subjects = currentClassObj?.subjects ?: classes.find { it.id == 1 }?.subjects ?: emptyList()
 
         rvSubjects.adapter = SubjectAdapter(subjects) { subject ->

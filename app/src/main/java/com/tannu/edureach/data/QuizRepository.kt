@@ -3,8 +3,8 @@ package com.tannu.edureach.data
 object QuizRepository {
 
     data class Question(
-        val category: String, // "English", "Math", "EVS", "GK"
-        val difficulty: Int, // 1 to 3
+        val category: String,
+        val difficulty: Int,
         val text: String,
         val options: List<String>,
         val correctAnswerIndex: Int,
@@ -14,7 +14,6 @@ object QuizRepository {
     fun getAllQuestions(): List<Question> {
         val list = mutableListOf<Question>()
 
-        // ------------------ ENGLISH (25 Questions) ------------------
         list.add(Question("English", 1, "A is for?", listOf("Apple", "Dog", "Car", "Ball"), 0))
         list.add(Question("English", 1, "B is for?", listOf("Fish", "Ball", "Tree", "Cat"), 1))
         list.add(Question("English", 1, "C is for?", listOf("Dog", "Cat", "Sun", "Bat"), 1))
@@ -45,8 +44,6 @@ object QuizRepository {
         list.add(Question("English", 3, "Complete: I am a ___", listOf("Boy", "Run", "Eat", "Cold"), 0))
         list.add(Question("English", 3, "Complete: This ___ a cat.", listOf("am", "are", "is", "be"), 2))
 
-
-        // ------------------ MATH (25 Questions) ------------------
         list.add(Question("Math", 1, "What comes after 1?", listOf("0", "2", "3", "4"), 1))
         list.add(Question("Math", 1, "What comes after 5?", listOf("4", "5", "6", "7"), 2))
         list.add(Question("Math", 1, "What comes before 4?", listOf("2", "3", "5", "6"), 1))
@@ -77,8 +74,6 @@ object QuizRepository {
         list.add(Question("Math", 2, "How many sides does a triangle have?", listOf("1", "2", "3", "4"), 2))
         list.add(Question("Math", 2, "How many sides does a square have?", listOf("2", "3", "4", "5"), 2))
 
-
-        // ------------------ EVS (25 Questions) ------------------
         list.add(Question("EVS", 1, "We see with our?", listOf("Nose", "Eyes", "Ears", "Hands"), 1))
         list.add(Question("EVS", 1, "We hear with our?", listOf("Eyes", "Ears", "Nose", "Legs"), 1))
         list.add(Question("EVS", 1, "We smell with our?", listOf("Mouth", "Ears", "Eyes", "Nose"), 3))
@@ -109,8 +104,6 @@ object QuizRepository {
         list.add(Question("EVS", 1, "Who teaches us in school?", listOf("Doctor", "Police", "Teacher", "Farmer"), 2))
         list.add(Question("EVS", 1, "Where do we play in school?", listOf("Classroom", "Library", "Playground", "Office"), 2))
 
-
-        // ------------------ GK (25 Questions) ------------------
         list.add(Question("GK", 1, "National Animal of India?", listOf("Lion", "Elephant", "Tiger", "Cow"), 2))
         list.add(Question("GK", 1, "National Bird of India?", listOf("Parrot", "Crow", "Peacock", "Sparrow"), 2))
         list.add(Question("GK", 1, "National Flower of India?", listOf("Rose", "Lotus", "Sunflower", "Lily"), 1))
@@ -141,21 +134,18 @@ object QuizRepository {
         list.add(Question("GK", 1, "What do we drink?", listOf("Bread", "Water", "Rice", "Apple"), 1))
         list.add(Question("GK", 1, "What do we eat?", listOf("Water", "Juice", "Milk", "Bread"), 3))
 
-
         return list
     }
 
-    // AI Revision System Logic: 
-    // Dynamically builds a quiz heavily weighting "Weak Topics"
     fun generateRevisionQuiz(weakTopics: List<String>, count: Int = 10): List<Question> {
         val all = getAllQuestions()
         val pool = mutableListOf<Question>()
         
-        // Add all weak topic questions (duplicate them to increase chance of selection)
+
         pool.addAll(all.filter { weakTopics.contains(it.category) })
         pool.addAll(all.filter { weakTopics.contains(it.category) })
         
-        // Add the rest
+
         pool.addAll(all)
 
         return pool.shuffled().take(count)

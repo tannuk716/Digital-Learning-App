@@ -78,7 +78,7 @@ class ContentRepository {
             val recent = RecentUploadModel(title = title, type = type, classId = classId, subjectId = subjectId, unitId = unitId, url = url, isYoutube = isYoutube)
             db.collection("recent_uploads").add(recent).await()
         } catch (e: Exception) {
-            // Ignore
+
         }
     }
 
@@ -90,7 +90,7 @@ class ContentRepository {
                 .collection("units").document(unitId)
                 .collection(collectionName)
             
-            // Check for duplicates based on title and URL
+
             val existingDocs = collectionRef
                 .whereEqualTo("title", note.title)
                 .whereEqualTo("fileUrl", note.fileUrl)
@@ -98,11 +98,11 @@ class ContentRepository {
                 .await()
             
             if (!existingDocs.isEmpty) {
-                // Duplicate found - return false to indicate upload was blocked
+
                 return false
             }
             
-            // No duplicate found - proceed with upload
+
             collectionRef.add(note).await()
             addRecentUpload(note.title, "Note", classId, subjectId, unitId, note.fileUrl, false)
             true
@@ -118,7 +118,7 @@ class ContentRepository {
                 .collection("units").document(unitId)
                 .collection("videos")
             
-            // Check for duplicates based on title and URL
+
             val existingDocs = collectionRef
                 .whereEqualTo("title", video.title)
                 .whereEqualTo("videoUrl", video.videoUrl)
@@ -126,11 +126,11 @@ class ContentRepository {
                 .await()
             
             if (!existingDocs.isEmpty) {
-                // Duplicate found - return false to indicate upload was blocked
+
                 return false
             }
             
-            // No duplicate found - proceed with upload
+
             collectionRef.add(video).await()
             addRecentUpload(video.title, "Video", classId, subjectId, unitId, video.videoUrl, video.isYoutube)
             true
@@ -147,18 +147,18 @@ class ContentRepository {
                 .collection("units").document(unitId)
                 .collection(collectionName)
             
-            // Check for duplicates based on title
+
             val existingDocs = collectionRef
                 .whereEqualTo("title", quiz.title)
                 .get()
                 .await()
             
             if (!existingDocs.isEmpty) {
-                // Duplicate found - return false to indicate upload was blocked
+
                 return false
             }
             
-            // No duplicate found - proceed with upload
+
             collectionRef.add(quiz).await()
             addRecentUpload(quiz.title, "Quiz", classId, subjectId, unitId)
             true
@@ -186,8 +186,7 @@ class ContentRepository {
     }
 
     fun getRecentUploadsByClass(classId: String): Flow<List<RecentUploadModel>> = callbackFlow {
-        // Simplified query to avoid immediate crash while index is being built
-        // We cannot use .limit(20) here without .orderBy() because it will fetch 20 random items, missing the newest ones!
+
         val ref = db.collection("recent_uploads")
                     .whereEqualTo("classId", classId)
         
@@ -198,7 +197,7 @@ class ContentRepository {
             }
             if (snapshot != null) {
                 val recents = snapshot.documents.mapNotNull { it.toObject(RecentUploadModel::class.java)?.copy(id = it.id) }
-                // Sort manually in Kotlin since the composite index is missing in Firestore
+
                 val sortedRecents = recents.sortedByDescending { it.timestamp }
                 trySend(sortedRecents).isSuccess
             }

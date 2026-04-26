@@ -9,12 +9,21 @@ import java.io.IOException
 object GeminiApiHelper {
     
     private const val TAG = "GeminiApiHelper"
+    private const val PREFS_NAME = "GeminiApiPrefs"
+    private const val KEY_LAST_QUOTA_ERROR = "last_quota_error_time"
+    private const val KEY_QUOTA_ERROR_COUNT = "quota_error_count"
+    private const val QUOTA_COOLDOWN_MS = 60000L
     
     suspend fun generateContent(prompt: String): Result<String> {
         val apiKey = BuildConfig.GEMINI_API_KEY
         
+        if (apiKey.isEmpty() || apiKey == "YOUR_API_KEY_HERE" || apiKey.length < 20) {
+            Log.e(TAG, "Invalid API key detected in BuildConfig")
+            return Result.failure(Exception("API configuration error. Please reinstall the app or contact support."))
+        }
+        
         Log.d(TAG, "Starting API call...")
-        Log.d(TAG, "API Key length: ${apiKey.length}")
+        Log.d(TAG, "API Key present: ${apiKey.isNotEmpty()}, Length: ${apiKey.length}, Prefix: ${apiKey.take(5)}")
         
         val request = GeminiRequest(
             contents = listOf(
@@ -37,7 +46,7 @@ object GeminiApiHelper {
             if (response.isSuccessful && response.body() != null) {
                 val body = response.body()!!
                 
-                // Check for API error in response body
+
                 if (body.error != null) {
                     val errorMsg = body.error.message ?: "Unknown API error"
                     val errorCode = body.error.code ?: 0
@@ -47,14 +56,20 @@ object GeminiApiHelper {
                         400 -> "Invalid request. Please try again."
                         401, 403 -> "API key issue. Please contact your teacher."
                         404 -> "AI model not available. Please try again later."
-                        429 -> "Too many requests. Please wait and try again."
+                        429 -> {
+                            if (errorMsg.contains("quota", ignoreCase = true)) {
+                                "Daily AI usage limit reached. The AI Tutor will be available again tomorrow. You can continue using other features of the app."
+                            } else {
+                                "Too many requests at once. Please wait a minute and try again."
+                            }
+                        }
                         500, 503 -> "Google server error. Please try again later."
                         else -> errorMsg
                     }
                     return Result.failure(Exception(userMessage))
                 }
                 
-                // Extract response text
+
                 val replyText = body.candidates?.firstOrNull()?.content?.parts?.firstOrNull()?.text
                 if (!replyText.isNullOrEmpty()) {
                     Log.d(TAG, "✓ Success! Response length: ${replyText.length}")
@@ -71,7 +86,13 @@ object GeminiApiHelper {
                     400 -> "Invalid request. Please try again."
                     401, 403 -> "API key issue. Please contact your teacher."
                     404 -> "AI model not available. Please try again later."
-                    429 -> "Too many requests. Please wait and try again."
+                    429 -> {
+                        if (errorBody?.contains("quota", ignoreCase = true) == true) {
+                            "Daily AI usage limit reached. The AI Tutor will be available again tomorrow. You can continue using other features of the app."
+                        } else {
+                            "Too many requests at once. Please wait a minute and try again."
+                        }
+                    }
                     500, 503 -> "Google server error. Please try again later."
                     else -> "Error ${response.code()}: ${response.message()}"
                 }

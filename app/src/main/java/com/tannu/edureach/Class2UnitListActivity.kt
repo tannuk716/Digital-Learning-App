@@ -26,6 +26,8 @@ class Class2UnitListActivity : AppCompatActivity() {
     private lateinit var tvSubjectTitle: TextView
     private lateinit var tvEmptyState: TextView
     
+    private var currentSubjectName: String = ""
+    
     private val STORAGE_PERMISSION_CODE = 101
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,19 +35,18 @@ class Class2UnitListActivity : AppCompatActivity() {
         setContentView(R.layout.activity_unit_list)
 
         val subjectId = intent.getStringExtra("SUBJECT_ID") ?: ""
-        val subjectName = intent.getStringExtra("SUBJECT_NAME") ?: "Subject"
+        currentSubjectName = intent.getStringExtra("SUBJECT_NAME") ?: "Subject"
 
         rvUnits = findViewById(R.id.rvUnits)
         tvSubjectTitle = findViewById(R.id.tvSubjectTitle)
         tvEmptyState = findViewById(R.id.tvEmptyState)
 
-        tvSubjectTitle.text = "$subjectName - Units"
+        tvSubjectTitle.text = "$currentSubjectName - Units"
 
         findViewById<View>(R.id.btnBack)?.setOnClickListener { finish() }
 
         rvUnits.layoutManager = LinearLayoutManager(this)
 
-        // Request storage permission if needed
         checkStoragePermission()
         
         loadUnits(subjectId)
@@ -80,7 +81,7 @@ class Class2UnitListActivity : AppCompatActivity() {
     }
 
     private fun loadUnits(subjectId: String) {
-        val subjectContent = Class2ContentProvider.getSubjectContent(subjectId)
+        val subjectContent = Class2ContentProvider.getSubjectContent(this, subjectId)
 
         if (subjectContent != null && subjectContent.units.isNotEmpty()) {
             val adapter = UnitAdapter(
@@ -104,12 +105,12 @@ class Class2UnitListActivity : AppCompatActivity() {
             return
         }
         
-        DownloadHelper.downloadContent(this, pdfUrl, unitName, isVideo = false)
+        DownloadHelper.downloadContent(this, pdfUrl, unitName, isVideo = false, subjectName = currentSubjectName)
     }
 
     private fun openPdf(pdfUrl: String, unitName: String) {
-        // First check if file is already downloaded natively
-        val localUri = DownloadHelper.getLocalFileUri(this, unitName, false)
+
+        val localUri = DownloadHelper.getLocalFileUri(this, unitName, false, subjectName = currentSubjectName)
         if (localUri != null) {
             try {
                 val intent = Intent(Intent.ACTION_VIEW)
@@ -123,7 +124,7 @@ class Class2UnitListActivity : AppCompatActivity() {
             }
         }
         
-        // Exact User Request: "Open PDF using Intent.ACTION_VIEW. Use given Drive links. No Google Drive UI redirect"
+
         try {
             val intent = Intent(Intent.ACTION_VIEW)
             intent.data = Uri.parse(pdfUrl)

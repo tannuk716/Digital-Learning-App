@@ -33,7 +33,6 @@ class LoginActivity : AppCompatActivity() {
         tvRegister = findViewById(R.id.tvRegister)
         progressBar = findViewById(R.id.progressBar)
 
-        // Check if already logged in
         if (auth.currentUser != null) {
             routeUserToDashboard()
             return
@@ -48,10 +47,9 @@ class LoginActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            // DEVELOPMENT MODE: Allow test login without network
             if (BuildConfig.DEBUG && email == "test@test.com" && password == "test123") {
                 Toast.makeText(this, "Development Mode: Bypassing login", Toast.LENGTH_SHORT).show()
-                // Save test user data
+
                 val prefs = getSharedPreferences("AppPrefs", android.content.Context.MODE_PRIVATE)
                 prefs.edit().apply {
                     putString("USER_EMAIL", email)
@@ -64,7 +62,7 @@ class LoginActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
             
-            // DEVELOPMENT MODE: Allow teacher test login
+
             if (BuildConfig.DEBUG && email == "teacher@test.com" && password == "test123") {
                 Toast.makeText(this, "Development Mode: Teacher login", Toast.LENGTH_SHORT).show()
                 val prefs = getSharedPreferences("AppPrefs", android.content.Context.MODE_PRIVATE)

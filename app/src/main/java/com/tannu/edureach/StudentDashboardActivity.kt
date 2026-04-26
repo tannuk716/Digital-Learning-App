@@ -37,7 +37,7 @@ class StudentDashboardActivity : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
     private lateinit var db: FirebaseFirestore
     
-    // ViewModels and Adapters
+
     private val viewModel: StudentViewModel by viewModels()
     private lateinit var recentAdapter: RecentUploadsAdapter
     private lateinit var rvRecentContent: RecyclerView
@@ -84,12 +84,10 @@ class StudentDashboardActivity : AppCompatActivity() {
             startActivity(Intent(this, ProgressActivity::class.java))
         }
 
-        // 🤖 Open AI Tutor
         findViewById<View>(R.id.cardAIChat).setOnClickListener {
             startActivity(Intent(this, AIChatbotActivity::class.java))
         }
 
-        // 🎤 Communication Skills (Class 5-10 only)
         findViewById<View>(R.id.cardCommunicationSkills)?.setOnClickListener {
             startActivity(Intent(this, CommunicationSkillsActivity::class.java))
         }
@@ -101,24 +99,24 @@ class StudentDashboardActivity : AppCompatActivity() {
         setupClickListeners()
         setupFilters()
         loadProfileData()
-        observeContent() // Initial load
+        observeContent()
         
-        // Load subjects immediately with default class (will be updated when profile loads)
+
         loadSubjectsFromJson()
         
-        // Clean out legacy Notion junk from database globally
+
         cleanNotionFiles()
         cleanNestedDummyContent()
     }
 
     private fun cleanNestedDummyContent() {
-        // Runs passively to clean garbage Notion/AWS/Dummy links deeply nested in Class 1
+
         val subjectsToClean = listOf("maths", "english", "hindi", "science", "evs", "sst")
         for (sub in subjectsToClean) {
             for (i in 1..10) {
                 val unitId = "unit_$i"
                 
-                // Clean Notes
+
                 db.collection("classes").document("class_1")
                     .collection("subjects").document(sub)
                     .collection("units").document(unitId)
@@ -134,7 +132,7 @@ class StudentDashboardActivity : AppCompatActivity() {
                         }
                     }
                 
-                // Clean Videos
+
                 db.collection("classes").document("class_1")
                     .collection("subjects").document(sub)
                     .collection("units").document(unitId)
@@ -193,7 +191,7 @@ class StudentDashboardActivity : AppCompatActivity() {
                 contentRepository.getRecentUploadsByClass(currentClassId).collect { list ->
                     android.util.Log.d("StudentDashboard", "Received ${list.size} items for class $currentClassId")
                     
-                    // Log all items before filtering
+
                     list.forEach { item ->
                         android.util.Log.d("StudentDashboard", "Item: ${item.title} | URL: ${item.url} | Contains notion: ${item.url.contains("notion.so", ignoreCase = true)}")
                     }
@@ -201,14 +199,12 @@ class StudentDashboardActivity : AppCompatActivity() {
                     val currentTime = System.currentTimeMillis()
                     val oneDayInMillis = 24 * 60 * 60 * 1000L
 
-                    // Show valid manually-uploaded items within the last 24 hours (notion blocked) and filtered by student class/subject
                     val recent24hList = list
                         .filter { 
                             val isNotionContent = it.url.contains("notion", ignoreCase = true)
                             val isWithin24Hours = (currentTime - it.timestamp) <= oneDayInMillis
                             
-                            // Check if subject is part of student's subjects. For simplicity, any valid standard subject implies student subject for their class.
-                            // If we need stricter filtering, we ensure the `it.subjectId` is valid.
+
                             val isStudentSubject = it.subjectId.isNotEmpty()
                             
                             android.util.Log.d("StudentDashboard", "Filtering ${it.title}: isNotion=$isNotionContent, isWithin24h=$isWithin24Hours")
@@ -239,7 +235,6 @@ class StudentDashboardActivity : AppCompatActivity() {
             return
         }
 
-        // Check if it's a YouTube URL even if flag is false
         val isYouTubeUrl = url.contains("youtube.com", ignoreCase = true) || 
                           url.contains("youtu.be", ignoreCase = true)
 
@@ -262,13 +257,13 @@ class StudentDashboardActivity : AppCompatActivity() {
             startActivity(intent)
         }
         
-        // Opening an item implies study activity, so update streak!
+
         ProgressManager.updateStreak()
     }
 
     override fun onResume() {
         super.onResume()
-        // Reload profile data when returning from ProfileActivity
+
         loadProfileData()
     }
 
@@ -292,7 +287,7 @@ class StudentDashboardActivity : AppCompatActivity() {
                     val classInt = className.replace("Class ", "").toIntOrNull() ?: 1
                     val newClassId = "class_$classInt"
                     
-                    // Show/Hide Communication Skills card based on class (Class 5-10 only)
+
                     val cardCommunicationSkills = findViewById<View>(R.id.cardCommunicationSkills)
                     if (classInt >= 5 && classInt <= 10) {
                         cardCommunicationSkills?.visibility = View.VISIBLE
@@ -300,13 +295,13 @@ class StudentDashboardActivity : AppCompatActivity() {
                         cardCommunicationSkills?.visibility = View.GONE
                     }
                     
-                    // If class changed, reload content
+
                     if (newClassId != currentClassId) {
                         currentClassId = newClassId
-                        observeContent() // Reload content for new class
+                        observeContent()
                     }
                     
-                    // Reset Viewmodel filter with right class
+
                     val spinnerSubject = findViewById<Spinner>(R.id.spinnerSubjectFilter)
                     val spinnerUnit = findViewById<Spinner>(R.id.spinnerUnitFilter)
                     if (spinnerSubject.selectedItemPosition > 0 && spinnerUnit.selectedItemPosition > 0) {
@@ -328,17 +323,17 @@ class StudentDashboardActivity : AppCompatActivity() {
     private fun loadSubjectsFromJson() {
         android.util.Log.d("StudentDashboard", "loadSubjectsFromJson called with currentClassId=$currentClassId")
         
-        // For Class 1, use predefined PDF content
+
         if (currentClassId == "class_1") {
             android.util.Log.d("StudentDashboard", "Loading Class 1 content")
-            val class1Subjects = com.tannu.edureach.utils.Class1ContentProvider.getClass1Content()
+            val class1Subjects = com.tannu.edureach.utils.Class1ContentProvider.getClass1Content(this)
             android.util.Log.d("StudentDashboard", "Class 1 subjects count: ${class1Subjects.size}")
             
             val subjectItems = class1Subjects.map { subject ->
                 val icon = when (subject.subjectId) {
-                    "maths" -> "🐘"
-                    "english" -> "🐰"
-                    "hindi" -> "🐒"
+                    "maths" -> "🔢"
+                    "english" -> "📖"
+                    "hindi" -> "✍️"
                     else -> "📚"
                 }
                 android.util.Log.d("StudentDashboard", "Creating SubjectItem: name=${subject.subjectName}, id=${subject.subjectId}, icon=$icon")
@@ -348,7 +343,7 @@ class StudentDashboardActivity : AppCompatActivity() {
             android.util.Log.d("StudentDashboard", "Creating adapter with ${subjectItems.size} items")
             
             val adapter = NotionSubjectAdapter(subjectItems) { subject ->
-                // Open unit list for Class 1
+
                 android.util.Log.d("StudentDashboard", "Opening Class1UnitListActivity for ${subject.name}")
                 val intent = Intent(this, Class1UnitListActivity::class.java)
                 intent.putExtra("SUBJECT_ID", subject.id)
@@ -362,17 +357,17 @@ class StudentDashboardActivity : AppCompatActivity() {
             return
         }
         
-        // For Class 2, use specific localized exact links mapping
+
         if (currentClassId == "class_2") {
             android.util.Log.d("StudentDashboard", "Loading Class 2 fixed content")
-            val class2Subjects = com.tannu.edureach.utils.Class2ContentProvider.getClass2Content()
+            val class2Subjects = com.tannu.edureach.utils.Class2ContentProvider.getClass2Content(this)
             
             val subjectItems = class2Subjects.map { subject ->
                 val icon = when (subject.subjectId.lowercase()) {
-                    "english" -> "🐰"
-                    "hindi" -> "🐒"
+                    "english" -> "📖"
+                    "hindi" -> "✍️"
                     "evs" -> "🌍"
-                    "maths" -> "🐘"
+                    "maths" -> "🔢"
                     else -> "📚"
                 }
                 SubjectItem(subject.subjectName, subject.subjectId, icon, "")
@@ -391,17 +386,17 @@ class StudentDashboardActivity : AppCompatActivity() {
             return
         }
         
-        // For Class 3, use specific localized exact links mapping
+
         if (currentClassId == "class_3") {
             android.util.Log.d("StudentDashboard", "Loading Class 3 fixed content")
-            val class3Subjects = com.tannu.edureach.utils.Class3ContentProvider.getClass3Content()
+            val class3Subjects = com.tannu.edureach.utils.Class3ContentProvider.getClass3Content(this)
             
             val subjectItems = class3Subjects.map { subject ->
                 val icon = when (subject.subjectId.lowercase()) {
-                    "english" -> "🐰"
-                    "hindi" -> "🐒"
+                    "english" -> "📖"
+                    "hindi" -> "✍️"
                     "evs" -> "🌍"
-                    "maths" -> "🐘"
+                    "maths" -> "🔢"
                     else -> "📚"
                 }
                 SubjectItem(subject.subjectName, subject.subjectId, icon, "")
@@ -420,17 +415,17 @@ class StudentDashboardActivity : AppCompatActivity() {
             return
         }
         
-        // For Class 4
+
         if (currentClassId == "class_4") {
             android.util.Log.d("StudentDashboard", "Loading Class 4 fixed content")
-            val class4Subjects = com.tannu.edureach.utils.Class4ContentProvider.getClass4Content()
+            val class4Subjects = com.tannu.edureach.utils.Class4ContentProvider.getClass4Content(this)
             
             val subjectItems = class4Subjects.map { subject ->
                 val icon = when (subject.subjectId.lowercase()) {
-                    "english" -> "🐰"
-                    "hindi" -> "🐒"
+                    "english" -> "📖"
+                    "hindi" -> "✍️"
                     "evs" -> "🌍"
-                    "maths" -> "🐘"
+                    "maths" -> "🔢"
                     else -> "📚"
                 }
                 SubjectItem(subject.subjectName, subject.subjectId, icon, "")
@@ -448,17 +443,16 @@ class StudentDashboardActivity : AppCompatActivity() {
             return
         }
 
-        // For Class 5
         if (currentClassId == "class_5") {
             android.util.Log.d("StudentDashboard", "Loading Class 5 fixed content")
-            val class5Subjects = com.tannu.edureach.utils.Class5ContentProvider.getClass5Content()
+            val class5Subjects = com.tannu.edureach.utils.Class5ContentProvider.getClass5Content(this)
             
             val subjectItems = class5Subjects.map { subject ->
                 val icon = when (subject.subjectId.lowercase()) {
-                    "english" -> "🐰"
-                    "hindi" -> "🐒"
+                    "english" -> "📖"
+                    "hindi" -> "✍️"
                     "evs" -> "🌍"
-                    "maths" -> "🐘"
+                    "maths" -> "🔢"
                     else -> "📚"
                 }
                 SubjectItem(subject.subjectName, subject.subjectId, icon, "")
@@ -476,18 +470,18 @@ class StudentDashboardActivity : AppCompatActivity() {
             return
         }
 
-        // For Class 6
         if (currentClassId == "class_6") {
             android.util.Log.d("StudentDashboard", "Loading Class 6 fixed content")
-            val class6Subjects = com.tannu.edureach.utils.Class6ContentProvider.getClass6Content()
+            val class6Subjects = com.tannu.edureach.utils.Class6ContentProvider.getClass6Content(this)
             
             val subjectItems = class6Subjects.map { subject ->
                 val icon = when (subject.subjectId.lowercase()) {
-                    "english" -> "🐰"
-                    "hindi" -> "🐒"
+                    "english" -> "📖"
+                    "hindi" -> "✍️"
                     "evs" -> "🌍"
-                    "maths" -> "🐘"
+                    "maths" -> "🔢"
                     "sst" -> "🗺️"
+                    "science" -> "🔬"
                     else -> "📚"
                 }
                 SubjectItem(subject.subjectName, subject.subjectId, icon, "")
@@ -505,17 +499,17 @@ class StudentDashboardActivity : AppCompatActivity() {
             return
         }
 
-        // For Class 7
         if (currentClassId == "class_7") {
             android.util.Log.d("StudentDashboard", "Loading Class 7 content")
-            val class7Subjects = com.tannu.edureach.utils.Class7ContentProvider.getClass7Content()
+            val class7Subjects = com.tannu.edureach.utils.Class7ContentProvider.getClass7Content(this)
             
             val subjectItems = class7Subjects.map { subject ->
                 val icon = when (subject.subjectId.lowercase()) {
-                    "english" -> "🐰"
-                    "hindi" -> "🐒"
-                    "science", "evs" -> "🌍"
-                    "maths" -> "🐘"
+                    "english" -> "📖"
+                    "hindi" -> "✍️"
+                    "science" -> "🔬"
+                    "evs" -> "🌍"
+                    "maths" -> "🔢"
                     "sst" -> "🏛️"
                     else -> "📚"
                 }
@@ -534,17 +528,17 @@ class StudentDashboardActivity : AppCompatActivity() {
             return
         }
 
-        // For Class 8
         if (currentClassId == "class_8") {
             android.util.Log.d("StudentDashboard", "Loading Class 8 content")
-            val class8Subjects = com.tannu.edureach.utils.Class8ContentProvider.getClass8Content()
+            val class8Subjects = com.tannu.edureach.utils.Class8ContentProvider.getClass8Content(this)
             
             val subjectItems = class8Subjects.map { subject ->
                 val icon = when (subject.subjectId.lowercase()) {
-                    "english" -> "🐰"
-                    "hindi" -> "🐒"
-                    "science", "evs" -> "🌍"
-                    "maths" -> "🐘"
+                    "english" -> "📖"
+                    "hindi" -> "✍️"
+                    "science" -> "🔬"
+                    "evs" -> "🌍"
+                    "maths" -> "🔢"
                     "sst" -> "🏛️"
                     else -> "📚"
                 }
@@ -563,17 +557,17 @@ class StudentDashboardActivity : AppCompatActivity() {
             return
         }
 
-        // For Class 9
         if (currentClassId == "class_9") {
             android.util.Log.d("StudentDashboard", "Loading Class 9 content")
-            val class9Subjects = com.tannu.edureach.utils.Class9ContentProvider.getClass9Content()
+            val class9Subjects = com.tannu.edureach.utils.Class9ContentProvider.getClass9Content(this)
             
             val subjectItems = class9Subjects.map { subject ->
                 val icon = when (subject.subjectId.lowercase()) {
-                    "english" -> "🐰"
-                    "hindi" -> "🐒"
-                    "science", "evs" -> "🌍"
-                    "maths" -> "🐘"
+                    "english" -> "📖"
+                    "hindi" -> "✍️"
+                    "science" -> "🔬"
+                    "evs" -> "🌍"
+                    "maths" -> "🔢"
                     "sst" -> "🏛️"
                     else -> "📚"
                 }
@@ -592,17 +586,17 @@ class StudentDashboardActivity : AppCompatActivity() {
             return
         }
 
-        // For Class 10
         if (currentClassId == "class_10") {
             android.util.Log.d("StudentDashboard", "Loading Class 10 content")
-            val class10Subjects = com.tannu.edureach.utils.Class10ContentProvider.getClass10Content()
+            val class10Subjects = com.tannu.edureach.utils.Class10ContentProvider.getClass10Content(this)
             
             val subjectItems = class10Subjects.map { subject ->
                 val icon = when (subject.subjectId.lowercase()) {
-                    "english" -> "🐰"
-                    "hindi" -> "🐒"
-                    "science", "evs" -> "🌍"
-                    "maths" -> "🐘"
+                    "english" -> "📖"
+                    "hindi" -> "✍️"
+                    "science" -> "🔬"
+                    "evs" -> "🌍"
+                    "maths" -> "🔢"
                     "sst" -> "🏛️"
                     else -> "📚"
                 }
@@ -630,12 +624,12 @@ class StudentDashboardActivity : AppCompatActivity() {
     ) : RecyclerView.Adapter<NotionSubjectAdapter.ViewHolder>() {
 
         private val colorGradients = listOf(
-            R.drawable.bg_gradient_blue,
-            R.drawable.bg_gradient_orange,
-            R.drawable.bg_gradient_green,
-            R.drawable.bg_gradient_light_green,
-            R.drawable.bg_gradient_purple,
-            R.drawable.bg_gradient_dark_blue
+            R.drawable.bg_gradient_subject_teal,
+            R.drawable.bg_gradient_subject_yellow,
+            R.drawable.bg_gradient_subject_red,
+            R.drawable.bg_gradient_subject_cyan,
+            R.drawable.bg_gradient_subject_indigo,
+            R.drawable.bg_gradient_subject_pink
         )
 
         class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -658,7 +652,6 @@ class StudentDashboardActivity : AppCompatActivity() {
             
             holder.tvSubjectName.text = subject.name
             holder.tvSubjectIcon.text = subject.icon
-            // tvSubjectDesc is now a LinearLayout, so we don't set text on it
 
             val bgRes = colorGradients[position % colorGradients.size]
             holder.rootLayout.setBackgroundResource(bgRes)

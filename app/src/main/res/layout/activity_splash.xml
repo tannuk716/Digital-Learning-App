@@ -43,7 +43,7 @@
             android:layout_height="wrap_content"
             android:text="@string/app_name"
             android:textSize="40sp"
-            android:textColor="#0B2DE7"
+            android:textColor="#119084"
             android:textStyle="bold"
             android:layout_marginTop="16dp"/>
 
@@ -54,7 +54,7 @@
             android:text="Learn, Play, Grow! 🌱"
             android:textSize="25sp"
             android:textStyle="bold"
-            android:textColor="#3F51B5"
+            android:textColor="#0C0D0D"
             android:layout_marginTop="8dp"/>
 
     </LinearLayout>

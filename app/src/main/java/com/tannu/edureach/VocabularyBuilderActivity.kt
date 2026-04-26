@@ -75,7 +75,6 @@ class VocabularyBuilderActivity : AppCompatActivity() {
 
         findViewById<View>(R.id.btnBack)?.setOnClickListener { finish() }
 
-        // Set initial word
         updateWord()
 
         btnSubmitQuiz.setOnClickListener {
@@ -105,7 +104,7 @@ class VocabularyBuilderActivity : AppCompatActivity() {
         
         tvWordNumber.text = "Word ${currentWordIndex + 1} of ${vocabulary.size}"
         
-        // Update button states
+
         btnPrevious.isEnabled = currentWordIndex > 0
         btnNext.isEnabled = currentWordIndex < vocabulary.size - 1
         
@@ -127,7 +126,7 @@ class VocabularyBuilderActivity : AppCompatActivity() {
             
             tvQuizQuestion.text = "${word.word} means:"
             
-            // Set radio button options
+
             val radioButton1 = findViewById<RadioButton>(R.id.radioOption1)
             val radioButton2 = findViewById<RadioButton>(R.id.radioOption2)
             val radioButton3 = findViewById<RadioButton>(R.id.radioOption3)
@@ -156,10 +155,10 @@ class VocabularyBuilderActivity : AppCompatActivity() {
         
         currentWord?.let { word ->
             if (selectedIndex == word.correctAnswer) {
-                // Correct answer - get AI explanation
+
                 getAIExplanation(word, true)
             } else {
-                // Wrong answer - get AI correction
+
                 getAIExplanation(word, false, word.options[selectedIndex])
             }
             btnSubmitQuiz.isEnabled = false

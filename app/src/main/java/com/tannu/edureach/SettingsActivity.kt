@@ -30,7 +30,6 @@ class SettingsActivity : AppCompatActivity() {
         val spinnerClass = findViewById<Spinner>(R.id.spinnerClass)
         val tvSelectClassLabel = findViewById<TextView>(R.id.tvSelectClassLabel)
 
-
         val languages = arrayOf("English", "Hindi", "Punjabi")
         spinnerLanguage.adapter = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, languages)
 
@@ -42,14 +41,12 @@ class SettingsActivity : AppCompatActivity() {
         val currentClass = prefs.getInt("USER_CLASS", 1)
         val userRole = prefs.getString("USER_ROLE", "Student") ?: "Student"
 
-
         when (currentLang) {
             "hi" -> spinnerLanguage.setSelection(1)
             "pa" -> spinnerLanguage.setSelection(2)
             else -> spinnerLanguage.setSelection(0)
         }
         spinnerClass.setSelection(currentClass - 1)
-
 
         if (userRole == "Teacher") {
             spinnerClass.visibility = View.GONE

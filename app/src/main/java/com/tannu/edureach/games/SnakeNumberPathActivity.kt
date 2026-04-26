@@ -54,7 +54,7 @@ class SnakeNumberPathActivity : AppCompatActivity() {
         val buttons = listOf(btnOpt1, btnOpt2, btnOpt3)
         for (i in buttons.indices) {
             buttons[i].text = options[i]
-            buttons[i].setBackgroundColor(Color.parseColor("#8BC34A")) // Light green
+            buttons[i].setBackgroundColor(Color.parseColor("#8BC34A"))
             buttons[i].isEnabled = true
             buttons[i].setOnClickListener { checkAnswer(i, correctIndex, buttons) }
         }

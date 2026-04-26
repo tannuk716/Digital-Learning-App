@@ -19,7 +19,7 @@ object ProgressManager {
         
         userRef.update("points", FieldValue.increment(pointsToAdd))
             .addOnFailureListener {
-                // If the field or document doesn't strictly exist with this field, merge it.
+
                 userRef.set(mapOf("points" to pointsToAdd), SetOptions.merge())
             }
     }
@@ -40,7 +40,7 @@ object ProgressManager {
             val lastStudyStr = if (lastStudyDate > 0) dateFormat.format(Date(lastStudyDate)) else ""
             
             if (lastStudyDate > 0 && todayStr == lastStudyStr) {
-                // Already studied today
+
                 return@addOnSuccessListener
             }
             
@@ -66,11 +66,11 @@ object ProgressManager {
                 TimeUnit.MILLISECONDS.toDays(diffMs)
             }
             
-            // diffDays == 1L means it was exactly yesterday.
+
             val nextStreak = if (diffDays == 1L) {
                 currentStreak + 1
             } else {
-                1L // Reset streak to 1
+                1L
             }
             
             val updates = mapOf(

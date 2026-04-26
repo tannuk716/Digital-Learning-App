@@ -1,5 +1,7 @@
 package com.tannu.edureach.utils
 
+import android.content.Context
+
 object Class1ContentProvider {
     
     data class UnitContent(
@@ -14,11 +16,11 @@ object Class1ContentProvider {
         val units: List<UnitContent>
     )
     
-    fun getClass1Content(): List<SubjectContent> {
+    fun getClass1Content(context: Context): List<SubjectContent> {
         return listOf(
             SubjectContent(
                 subjectId = "english",
-                subjectName = "English",
+                subjectName = context.getString(SubjectNameLocalizer.getSubjectNameResourceId("english")),
                 units = listOf(
                     UnitContent(1, "Unit 1", "https://drive.google.com/uc?export=download&id=17-3ohSQHGG1JQA72SiOGcASGET0qFS86"),
                     UnitContent(2, "Unit 2", "https://drive.google.com/uc?export=download&id=1vQDGA4EoP-32BM8WOt5lEQN69eEURHEs"),
@@ -28,7 +30,7 @@ object Class1ContentProvider {
             ),
             SubjectContent(
                 subjectId = "hindi",
-                subjectName = "Hindi",
+                subjectName = context.getString(SubjectNameLocalizer.getSubjectNameResourceId("hindi")),
                 units = listOf(
                     UnitContent(1, "Unit 1", "https://drive.google.com/uc?export=download&id=1sqXW7vQXrsS1_a8er3HHFNVUU1T_il12"),
                     UnitContent(2, "Unit 2", "https://drive.google.com/uc?export=download&id=1DmHwqSNS-uRfSyprl-OWEEUe4B-NXjm6"),
@@ -37,7 +39,7 @@ object Class1ContentProvider {
             ),
             SubjectContent(
                 subjectId = "maths",
-                subjectName = "Maths",
+                subjectName = context.getString(SubjectNameLocalizer.getSubjectNameResourceId("maths")),
                 units = listOf(
                     UnitContent(1, "Unit 1", "https://drive.google.com/uc?export=download&id=1Ste1DhbDfEgXqDcGVsBHuM4Sg0bwvdov"),
                     UnitContent(2, "Unit 2", "https://drive.google.com/uc?export=download&id=1zWUCuANl7T5dhyJCIUmK0wNH_iht3Kr6"),
@@ -47,7 +49,7 @@ object Class1ContentProvider {
         )
     }
     
-    fun getSubjectContent(subjectId: String): SubjectContent? {
-        return getClass1Content().find { it.subjectId == subjectId }
+    fun getSubjectContent(context: Context, subjectId: String): SubjectContent? {
+        return getClass1Content(context).find { it.subjectId == subjectId }
     }
 }

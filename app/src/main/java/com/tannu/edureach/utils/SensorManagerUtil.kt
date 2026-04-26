@@ -18,10 +18,9 @@ class SensorManagerUtil(context: Context) {
     private val lightListener = object : SensorEventListener {
         override fun onSensorChanged(event: SensorEvent?) {
             if (event?.sensor?.type == Sensor.TYPE_LIGHT) {
-                // val lightValue = event.values[0]
-                // val currentMode = AppCompatDelegate.getDefaultNightMode()
+
                 
-                // Force Light mode regardless of light sensor
+
                 if (AppCompatDelegate.getDefaultNightMode() != AppCompatDelegate.MODE_NIGHT_NO) {
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
                 }

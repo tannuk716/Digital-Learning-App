@@ -21,6 +21,14 @@
 #-renamesourcefileattribute SourceFile
 
 # ============================================
+# BuildConfig - Keep API keys and build constants
+# ============================================
+-keep class com.tannu.edureach.BuildConfig { *; }
+-keepclassmembers class com.tannu.edureach.BuildConfig {
+    public static final java.lang.String GEMINI_API_KEY;
+}
+
+# ============================================
 # Gemini API - Keep all API-related classes
 # ============================================
 -keep class com.tannu.edureach.utils.Gemini** { *; }

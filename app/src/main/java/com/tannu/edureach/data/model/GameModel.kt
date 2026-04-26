@@ -4,12 +4,12 @@ data class GameModel(
     val id: String = "",
     val title: String = "",
     val description: String = "",
-    val gameType: String = "", // e.g., "monkey_jump", "lion_math", "parrot_spelling"
-    val activityClass: String = "", // Full class name to launch
+    val gameType: String = "",
+    val activityClass: String = "",
     val iconUrl: String = "",
     val classId: String = "",
     val subjectId: String = "",
-    val unitId: String = "", // Unit 1-20
+    val unitId: String = "",
     val timestamp: Long = System.currentTimeMillis()
 )
 

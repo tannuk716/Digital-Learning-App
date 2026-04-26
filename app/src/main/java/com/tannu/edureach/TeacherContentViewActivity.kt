@@ -61,7 +61,7 @@ class TeacherContentViewActivity : AppCompatActivity() {
         val adapter = ClassTabAdapter(classes, currentClassId) { selectedClass ->
             if (currentClassId != selectedClass) {
                 currentClassId = selectedClass
-                setupClassTabs() // Recreate adapter with new currentClassId
+                setupClassTabs()
                 loadContentForClass(currentClassId)
             }
         }
@@ -71,7 +71,7 @@ class TeacherContentViewActivity : AppCompatActivity() {
     private fun loadContentForClass(classId: String) {
         android.util.Log.d("TeacherContentView", "Loading content for classId=$classId, subjectId=$subjectId")
         
-        // Handle "maths" vs "math" mismatch - try both variants
+
         val subjectIds = when (subjectId.lowercase()) {
             "maths", "math" -> listOf("maths", "math")
             else -> listOf(subjectId, subjectId.lowercase())
@@ -83,12 +83,11 @@ class TeacherContentViewActivity : AppCompatActivity() {
                 
                 val allContent = mutableListOf<ContentItem>()
 
-                // Search with all subject ID variants
                 for (searchSubjectId in subjectIds) {
                     android.util.Log.d("TeacherContentView", "Searching with subjectId: $searchSubjectId")
                     
                     for (unitId in units) {
-                        // Load videos
+
                         val videosSnapshot = db.collection("classes").document(classId)
                             .collection("subjects").document(searchSubjectId)
                             .collection("units").document(unitId)
@@ -99,7 +98,7 @@ class TeacherContentViewActivity : AppCompatActivity() {
                         
                         videosSnapshot.documents.forEach { doc ->
                             doc.toObject(VideoContent::class.java)?.let { video ->
-                                // Block ONLY Notion content, allow everything else
+
                                 val isNotionContent = video.videoUrl.contains("notion.so", ignoreCase = true) || 
                                                      video.videoUrl.contains("notion.site", ignoreCase = true) ||
                                                      video.videoUrl.contains("prod-files-secure", ignoreCase = true)
@@ -118,7 +117,6 @@ class TeacherContentViewActivity : AppCompatActivity() {
                             }
                         }
 
-                        // Load notes
                         val notesSnapshot = db.collection("classes").document(classId)
                             .collection("subjects").document(searchSubjectId)
                             .collection("units").document(unitId)
@@ -129,7 +127,7 @@ class TeacherContentViewActivity : AppCompatActivity() {
                         
                         notesSnapshot.documents.forEach { doc ->
                             doc.toObject(NoteContent::class.java)?.let { note ->
-                                // Block ONLY Notion content, allow everything else
+
                                 val isNotionContent = note.fileUrl.contains("notion.so", ignoreCase = true) || 
                                                      note.fileUrl.contains("notion.site", ignoreCase = true) ||
                                                      note.fileUrl.contains("prod-files-secure", ignoreCase = true)
@@ -148,7 +146,6 @@ class TeacherContentViewActivity : AppCompatActivity() {
                             }
                         }
 
-                        // Load quizzes
                         val quizzesSnapshot = db.collection("classes").document(classId)
                             .collection("subjects").document(searchSubjectId)
                             .collection("units").document(unitId)
@@ -159,7 +156,7 @@ class TeacherContentViewActivity : AppCompatActivity() {
                         
                         quizzesSnapshot.documents.forEach { doc ->
                             doc.toObject(QuizModel::class.java)?.let { quiz ->
-                                // Quizzes don't have URLs, so just add them
+
                                 allContent.add(ContentItem(
                                     id = doc.id,
                                     classId = classId,
@@ -174,12 +171,11 @@ class TeacherContentViewActivity : AppCompatActivity() {
                     }
                 }
                 
-                // Remove duplicates
+
                 val uniqueContent = allContent.distinctBy { it.id }
 
                 android.util.Log.d("TeacherContentView", "Total content items after filtering: ${uniqueContent.size}")
 
-                // Display content
                 if (uniqueContent.isEmpty()) {
                     tvEmptyState.visibility = View.VISIBLE
                     tvEmptyState.text = "No content uploaded for ${classId.replace("_", " ").replaceFirstChar { it.uppercase() }} yet.\nUpload content from the dashboard."
@@ -204,16 +200,16 @@ class TeacherContentViewActivity : AppCompatActivity() {
     private fun openContent(item: ContentItem) {
         when (item.type) {
             "Video" -> {
-                // Check if it's a YouTube video or Firebase Storage video
+
                 if (item.url.contains("youtube.com", ignoreCase = true) || 
                     item.url.contains("youtu.be", ignoreCase = true)) {
-                    // Open YouTube video in EducationalWebActivity
+
                     val intent = Intent(this, EducationalWebActivity::class.java)
                     intent.putExtra("WEB_URL", item.url)
                     intent.putExtra("WEB_TITLE", item.title)
                     startActivity(intent)
                 } else {
-                    // Open Firebase Storage video in VideoPlayerActivity
+
                     val intent = Intent(this, VideoPlayerActivity::class.java)
                     intent.putExtra("VIDEO_URL", item.url)
                     intent.putExtra("IS_OFFLINE", false)
@@ -221,17 +217,17 @@ class TeacherContentViewActivity : AppCompatActivity() {
                 }
             }
             "Note" -> {
-                // Open PDF in EducationalWebActivity or external PDF viewer
+
                 val intent = Intent(this, com.tannu.edureach.utils.EducationalWebActivity::class.java)
                 intent.putExtra("WEB_URL", item.url)
                 intent.putExtra("WEB_TITLE", item.title)
                 startActivity(intent)
             }
             "Quiz" -> {
-                // Open quiz in QuizActivity
+
                 lifecycleScope.launch {
                     try {
-                        // Fetch the quiz data from Firestore
+
                         val quizDoc = db.collection("classes").document(item.classId)
                             .collection("subjects").document(subjectId)
                             .collection("units").document(item.unitId)
@@ -288,7 +284,7 @@ class TeacherContentViewActivity : AppCompatActivity() {
                     .await()
 
                 Toast.makeText(this@TeacherContentViewActivity, "Content deleted successfully", Toast.LENGTH_SHORT).show()
-                loadContentForClass(item.classId) // Reload the specific class's list
+                loadContentForClass(item.classId)
 
             } catch (e: Exception) {
                 Toast.makeText(this@TeacherContentViewActivity, "Failed to delete: ${e.message}", Toast.LENGTH_SHORT).show()

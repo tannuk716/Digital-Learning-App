@@ -63,7 +63,6 @@ class TeacherDashboardActivity : AppCompatActivity() {
         rvTeacherSubjects.layoutManager = androidx.recyclerview.widget.GridLayoutManager(this, 3)
         setupSubjectCards(rvTeacherSubjects)
 
-        // Connectivity for buttons that exist in XML
         findViewById<Button>(R.id.btnAddContent).setOnClickListener {
             startActivity(Intent(this, AddLearningContentActivity::class.java))
         }
@@ -139,7 +138,7 @@ class TeacherDashboardActivity : AppCompatActivity() {
                         val isNotion = fileUrl.contains("notion", ignoreCase = true) || 
                                        fileUrl.contains("amazonaws.com", ignoreCase = true)
                         
-                        // Only show content uploaded within last 24 hours
+
                         val isWithin24Hours = (currentTime - timestamp) <= oneDayInMillis
                         
                         if (title.isNotEmpty() && !isNotion && isWithin24Hours) {
@@ -172,7 +171,7 @@ class TeacherDashboardActivity : AppCompatActivity() {
                         val videoUrl = doc.getString("videoUrl") ?: ""
                         val timestamp = doc.getLong("timestamp") ?: 0L
                         
-                        // Only show content uploaded within last 24 hours
+
                         val isWithin24Hours = (currentTime - timestamp) <= oneDayInMillis
                         
                         if (title.isNotEmpty() && isWithin24Hours) {
@@ -191,7 +190,7 @@ class TeacherDashboardActivity : AppCompatActivity() {
     }
 
     private fun updateTeacherContentList() {
-        // Sort by timestamp (newest first)
+
         val allContent = (currentNotes + currentVideos).sortedByDescending { it.timestamp }
 
         if (allContent.isEmpty()) {

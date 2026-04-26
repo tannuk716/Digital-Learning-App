@@ -12,9 +12,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
-import com.tannu.edureach.utils.GeminiApiHelper
+import com.tannu.edureach.evaluation.SpeechEvaluator
+import com.tannu.edureach.evaluation.models.ActivityType
 import kotlinx.coroutines.launch
-import org.json.JSONObject
 import java.util.Locale
 import java.util.Calendar
 
@@ -33,13 +33,14 @@ class DailySpeakingActivity : AppCompatActivity() {
     
     private val db = FirebaseFirestore.getInstance()
     private val auth = FirebaseAuth.getInstance()
+    private val speechEvaluator = SpeechEvaluator()
     
     private var spokenText = ""
     private val SPEECH_REQUEST_CODE = 101
     private var currentQuestionIndex = 0
     private var currentWeekLevel = 1
     
-    // Week 1: Basic (Simple present, personal info)
+
     private val week1Questions = listOf(
         "What is your name?",
         "How old are you?",
@@ -53,7 +54,7 @@ class DailySpeakingActivity : AppCompatActivity() {
         "What makes you happy?"
     )
     
-    // Week 2: Elementary (Simple descriptions)
+
     private val week2Questions = listOf(
         "Describe your best friend.",
         "What did you do yesterday?",
@@ -67,7 +68,7 @@ class DailySpeakingActivity : AppCompatActivity() {
         "What do you do on weekends?"
     )
     
-    // Week 3: Intermediate (Past tense, longer responses)
+
     private val week3Questions = listOf(
         "Tell me about your last birthday.",
         "What is the best gift you ever received?",
@@ -81,7 +82,7 @@ class DailySpeakingActivity : AppCompatActivity() {
         "Describe your dream vacation."
     )
     
-    // Week 4: Advanced (Complex sentences, opinions)
+
     private val week4Questions = listOf(
         "If you could have any superpower, what would it be and why?",
         "What would you do if you found a lost puppy?",
@@ -112,10 +113,9 @@ class DailySpeakingActivity : AppCompatActivity() {
 
         findViewById<View>(R.id.btnBack)?.setOnClickListener { finish() }
 
-        // Calculate current week level (1-4, repeating)
         calculateWeekLevel()
         
-        // Set initial question based on day
+
         setDailyQuestion()
 
         btnRecord.setOnClickListener {
@@ -151,7 +151,7 @@ class DailySpeakingActivity : AppCompatActivity() {
     private fun calculateWeekLevel() {
         val calendar = Calendar.getInstance()
         val weekOfYear = calendar.get(Calendar.WEEK_OF_YEAR)
-        // Cycle through weeks 1-4
+
         currentWeekLevel = ((weekOfYear - 1) % 4) + 1
     }
 
@@ -180,7 +180,7 @@ class DailySpeakingActivity : AppCompatActivity() {
         val dayOfYear = calendar.get(Calendar.DAY_OF_YEAR)
         val questions = getCurrentWeekQuestions()
         
-        // Set question based on day of year
+
         currentQuestionIndex = dayOfYear % questions.size
         updateQuestion()
     }
@@ -191,7 +191,7 @@ class DailySpeakingActivity : AppCompatActivity() {
         tvQuestionNumber.text = "Question ${currentQuestionIndex + 1} of ${questions.size}"
         tvDifficultyLevel.text = "📊 ${getDifficultyLabel()} - Week $currentWeekLevel"
         
-        // Update button states
+
         btnPrevious.isEnabled = currentQuestionIndex > 0
         btnNext.isEnabled = currentQuestionIndex < questions.size - 1
         
@@ -239,77 +239,20 @@ class DailySpeakingActivity : AppCompatActivity() {
         
         lifecycleScope.launch {
             try {
-                val difficultyContext = when (currentWeekLevel) {
-                    1 -> "This is a basic level question. Expect simple, short answers."
-                    2 -> "This is an elementary level question. Expect simple descriptions."
-                    3 -> "This is an intermediate level question. Expect past tense and longer responses."
-                    4 -> "This is an advanced level question. Expect complex sentences and opinions."
-                    else -> "Basic level question."
-                }
+
+                val result = speechEvaluator.evaluateSpeech(
+                    question = tvQuestion.text.toString(),
+                    studentResponse = spokenText,
+                    difficultyLevel = currentWeekLevel,
+                    activityType = ActivityType.DAILY_SPEAKING
+                )
                 
-                val prompt = """
-                    Evaluate this English speaking response for a Class 5-10 student:
-                    
-                    Difficulty Level: Week $currentWeekLevel - ${getDifficultyLabel()}
-                    $difficultyContext
-                    
-                    Question: ${tvQuestion.text}
-                    Student's Response: $spokenText
-                    
-                    Provide feedback in JSON format:
-                    {
-                        "score": <number 0-100>,
-                        "pronunciation": "<Good/Fair/Needs Improvement>",
-                        "fluency": "<High/Medium/Low>",
-                        "grammar": "<Correct/Minor Errors/Major Errors>",
-                        "suggestion": "<helpful tip in simple English>"
-                    }
-                    
-                    Be encouraging and supportive. Adjust expectations based on the difficulty level.
-                """.trimIndent()
+
+                tvFeedback.text = result.feedbackText
+                tvFeedback.visibility = View.VISIBLE
                 
-                val result = GeminiApiHelper.generateContent(prompt)
-                
-                result.onSuccess { response ->
-                    val jsonStart = response.indexOf("{")
-                    val jsonEnd = response.lastIndexOf("}") + 1
-                    
-                    if (jsonStart >= 0 && jsonEnd > jsonStart) {
-                        val jsonStr = response.substring(jsonStart, jsonEnd)
-                        val json = JSONObject(jsonStr)
-                        
-                        val score = json.optInt("score", 70)
-                        val pronunciation = json.optString("pronunciation", "Good")
-                        val fluency = json.optString("fluency", "Medium")
-                        val grammar = json.optString("grammar", "Correct")
-                        val suggestion = json.optString("suggestion", "Keep practicing!")
-                        
-                        val feedback = """
-                            ✅ Great job! 
-                            
-                            📊 Score: $score%
-                            🗣️ Pronunciation: $pronunciation
-                            💬 Fluency: $fluency
-                            📝 Grammar: $grammar
-                            
-                            💡 Tip: $suggestion
-                            
-                            🎯 Level: ${getDifficultyLabel()}
-                        """.trimIndent()
-                        
-                        tvFeedback.text = feedback
-                        tvFeedback.visibility = View.VISIBLE
-                        
-                        saveProgress(score)
-                    } else {
-                        showBasicFeedback()
-                    }
-                }
-                
-                result.onFailure { error ->
-                    android.util.Log.e("DailySpeaking", "Error evaluating speech", error)
-                    showBasicFeedback()
-                }
+
+                saveProgress(result.score)
                 
             } catch (e: Exception) {
                 android.util.Log.e("DailySpeaking", "Error evaluating speech", e)

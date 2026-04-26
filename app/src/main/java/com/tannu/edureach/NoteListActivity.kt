@@ -44,35 +44,35 @@ class NoteListActivity : AppCompatActivity() {
         findViewById<View>(R.id.btnBack)?.setOnClickListener { finish() }
 
         rvNotes.layoutManager = LinearLayoutManager(this)
-        // Initialize with empty adapter immediately to prevent "No adapter attached" warning
+
         rvNotes.adapter = ContentAdapter(emptyList()) {}
 
         loadContent(classId, subjectId)
     }
 
     private fun loadContent(classId: String, subjectId: String) {
-        // Debug logging
+
         android.util.Log.d("NoteList", "========================================")
         android.util.Log.d("NoteList", "LOADING CONTENT")
         android.util.Log.d("NoteList", "ClassID: $classId")
         android.util.Log.d("NoteList", "SubjectID: $subjectId")
         android.util.Log.d("NoteList", "========================================")
         
-        // Handle "maths" vs "math" mismatch - try both
+
         val subjectIds = if (subjectId == "maths") {
             listOf("maths", "math")
         } else {
             listOf(subjectId)
         }
         
-        // Launch separate collectors for each subject ID variant and unit
+
         for (searchSubjectId in subjectIds) {
             android.util.Log.d("NoteList", "Searching with subjectId: $searchSubjectId")
             
             for (unitNum in 1..20) {
                 val unitId = "unit_$unitNum"
                 
-                // Load Notes
+
                 lifecycleScope.launch {
                     if (!isActive) return@launch
                     try {
@@ -83,7 +83,7 @@ class NoteListActivity : AppCompatActivity() {
                                     android.util.Log.d("NoteList", "  📄 ${note.title} | ${note.fileUrl}")
                                 }
                             }
-                            // Merge with existing notes for this unit
+
                             val existing = allNotesMap[unitId] ?: emptyList()
                             val combined = (existing + notes.map { NoteWithUnit(it, unitId) }).distinctBy { it.note.id }
                             allNotesMap[unitId] = combined
@@ -96,7 +96,7 @@ class NoteListActivity : AppCompatActivity() {
                     }
                 }
                 
-                // Load Videos
+
                 lifecycleScope.launch {
                     if (!isActive) return@launch
                     try {
@@ -107,7 +107,7 @@ class NoteListActivity : AppCompatActivity() {
                                     android.util.Log.d("NoteList", "  📹 ${video.title} | ${video.videoUrl}")
                                 }
                             }
-                            // Merge with existing videos for this unit
+
                             val existing = allVideosMap[unitId] ?: emptyList()
                             val combined = (existing + videos.map { VideoWithUnit(it, unitId) }).distinctBy { it.video.id }
                             allVideosMap[unitId] = combined
@@ -126,27 +126,27 @@ class NoteListActivity : AppCompatActivity() {
     private fun combineAndRefreshUI() {
         if (isDestroyed || isFinishing) return
         
-        // Combine notes and videos into a unified content list
+
         val contentList = mutableListOf<ContentItem>()
         contentList.clear()
         
-        // Add notes
+
         val notesList = allNotesMap.values.flatten()
             .distinctBy { it.note.title + it.note.fileUrl }
         
         android.util.Log.d("NoteList", "Total notes before filtering: ${notesList.size}")
         
-        // Filter out Notion content and worksheet/chapter content
+
         val filteredNotes = notesList.filter { noteWithUnit ->
             val url = noteWithUnit.note.fileUrl
             val title = noteWithUnit.note.title.lowercase()
             
-            // Block Notion URLs
+
             val isNotion = url.contains("notion.so", ignoreCase = true) ||
                           url.contains("notion.site", ignoreCase = true) ||
                           url.contains("prod-files-secure", ignoreCase = true)
             
-            // Block worksheet/chapter content (typical Notion content patterns)
+
             val isWorksheetContent = title.contains("chapter", ignoreCase = true) ||
                                     title.contains("worksheet", ignoreCase = true) ||
                                     title.contains("tap to view", ignoreCase = true) ||
@@ -177,23 +177,23 @@ class NoteListActivity : AppCompatActivity() {
             ))
         }
         
-        // Add videos
+
         val videosList = allVideosMap.values.flatten()
             .distinctBy { it.video.title + it.video.videoUrl }
         
         android.util.Log.d("NoteList", "Total videos before filtering: ${videosList.size}")
         
-        // Filter out Notion content and worksheet/chapter content
+
         val filteredVideos = videosList.filter { videoWithUnit ->
             val url = videoWithUnit.video.videoUrl
             val title = videoWithUnit.video.title.lowercase()
             
-            // Block Notion URLs
+
             val isNotion = url.contains("notion.so", ignoreCase = true) ||
                           url.contains("notion.site", ignoreCase = true) ||
                           url.contains("prod-files-secure", ignoreCase = true)
             
-            // Block worksheet/chapter content
+
             val isWorksheetContent = title.contains("chapter", ignoreCase = true) ||
                                     title.contains("worksheet", ignoreCase = true) ||
                                     title.contains("tap to view", ignoreCase = true) ||
@@ -224,7 +224,7 @@ class NoteListActivity : AppCompatActivity() {
             ))
         }
         
-        // Sort by timestamp (newest first)
+
         val sortedList = contentList.sortedByDescending { it.timestamp }
         
         android.util.Log.d("NoteList", "TOTAL TO DISPLAY: ${sortedList.size} items")
@@ -261,7 +261,7 @@ class NoteListActivity : AppCompatActivity() {
                 startActivity(intent)
             }
         } else {
-            // Handle note content
+
             openNote(content)
         }
     }
@@ -269,12 +269,12 @@ class NoteListActivity : AppCompatActivity() {
     private fun openNote(content: ContentItem) {
         var url = content.url
         
-        // Convert Google Drive URLs to direct download format
+
         if (GoogleDriveUrlHelper.isGoogleDriveUrl(url)) {
             url = GoogleDriveUrlHelper.convertToDirectUrl(url)
         }
         
-        // 1. Check if it's already downloaded offline
+
         val localUri = com.tannu.edureach.utils.DownloadHelper.getLocalFileUri(this, content.title, false)
         if (localUri != null) {
             Toast.makeText(this, "Opening offline document", Toast.LENGTH_SHORT).show()
@@ -290,10 +290,9 @@ class NoteListActivity : AppCompatActivity() {
             }
         }
 
-        // 2. For PDF files, try to open directly first
         if (url.lowercase().endsWith(".pdf") || url.contains(".pdf?alt=media", ignoreCase = true) || 
             url.contains("drive.google.com", ignoreCase = true)) {
-            // Try direct PDF opening first
+
             val directIntent = Intent(Intent.ACTION_VIEW)
             directIntent.setDataAndType(android.net.Uri.parse(url), "application/pdf")
             directIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
@@ -303,12 +302,11 @@ class NoteListActivity : AppCompatActivity() {
                 startActivity(directIntent)
                 return
             } catch (e: Exception) {
-                // If direct opening fails, fall back to WebView with Google Docs viewer
+
                 android.util.Log.d("NoteList", "Direct PDF open failed, using WebView: ${e.message}")
             }
         }
 
-        // 3. Fall back to WebView (for web content or if direct PDF failed)
         val intent = Intent(this, com.tannu.edureach.utils.EducationalWebActivity::class.java)
         intent.putExtra("WEB_URL", url)
         intent.putExtra("WEB_TITLE", content.title)
@@ -350,7 +348,7 @@ class NoteListActivity : AppCompatActivity() {
         override fun onBindViewHolder(holder: ViewHolder, position: Int) {
             val item = items[position]
             
-            // Show content type badge
+
             holder.tvContentType?.text = item.type
             holder.tvContentType?.visibility = View.VISIBLE
             
@@ -361,10 +359,10 @@ class NoteListActivity : AppCompatActivity() {
             holder.tvUnitBadge.text = unitName
             holder.tvUnitBadge.visibility = View.VISIBLE
             
-            // Main click - open content
+
             holder.itemView.setOnClickListener { onClick(item) }
             
-            // Download button click
+
             holder.btnDownload?.setOnClickListener {
                 val context = holder.itemView.context
                 if (item.url.isEmpty()) {
@@ -372,7 +370,7 @@ class NoteListActivity : AppCompatActivity() {
                     return@setOnClickListener
                 }
                 
-                // Download the content
+
                 com.tannu.edureach.utils.DownloadHelper.downloadContent(
                     context, 
                     item.url, 

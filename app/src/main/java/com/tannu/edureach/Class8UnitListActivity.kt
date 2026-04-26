@@ -26,6 +26,8 @@ class Class8UnitListActivity : AppCompatActivity() {
     private lateinit var tvSubjectTitle: TextView
     private lateinit var tvEmptyState: TextView
     
+    private var currentSubjectName: String = ""
+    
     private val STORAGE_PERMISSION_CODE = 101
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,13 +35,13 @@ class Class8UnitListActivity : AppCompatActivity() {
         setContentView(R.layout.activity_unit_list)
 
         val subjectId = intent.getStringExtra("SUBJECT_ID") ?: ""
-        val subjectName = intent.getStringExtra("SUBJECT_NAME") ?: "Subject"
+        currentSubjectName = intent.getStringExtra("SUBJECT_NAME") ?: "Subject"
 
         rvUnits = findViewById(R.id.rvUnits)
         tvSubjectTitle = findViewById(R.id.tvSubjectTitle)
         tvEmptyState = findViewById(R.id.tvEmptyState)
 
-        tvSubjectTitle.text = "$subjectName - Units"
+        tvSubjectTitle.text = "$currentSubjectName - Units"
 
         findViewById<View>(R.id.btnBack)?.setOnClickListener { finish() }
 
@@ -79,7 +81,7 @@ class Class8UnitListActivity : AppCompatActivity() {
     }
 
     private fun loadUnits(subjectId: String) {
-        val subjectContent = Class8ContentProvider.getSubjectContent(subjectId)
+        val subjectContent = Class8ContentProvider.getSubjectContent(this, subjectId)
 
         if (subjectContent != null && subjectContent.units.isNotEmpty()) {
             val adapter = UnitAdapter(
@@ -102,11 +104,11 @@ class Class8UnitListActivity : AppCompatActivity() {
             Toast.makeText(this, "PDF URL not available", Toast.LENGTH_SHORT).show()
             return
         }
-        DownloadHelper.downloadContent(this, pdfUrl, unitName, isVideo = false)
+        DownloadHelper.downloadContent(this, pdfUrl, unitName, isVideo = false, subjectName = currentSubjectName)
     }
 
     private fun openPdf(pdfUrl: String, unitName: String) {
-        val localUri = DownloadHelper.getLocalFileUri(this, unitName, false)
+        val localUri = DownloadHelper.getLocalFileUri(this, unitName, false, subjectName = currentSubjectName)
         if (localUri != null) {
             try {
                 val intent = Intent(Intent.ACTION_VIEW)

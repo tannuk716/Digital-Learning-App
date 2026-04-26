@@ -45,7 +45,6 @@ class RegisterActivity : AppCompatActivity() {
 
         userRole = intent.getStringExtra("ROLE") ?: "student"
 
-        // 🔥 Bind views
         tvRegisterTitle = findViewById(R.id.tvRegisterTitle)
         etName = findViewById(R.id.etName)
         etEmail = findViewById(R.id.etEmail)

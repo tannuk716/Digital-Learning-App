@@ -47,7 +47,7 @@ class GameListActivity : AppCompatActivity() {
     private fun loadGames(classId: String, subjectId: String) {
         android.util.Log.d("GameList", "Loading games for classId=$classId, subjectId=$subjectId")
         
-        // Handle "maths" vs "math" mismatch - try both variants
+
         val subjectIds = when (subjectId.lowercase()) {
             "maths", "math" -> listOf("maths", "math")
             else -> listOf(subjectId)
@@ -57,7 +57,7 @@ class GameListActivity : AppCompatActivity() {
             try {
                 val allGames = mutableListOf<GameModel>()
                 
-                // Search with all subject ID variants
+
                 for (searchSubjectId in subjectIds) {
                     android.util.Log.d("GameList", "Searching with subjectId: $searchSubjectId")
                     
@@ -70,7 +70,7 @@ class GameListActivity : AppCompatActivity() {
                     
                     snapshot.documents.forEach { doc ->
                         doc.toObject(GameModel::class.java)?.let { game ->
-                            // Avoid duplicates
+
                             if (allGames.none { it.id == game.id }) {
                                 allGames.add(game.copy(id = doc.id))
                             }
@@ -98,9 +98,9 @@ class GameListActivity : AppCompatActivity() {
 
     private fun launchGame(game: GameModel) {
         try {
-            // Open game URL in EducationalWebActivity
+
             val intent = Intent(this, com.tannu.edureach.utils.EducationalWebActivity::class.java)
-            intent.putExtra("WEB_URL", game.activityClass) // URL is stored in activityClass field
+            intent.putExtra("WEB_URL", game.activityClass)
             intent.putExtra("WEB_TITLE", game.title)
             startActivity(intent)
         } catch (e: Exception) {

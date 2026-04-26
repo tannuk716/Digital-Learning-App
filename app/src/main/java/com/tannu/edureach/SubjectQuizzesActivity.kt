@@ -86,7 +86,6 @@ class SubjectQuizzesActivity : AppCompatActivity() {
             
             holder.tvSubjectName.text = subject.name
             holder.tvSubjectIcon.text = subject.icon
-            // tvSubjectDesc is now a LinearLayout, so we don't set text on it
 
             val bgRes = colorGradients[position % colorGradients.size]
             holder.rootLayout.setBackgroundResource(bgRes)

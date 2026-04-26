@@ -71,7 +71,6 @@ class PronunciationTrainerActivity : AppCompatActivity(), TextToSpeech.OnInitLis
 
         textToSpeech = TextToSpeech(this, this)
 
-        // Set initial word
         updateWord()
 
         btnListen.setOnClickListener {
@@ -107,7 +106,7 @@ class PronunciationTrainerActivity : AppCompatActivity(), TextToSpeech.OnInitLis
         tvMeaning.text = wordPair.second
         tvWordNumber.text = "Word ${currentWordIndex + 1} of ${words.size}"
         
-        // Update button states
+
         btnPrevious.isEnabled = currentWordIndex > 0
         btnNext.isEnabled = currentWordIndex < words.size - 1
         
@@ -122,7 +121,7 @@ class PronunciationTrainerActivity : AppCompatActivity(), TextToSpeech.OnInitLis
     override fun onInit(status: Int) {
         if (status == TextToSpeech.SUCCESS) {
             textToSpeech?.language = Locale.US
-            textToSpeech?.setSpeechRate(0.8f) // Slower for learning
+            textToSpeech?.setSpeechRate(0.8f)
         }
     }
 
@@ -151,7 +150,7 @@ class PronunciationTrainerActivity : AppCompatActivity(), TextToSpeech.OnInitLis
             val results = data?.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS)
             spokenText = results?.get(0) ?: ""
             
-            // Use AI to evaluate pronunciation
+
             evaluatePronunciationWithAI()
         }
     }
@@ -278,8 +277,12 @@ class PronunciationTrainerActivity : AppCompatActivity(), TextToSpeech.OnInitLis
     }
 
     override fun onDestroy() {
-        textToSpeech?.stop()
-        textToSpeech?.shutdown()
+        try {
+            textToSpeech?.stop()
+            textToSpeech?.shutdown()
+        } catch (e: Exception) {
+            android.util.Log.e("PronunciationTrainer", "Error stopping TextToSpeech", e)
+        }
         super.onDestroy()
     }
 }

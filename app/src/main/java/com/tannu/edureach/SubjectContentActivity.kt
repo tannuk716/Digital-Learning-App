@@ -50,7 +50,6 @@ class SubjectContentActivity : AppCompatActivity() {
         tvSubjectTitle = findViewById(R.id.tvSubjectTitle)
         btnBack = findViewById(R.id.btnBack)
 
-        // Capitalize subject logic safely
         val formattedSubject = subjectId.replaceFirstChar { if (it.isLowerCase()) it.titlecase() else it.toString() }
         tvSubjectTitle.text = "$formattedSubject Content"
 
@@ -84,7 +83,6 @@ class SubjectContentActivity : AppCompatActivity() {
                         }
                     }
 
-                    // Fetch videos
                     val videosSnapshot = db.collection("classes").document(classId)
                         .collection("subjects").document(subjectId)
                         .collection("units").document(unitId)
@@ -98,7 +96,7 @@ class SubjectContentActivity : AppCompatActivity() {
                         }
                     }
                     
-                    // Fetch notes
+
                     val notesSnapshot = db.collection("classes").document(classId)
                         .collection("subjects").document(subjectId)
                         .collection("units").document(unitId)

@@ -75,7 +75,7 @@ class SubjectGamesActivity : AppCompatActivity() {
         class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
             val tvSubjectName: TextView = view.findViewById(R.id.tvSubjectName)
             val tvSubjectIcon: TextView = view.findViewById(R.id.tvSubjectIcon)
-            val tvSubjectDesc: TextView = view.findViewById(R.id.tvSubjectDesc)
+            val tvSubjectDesc: android.view.View = view.findViewById(R.id.tvSubjectDesc)
             val cardBackground: android.view.View = view.findViewById(R.id.cardBackground)
         }
 
@@ -89,10 +89,10 @@ class SubjectGamesActivity : AppCompatActivity() {
             val subject = subjects[position]
             holder.tvSubjectName.text = subject.name
             
-            // Use the icon from SubjectItem
+
             holder.tvSubjectIcon.text = subject.icon
             
-            // Create gradient background for each subject
+
             val gradientDrawable = android.graphics.drawable.GradientDrawable(
                 android.graphics.drawable.GradientDrawable.Orientation.TL_BR,
                 intArrayOf(

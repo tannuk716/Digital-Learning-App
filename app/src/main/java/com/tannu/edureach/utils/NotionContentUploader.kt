@@ -7,21 +7,16 @@ import com.tannu.edureach.data.model.NoteContent
 import kotlinx.coroutines.tasks.await
 import org.json.JSONObject
 
-/**
- * Utility to upload Notion content links to Firebase as notes
- */
 object NotionContentUploader {
     
     private const val TAG = "NotionContentUploader"
     private val db = FirebaseFirestore.getInstance()
     
-    /**
-     * Upload all Notion content from JSON to Firebase
-     * This will create notes for each subject with Notion links
-     */
+    
+
     suspend fun uploadNotionContent(context: Context): Result<String> {
         return try {
-            // Read JSON from assets
+
             val jsonString = context.assets.open("notion_content_links.json")
                 .bufferedReader()
                 .use { it.readText() }
@@ -30,19 +25,19 @@ object NotionContentUploader {
             var totalUploaded = 0
             var totalSkipped = 0
             
-            // Iterate through each class
+
             val classKeys = jsonObject.keys()
             while (classKeys.hasNext()) {
                 val classId = classKeys.next()
                 val subjectsObj = jsonObject.getJSONObject(classId)
                 
-                // Iterate through each subject
+
                 val subjectKeys = subjectsObj.keys()
                 while (subjectKeys.hasNext()) {
                     val subjectId = subjectKeys.next()
                     val notionUrl = subjectsObj.getString(subjectId)
                     
-                    // Create note for this subject
+
                     val note = NoteContent(
                         title = "${subjectId.capitalize()} - Complete Notes",
                         description = "Complete study material for ${subjectId.capitalize()}",
@@ -50,10 +45,10 @@ object NotionContentUploader {
                         timestamp = System.currentTimeMillis()
                     )
                     
-                    // Upload to unit_1 (you can modify this logic)
+
                     val unitId = "unit_1"
                     
-                    // Check if already exists
+
                     val exists = checkIfNoteExists(classId, subjectId, unitId, note.title, notionUrl)
                     
                     if (!exists) {
@@ -74,9 +69,8 @@ object NotionContentUploader {
         }
     }
     
-    /**
-     * Check if note already exists to avoid duplicates
-     */
+    
+
     private suspend fun checkIfNoteExists(
         classId: String,
         subjectId: String,
@@ -100,9 +94,8 @@ object NotionContentUploader {
         }
     }
     
-    /**
-     * Upload a single note to Firebase
-     */
+    
+
     private suspend fun uploadNote(
         classId: String,
         subjectId: String,
@@ -121,23 +114,21 @@ object NotionContentUploader {
         }
     }
     
-    /**
-     * Delete all existing notes before uploading new ones
-     * Use with caution!
-     */
+    
+
     suspend fun deleteAllNotes(): Result<String> {
         return try {
             var totalDeleted = 0
             
-            // Classes 1-10
+
             for (classNum in 1..10) {
                 val classId = "class_$classNum"
                 
-                // Common subjects
+
                 val subjects = listOf("english", "hindi", "maths", "science", "evs", "sst")
                 
                 for (subjectId in subjects) {
-                    // Units 1-3
+
                     for (unitNum in 1..3) {
                         val unitId = "unit_$unitNum"
                         
@@ -154,7 +145,7 @@ object NotionContentUploader {
                                 totalDeleted++
                             }
                         } catch (e: Exception) {
-                            // Continue even if some paths don't exist
+
                         }
                     }
                 }

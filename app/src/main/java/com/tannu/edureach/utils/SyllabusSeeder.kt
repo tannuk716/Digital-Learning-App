@@ -17,7 +17,7 @@ object SyllabusSeeder {
         Toast.makeText(context, "Seeding Capstone Syllabus to Firestore...", Toast.LENGTH_SHORT).show()
 
         CoroutineScope(Dispatchers.IO).launch {
-            // English - Marigold
+
             val englishChapters = listOf(
                 "A Happy Child", "Three Little Pigs", "After a Bath", "The Bubble, the Straw and the Shoe",
                 "One Little Kitten", "Lalu and Peelu", "Once I Saw a Little Bird", "Mittu and the Yellow Mango",
@@ -29,7 +29,6 @@ object SyllabusSeeder {
                 repo.uploadVideo("class_1", "english", unitId, VideoContent(title = "$chapter Story Video", description = "Watch the story of $chapter.", videoUrl = "https://www.youtube.com/watch?v=dQw4w9WgXcQ", isYoutube = true))
             }
 
-            // Maths - Math Magic
             val mathsChapters = listOf(
                 "Shapes and Space", "Numbers from One to Nine", "Addition", "Subtraction",
                 "Numbers from Ten to Twenty", "Time", "Measurement", "Numbers from Twenty-One to Fifty",
@@ -40,7 +39,6 @@ object SyllabusSeeder {
                 repo.uploadNote("class_1", "maths", unitId, NoteContent(title = "Chapter ${index + 1}: $chapter", description = "Worksheets for $chapter", fileUrl = "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"))
             }
 
-            // Hindi - Sarangi
             val hindiChapters = listOf(
                 "Jhoola", "Mithai", "Teen Saathi", "Wah, Mere Ghode!",
                 "Khatre Mein Saanp", "Aalu Ki Sadak", "Jhoom-Jholi", "Mela"

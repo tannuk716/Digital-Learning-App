@@ -54,7 +54,7 @@ class HoneyCountActivity : AppCompatActivity() {
         val buttons = listOf(btnOpt1, btnOpt2, btnOpt3)
         for (i in buttons.indices) {
             buttons[i].text = options[i]
-            buttons[i].setBackgroundColor(Color.parseColor("#FFCA28")) // Yellow
+            buttons[i].setBackgroundColor(Color.parseColor("#FFCA28"))
             buttons[i].isEnabled = true
             buttons[i].setOnClickListener { checkAnswer(i, correctIndex, buttons) }
         }

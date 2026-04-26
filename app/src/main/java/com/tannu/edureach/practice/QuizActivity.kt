@@ -87,7 +87,7 @@ class QuizActivity : AppCompatActivity() {
             if (quizModel != null && quizModel!!.questions.isNotEmpty()) {
                 tvQuizTitle.text = quizModel!!.title
                 pbQuizProgress.max = quizModel!!.questions.size
-                startTimer(10 * 60 * 1000) // 10 minutes default timer
+                startTimer(10 * 60 * 1000)
                 showQuestion(0)
             } else {
                 Toast.makeText(this@QuizActivity, "Failed to load quiz.", Toast.LENGTH_SHORT).show()
@@ -134,9 +134,9 @@ class QuizActivity : AppCompatActivity() {
                 btn.text = question.options[i]
                 
                 if (previouslySelected == i) {
-                    btn.setBackgroundColor(Color.parseColor("#4CAF50")) // Highlight selected
+                    btn.setBackgroundColor(Color.parseColor("#4CAF50"))
                 } else {
-                    btn.setBackgroundColor(Color.parseColor("#FFB74D")) // Default
+                    btn.setBackgroundColor(Color.parseColor("#FFB74D"))
                 }
 
                 btn.setOnClickListener {
@@ -166,7 +166,7 @@ class QuizActivity : AppCompatActivity() {
 
     private fun submitQuiz() {
         timer?.cancel()
-        btnSubmitQuiz.isEnabled = false // prevent double submission
+        btnSubmitQuiz.isEnabled = false
         
         val uid = FirebaseAuth.getInstance().currentUser?.uid ?: return
         val questions = quizModel?.questions ?: return

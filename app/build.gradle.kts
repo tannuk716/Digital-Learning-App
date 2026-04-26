@@ -1,4 +1,5 @@
 import java.util.Properties
+import java.io.FileInputStream
 
 plugins {
     alias(libs.plugins.android.application)
@@ -11,21 +12,33 @@ android {
     namespace = "com.tannu.edureach"
     compileSdk = 36
 
+    signingConfigs {
+        create("release") {
+            // Point to your keystore file
+            storeFile = file("E:/College/Sem 8/Capstone/EdureachUpdated4/RuralLearningApp/tannukey/tannukey/key")
+            // Make sure these match what you set when creating the key
+            storePassword = "your_keystore_password" 
+            keyAlias = "key0" // Reset to 'key0' as requested
+            keyPassword = "your_key_password"
+        }
+    }
+
     defaultConfig {
         applicationId = "com.tannu.edureach"
         minSdk = 24
         targetSdk = 36
-        versionCode = 1
-        versionName = "1.0"
+        versionCode = 6
+        versionName = "1.9"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         
         val properties = Properties()
         val propertiesFile = project.rootProject.file("local.properties")
         if (propertiesFile.exists()) {
-            properties.load(propertiesFile.inputStream())
+            properties.load(FileInputStream(propertiesFile))
         }
-        buildConfigField("String", "GEMINI_API_KEY", "\"${properties.getProperty("GEMINI_API_KEY")}\"")
+        val apiKey = properties.getProperty("GEMINI_API_KEY") ?: "YOUR_API_KEY_HERE"
+        buildConfigField("String", "GEMINI_API_KEY", "\"$apiKey\"")
     }
 
     buildFeatures {
@@ -35,6 +48,7 @@ android {
     buildTypes {
         release {
             isMinifyEnabled = false
+            signingConfig = signingConfigs.getByName("release")
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
@@ -47,6 +61,15 @@ android {
     }
     kotlinOptions {
         jvmTarget = "11"
+    }
+    
+    testOptions {
+        unitTests {
+            isIncludeAndroidResources = true
+            all {
+                it.useJUnitPlatform()
+            }
+        }
     }
 }
 
@@ -101,9 +124,15 @@ dependencies {
 
     // Testing
     testImplementation(libs.junit)
+    testImplementation("org.junit.jupiter:junit-jupiter-api:5.10.1")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.10.1")
     testImplementation("org.robolectric:robolectric:4.11.1")
     testImplementation("androidx.test:core:1.5.0")
     testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.3")
+    testImplementation("net.jqwik:jqwik:1.8.2")
+    testImplementation("net.jqwik:jqwik-kotlin:1.8.2")
+    testImplementation("org.mockito:mockito-core:5.8.0")
+    testImplementation("org.mockito.kotlin:mockito-kotlin:5.2.1")
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 }

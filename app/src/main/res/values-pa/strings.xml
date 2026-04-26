@@ -50,4 +50,13 @@
     <string name="teacher_uploaded_section">ਤੁਹਾਡੀ ਅੱਪਲੋਡ ਕੀਤੀ ਸਮੱਗਰੀ</string>
     <string name="teacher_empty_state_title">ਅਜੇ ਤੱਕ ਕੋਈ ਸਮੱਗਰੀ ਨਹੀਂ 📚</string>
     <string name="teacher_empty_state_desc">ਸ਼ੁਰੂ ਕਰਨ ਲਈ ਨਵੀਂ ਸਮੱਗਰੀ ਸ਼ਾਮਲ ਕਰੋ।</string>
+    
+    <!-- Subject Names -->
+    <string name="subject_english">ਅੰਗਰੇਜ਼ੀ</string>
+    <string name="subject_maths">ਗਣਿਤ</string>
+    <string name="subject_hindi">ਹਿੰਦੀ</string>
+    <string name="subject_science">ਵਿਗਿਆਨ</string>
+    <string name="subject_evs">ਵਾਤਾਵਰਣ</string>
+    <string name="subject_sst">ਸਮਾਜਿਕ ਵਿਗਿਆਨ</string>
+    <string name="subject_punjabi">ਪੰਜਾਬੀ</string>
 </resources>

@@ -36,7 +36,7 @@ class MonkeyJumpActivity : AppCompatActivity() {
     }
 
     private fun loadQuestion() {
-        // Simulated question purely for the game
+
         tvQuestion.text = "A is for?"
         btnOpt1.text = "🍎 Apple"
         btnOpt2.text = "🚗 Car"
@@ -44,7 +44,7 @@ class MonkeyJumpActivity : AppCompatActivity() {
     }
 
     private fun checkAnswer(selectedIndex: Int, clickedBtn: Button) {
-        // Assume answer is 0 (Apple)
+
         val correctAnswerIndex = 0
 
         if (selectedIndex == correctAnswerIndex) {
@@ -69,7 +69,7 @@ class MonkeyJumpActivity : AppCompatActivity() {
         animY.start()
 
         Handler(Looper.getMainLooper()).postDelayed({
-            finish() // End game after animation
+            finish()
         }, 2000)
     }
 }

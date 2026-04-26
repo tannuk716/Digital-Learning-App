@@ -30,7 +30,7 @@ class QuizResultActivity : AppCompatActivity() {
 
         val btnFinish: Button = findViewById(R.id.btnFinish)
         btnFinish.setOnClickListener {
-            // Navigate back to Dashboard and clear stack
+
             val intent = Intent(this, StudentDashboardActivity::class.java)
             intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK
             startActivity(intent)

@@ -7,26 +7,12 @@ import com.google.firebase.firestore.FirebaseFirestoreException
 import java.net.SocketTimeoutException
 import java.net.UnknownHostException
 
-/**
- * ErrorHandler - Centralized error handling utility
- * 
- * Validates: Requirements 4.6, 9.5
- * 
- * This object provides centralized error handling with user-friendly messages
- * for Gemini API errors, network errors, and Firebase exceptions.
- */
 object ErrorHandler {
     
     private const val TAG = "ErrorHandler"
     
-    /**
-     * Handles Gemini API errors with context and retry callback
-     * 
-     * @param context Android context for resource access
-     * @param exception The exception that occurred
-     * @param onRetry Callback function to retry the operation
-     * @return User-friendly error message
-     */
+    
+
     fun handleGeminiError(context: Context, exception: Exception, onRetry: () -> Unit): String {
         logError(TAG, "Gemini API error occurred", exception)
         
@@ -57,13 +43,8 @@ object ErrorHandler {
         }
     }
     
-    /**
-     * Handles network errors for general network failures
-     * 
-     * @param context Android context for resource access
-     * @param exception The network exception that occurred
-     * @return User-friendly error message
-     */
+    
+
     fun handleNetworkError(context: Context, exception: Exception): String {
         logError(TAG, "Network error occurred", exception)
         
@@ -91,13 +72,8 @@ object ErrorHandler {
         }
     }
     
-    /**
-     * Handles Firebase exceptions (Auth and Firestore)
-     * 
-     * @param context Android context for resource access
-     * @param exception The Firebase exception that occurred
-     * @return User-friendly error message
-     */
+    
+
     fun handleFirebaseError(context: Context, exception: Exception): String {
         logError(TAG, "Firebase error occurred", exception)
         
@@ -156,13 +132,8 @@ object ErrorHandler {
         }
     }
     
-    /**
-     * Logs error details for debugging and monitoring
-     * 
-     * @param tag Log tag for categorization
-     * @param message Descriptive error message
-     * @param exception The exception to log (optional)
-     */
+    
+
     fun logError(tag: String, message: String, exception: Exception?) {
         if (exception != null) {
             Log.e(tag, message, exception)
@@ -170,7 +141,6 @@ object ErrorHandler {
             Log.e(tag, message)
         }
         
-        // Optional: Send to Firebase Crashlytics for production monitoring
-        // FirebaseCrashlytics.getInstance().recordException(exception ?: Exception(message))
+
     }
 }

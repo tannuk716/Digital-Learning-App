@@ -18,7 +18,7 @@ class NotesActivity : AppCompatActivity() {
         val rvNotes = findViewById<androidx.recyclerview.widget.RecyclerView>(R.id.rvNotes)
         rvNotes.layoutManager = androidx.recyclerview.widget.LinearLayoutManager(this)
         
-        // Mock data for unit wise notes
+
         val notes = listOf(
             "Unit 1: The Alphabet (A-Z)",
             "Unit 2: Phonics Basics",
@@ -31,7 +31,6 @@ class NotesActivity : AppCompatActivity() {
         rvNotes.adapter = NotesAdapter(notes)
     }
 
-    // Using a basic adapter implementation for the mock data
     private class NotesAdapter(private val data: List<String>) : androidx.recyclerview.widget.RecyclerView.Adapter<NotesAdapter.ViewHolder>() {
         class ViewHolder(view: View) : androidx.recyclerview.widget.RecyclerView.ViewHolder(view) {
             val textView: TextView = view.findViewById(android.R.id.text1)

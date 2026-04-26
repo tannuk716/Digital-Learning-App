@@ -85,7 +85,6 @@ class AddLearningContentActivity : AppCompatActivity() {
                     return@setOnClickListener
                 }
 
-                // Validate URL format using URLValidator
                 val validationResult = URLValidator.validateURL(url)
                 if (!validationResult.isValid) {
                     showValidationError("Invalid URL format. Please enter a valid YouTube or Google Drive link")
@@ -96,16 +95,16 @@ class AddLearningContentActivity : AppCompatActivity() {
                 showValidationProgress()
 
                 lifecycleScope.launch {
-                    // Validate content safety
+
                     val safetyResult = contentSafetyValidator.validateContent(url)
                     
                     hideValidationProgress()
                     
                     if (!safetyResult.isSafe) {
-                        // Content is unsafe - block submission and log
+
                         showValidationError(safetyResult.reason ?: "Content blocked: This link contains inappropriate material")
                         
-                        // Log blocked submission
+
                         val userId = FirebaseAuth.getInstance().currentUser?.uid ?: "unknown"
                         contentSafetyValidator.logBlockedSubmission(userId, url, safetyResult.reason ?: "Inappropriate content detected")
                         
@@ -113,12 +112,12 @@ class AddLearningContentActivity : AppCompatActivity() {
                         return@launch
                     }
                     
-                    // Show warning if validation timed out
+
                     if (safetyResult.reason != null) {
                         showValidationWarning(safetyResult.reason)
                     }
                     
-                    // Proceed with upload
+
                     btnSaveContent.text = "Uploading..."
                     
                     val success = if (rbVideo.isChecked) {

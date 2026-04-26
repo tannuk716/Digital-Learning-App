@@ -31,7 +31,6 @@ class ChatAdapter(
     override fun onBindViewHolder(holder: ChatViewHolder, position: Int) {
         val messageItem = messages[position]
 
-        // Reset all visibility
         holder.llSender.visibility = View.GONE
         holder.llReceiver.visibility = View.GONE
         holder.llLoading.visibility = View.GONE

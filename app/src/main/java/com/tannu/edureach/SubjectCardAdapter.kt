@@ -40,18 +40,15 @@ class SubjectCardAdapter(
         
         holder.tvSubjectName.text = subject.name
         holder.tvSubjectIcon.text = subject.icon ?: "📚"
-        // tvSubjectDesc is now a LinearLayout, so we don't set text on it
 
-        // Apply a cyclical repeating gradient background for vibrant colors
         val bgRes = colorGradients[position % colorGradients.size]
         holder.rootLayout.setBackgroundResource(bgRes)
 
-        // Action
         holder.rootLayout.setOnClickListener {
             onSubjectClick(subject)
         }
         
-        // Setup simple scale animation on touch 
+
         holder.rootLayout.setOnTouchListener { view, event ->
             when (event.action) {
                 android.view.MotionEvent.ACTION_DOWN -> {

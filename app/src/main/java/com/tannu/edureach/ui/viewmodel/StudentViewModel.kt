@@ -11,7 +11,7 @@ import kotlinx.coroutines.flow.*
 data class UnifiedContent(
     val id: String,
     val title: String,
-    val type: String, // "Note", "Video", "Quiz"
+    val type: String,
     val urlOrData: String,
     val timestamp: Long
 )
@@ -23,7 +23,6 @@ class StudentViewModel : ViewModel() {
     private val _classId = MutableStateFlow("class_1")
     private val _subjectId = MutableStateFlow("english")
     private val _unitId = MutableStateFlow("unit_1")
-    // Removed languageCode filter as content is shared across locales
 
     fun updateFilters(classId: String, subjectId: String, unitId: String) {
         _classId.value = classId
@@ -31,7 +30,6 @@ class StudentViewModel : ViewModel() {
         _unitId.value = unitId
     }
     
-    // Deprecated setLanguage
 
     val contentList: Flow<List<UnifiedContent>> = combine(
         _classId, _subjectId, _unitId

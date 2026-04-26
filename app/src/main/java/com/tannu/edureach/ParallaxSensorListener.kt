@@ -14,12 +14,9 @@ class ParallaxSensorListener(
             val x = event.values[0]
             val y = event.values[1]
 
-            // Apply absolute translation based on accelerometer movement
-            // This creates a parallax effect matching the device tilt
             backgroundView?.translationX = x * -8f
             backgroundView?.translationY = y * 8f
 
-            // Counter translate foreground elements to pop out
             for (fg in foregroundViews) {
                 fg.translationX = x * 4f
                 fg.translationY = y * -4f

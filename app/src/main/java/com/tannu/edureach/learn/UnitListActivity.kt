@@ -40,7 +40,7 @@ class UnitListActivity : AppCompatActivity() {
         if (currentSubject != null) {
             rvUnits.adapter = UnitAdapter(currentSubject.units) { unit ->
                 val intent = Intent(this@UnitListActivity, LearnContentActivity::class.java)
-                // We'll pass class and subject so the content activity knows where to look inside the json tree!
+
                 intent.putExtra("CLASS_ID", userClass)
                 intent.putExtra("SUBJECT_NAME", subjectName)
                 intent.putExtra("UNIT_ID", unit.id)
@@ -56,9 +56,9 @@ class UnitListActivity : AppCompatActivity() {
 
         inner class UnitViewHolder(view: View) : RecyclerView.ViewHolder(view) {
             val title: TextView = view.findViewById(R.id.tvUnitName)
-            val btnDownload: ImageView // We pretend there is a download button attached!
+            val btnDownload: ImageView
             init {
-                // If it crashes because item_unit.xml doesn't have btnDownload, we catch it!
+
                 btnDownload = view.findViewById(R.id.btnDownload) ?: ImageView(view.context)
             }
         }
@@ -74,7 +74,7 @@ class UnitListActivity : AppCompatActivity() {
             holder.title.text = unit.title
             holder.itemView.setOnClickListener { onClick(unit) }
             
-            // Mock Download logic
+
             holder.btnDownload.setOnClickListener {
                 android.widget.Toast.makeText(holder.itemView.context, "Downloading ${unit.title} for offline access...", android.widget.Toast.LENGTH_SHORT).show()
                 holder.btnDownload.setImageResource(android.R.drawable.stat_sys_download_done)

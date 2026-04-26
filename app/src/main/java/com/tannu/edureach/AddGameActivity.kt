@@ -53,16 +53,14 @@ class AddGameActivity : AppCompatActivity() {
     }
 
     private fun setupSpinners() {
-        // Class spinner - Classes 1-10
+
         val classes = arrayOf("Select Class", "Class 1", "Class 2", "Class 3", "Class 4", "Class 5", 
                              "Class 6", "Class 7", "Class 8", "Class 9", "Class 10")
         spinnerClass.adapter = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, classes)
 
-        // Subject spinner - All subjects
         val subjects = arrayOf("Select Subject", "English", "Hindi", "Maths", "Science", "SST", "EVS")
         spinnerSubject.adapter = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, subjects)
 
-        // Unit spinner - Units 1-20
         val units = arrayOf("Select Unit", "Unit 1", "Unit 2", "Unit 3", "Unit 4", "Unit 5",
                            "Unit 6", "Unit 7", "Unit 8", "Unit 9", "Unit 10",
                            "Unit 11", "Unit 12", "Unit 13", "Unit 14", "Unit 15",
@@ -100,7 +98,6 @@ class AddGameActivity : AppCompatActivity() {
             return
         }
 
-        // Validate URL format
         val validationResult = URLValidator.validateURL(url)
         if (!validationResult.isValid) {
             showValidationError("Invalid URL format. Please enter a valid web link")
@@ -116,16 +113,16 @@ class AddGameActivity : AppCompatActivity() {
 
         lifecycleScope.launch {
             try {
-                // Validate content safety
+
                 val safetyResult = contentSafetyValidator.validateContent(url)
                 
                 hideValidationProgress()
                 
                 if (!safetyResult.isSafe) {
-                    // Content is unsafe - block submission
+
                     showValidationError(safetyResult.reason ?: "Content blocked: This link contains inappropriate material")
                     
-                    // Log blocked submission
+
                     val userId = com.google.firebase.auth.FirebaseAuth.getInstance().currentUser?.uid ?: "unknown"
                     contentSafetyValidator.logBlockedSubmission(userId, url, safetyResult.reason ?: "Inappropriate content detected")
                     
@@ -133,7 +130,7 @@ class AddGameActivity : AppCompatActivity() {
                     return@launch
                 }
                 
-                // Show warning if validation timed out
+
                 if (safetyResult.reason != null) {
                     showValidationWarning(safetyResult.reason)
                 }
@@ -141,7 +138,6 @@ class AddGameActivity : AppCompatActivity() {
                 btnSaveGame.text = "Saving..."
                 progressBar.visibility = View.VISIBLE
 
-                // Check for duplicate game
                 val repository = com.tannu.edureach.data.repository.ContentRepository()
                 val isDuplicate = repository.checkDuplicateGame(classId, subjectId, title, url)
                 
@@ -157,7 +153,7 @@ class AddGameActivity : AppCompatActivity() {
                     title = title,
                     description = description,
                     gameType = "web_game",
-                    activityClass = url, // Store URL in activityClass field
+                    activityClass = url,
                     classId = classId,
                     subjectId = subjectId,
                     unitId = unitId

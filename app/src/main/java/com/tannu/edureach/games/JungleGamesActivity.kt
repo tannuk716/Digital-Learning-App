@@ -26,7 +26,7 @@ class JungleGamesActivity : AppCompatActivity() {
 
         val rvGames = findViewById<RecyclerView>(R.id.rvGames)
         rvGames.layoutManager = LinearLayoutManager(this)
-        // Disable nested scrolling so it works smoothly inside the ScrollView
+
         rvGames.isNestedScrollingEnabled = false
 
         val gamesList = listOf(
@@ -43,7 +43,7 @@ class JungleGamesActivity : AppCompatActivity() {
         )
 
         rvGames.adapter = GamesAdapter(gamesList) { game ->
-            com.tannu.edureach.utils.ProgressManager.awardPoints(10) // 10 points per game attempt
+            com.tannu.edureach.utils.ProgressManager.awardPoints(10)
             when (game.title) {
                 "1. Jungle Jump" -> startActivity(Intent(this, MonkeyJumpActivity::class.java))
                 "2. Lion Math Challenge" -> startActivity(Intent(this, LionMathChallengeActivity::class.java))

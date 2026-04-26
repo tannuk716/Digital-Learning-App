@@ -43,7 +43,6 @@ class AIChatbotActivity : AppCompatActivity() {
         rvChat.layoutManager = LinearLayoutManager(this)
         rvChat.adapter = chatAdapter
 
-
         if (!validateGeminiApiKey()) {
             return
         }
@@ -66,13 +65,8 @@ class AIChatbotActivity : AppCompatActivity() {
         rvChat.scrollToPosition(messages.size - 1)
     }
 
-    /**
-     * Validates the Gemini API key configuration
-     * 
-     * Validates: Requirements 4.1, 4.2
-     * 
-     * @return true if API key is valid, false otherwise
-     */
+    
+
     private fun validateGeminiApiKey(): Boolean {
         val apiKey = BuildConfig.GEMINI_API_KEY
         
@@ -124,9 +118,7 @@ class AIChatbotActivity : AppCompatActivity() {
                         "English, or General Knowledge, provide a concise, easy-to-understand explanation appropriate for their age. " +
                         "Question: $query"
 
-
                 val result = com.tannu.edureach.utils.GeminiApiHelper.generateContent(promptText)
-
 
                 if (typingIdx < messages.size) {
                     messages.removeAt(typingIdx)
@@ -139,6 +131,8 @@ class AIChatbotActivity : AppCompatActivity() {
                     android.util.Log.e("AIChatbot", "Error: ${exception.message}", exception)
                     
                     val errorMessage = when {
+                        exception.message?.contains("Daily AI usage limit", ignoreCase = true) == true -> 
+                            exception.message ?: "Daily limit reached"
                         exception.message?.contains("internet", ignoreCase = true) == true -> 
                             "No internet connection. Please check your network and try again."
                         exception.message?.contains("timeout", ignoreCase = true) == true -> 
@@ -147,8 +141,10 @@ class AIChatbotActivity : AppCompatActivity() {
                             "AI service temporarily unavailable. Please try again later."
                         exception.message?.contains("401") == true || exception.message?.contains("403") == true -> 
                             "API key issue. Please contact your teacher."
+                        exception.message?.contains("quota", ignoreCase = true) == true -> 
+                            "Daily AI usage limit reached. The AI Tutor will be available again tomorrow. You can continue using other features of the app."
                         exception.message?.contains("429") == true -> 
-                            "Too many requests. Please wait a moment and try again."
+                            "Too many requests at once. Please wait a minute and try again."
                         else -> exception.message ?: "An error occurred. Please try again."
                     }
                     

@@ -44,18 +44,17 @@ class QuizListActivity : AppCompatActivity() {
     private fun loadQuizzes(classId: String, subjectId: String) {
         android.util.Log.d("QuizList", "Loading quizzes for classId=$classId, subjectId=$subjectId")
         
-        // Handle "maths" vs "math" mismatch - try both variants
+
         val subjectIds = when (subjectId.lowercase()) {
             "maths", "math" -> listOf("maths", "math")
             else -> listOf(subjectId)
         }
         
         lifecycleScope.launch {
-            // Get all units for this subject
+
             val units = listOf("unit_1", "unit_2", "unit_3", "unit_4", "unit_5", "unit_6", "unit_7", "unit_8", "unit_9", "unit_10")
             val allQuizzes = mutableListOf<QuizWithUnit>()
 
-            // Search with all subject ID variants
             for (searchSubjectId in subjectIds) {
                 android.util.Log.d("QuizList", "Searching with subjectId: $searchSubjectId")
                 
@@ -64,13 +63,13 @@ class QuizListActivity : AppCompatActivity() {
                         android.util.Log.d("QuizList", "[$searchSubjectId] Found ${quizzes.size} quizzes in $unit")
                         
                         quizzes.forEach { quiz ->
-                            // Avoid duplicates
+
                             if (allQuizzes.none { it.quiz.id == quiz.id }) {
                                 allQuizzes.add(QuizWithUnit(quiz, unit))
                             }
                         }
                         
-                        // Update UI
+
                         if (allQuizzes.isEmpty()) {
                             tvEmptyState.visibility = View.VISIBLE
                             tvEmptyState.text = "No quizzes available yet.\nTeachers can create quizzes for this subject."
@@ -79,7 +78,7 @@ class QuizListActivity : AppCompatActivity() {
                             tvEmptyState.visibility = View.GONE
                             rvQuizzes.visibility = View.VISIBLE
                             rvQuizzes.adapter = QuizAdapter(allQuizzes) { quizWithUnit ->
-                                com.tannu.edureach.utils.ProgressManager.awardPoints(5) // 5 points per quiz attempt
+                                com.tannu.edureach.utils.ProgressManager.awardPoints(5)
                                 val intent = Intent(this@QuizListActivity, QuizActivity::class.java)
                                 intent.putExtra("QUIZ_ID", quizWithUnit.quiz.id)
                                 intent.putExtra("CLASS_ID", classId)

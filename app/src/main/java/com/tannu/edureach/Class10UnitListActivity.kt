@@ -26,6 +26,8 @@ class Class10UnitListActivity : AppCompatActivity() {
     private lateinit var tvSubjectTitle: TextView
     private lateinit var tvEmptyState: TextView
     
+    private var currentSubjectName: String = ""
+    
     private val STORAGE_PERMISSION_CODE = 101
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,13 +35,13 @@ class Class10UnitListActivity : AppCompatActivity() {
         setContentView(R.layout.activity_unit_list)
 
         val subjectId = intent.getStringExtra("SUBJECT_ID") ?: ""
-        val subjectName = intent.getStringExtra("SUBJECT_NAME") ?: "Subject"
+        currentSubjectName = intent.getStringExtra("SUBJECT_NAME") ?: "Subject"
 
         rvUnits = findViewById(R.id.rvUnits)
         tvSubjectTitle = findViewById(R.id.tvSubjectTitle)
         tvEmptyState = findViewById(R.id.tvEmptyState)
 
-        tvSubjectTitle.text = "$subjectName - Units"
+        tvSubjectTitle.text = "$currentSubjectName - Units"
 
         findViewById<View>(R.id.btnBack)?.setOnClickListener { finish() }
 
@@ -79,22 +81,44 @@ class Class10UnitListActivity : AppCompatActivity() {
     }
 
     private fun loadUnits(subjectId: String) {
-        val subjectContent = Class10ContentProvider.getSubjectContent(subjectId)
+        android.util.Log.d("Class10Unit", "========================================")
+        android.util.Log.d("Class10Unit", "loadUnits called with subjectId: '$subjectId'")
+        
+        if (subjectId.isEmpty()) {
+            android.util.Log.e("Class10Unit", "❌ ERROR: subjectId is empty!")
+            rvUnits.visibility = View.GONE
+            tvEmptyState.visibility = View.VISIBLE
+            tvEmptyState.text = "Error: No subject selected"
+            return
+        }
+        
+        val subjectContent = Class10ContentProvider.getSubjectContent(this, subjectId)
 
         if (subjectContent != null && subjectContent.units.isNotEmpty()) {
+            android.util.Log.d("Class10Unit", "✅ Loaded ${subjectContent.units.size} units for ${subjectContent.subjectName}")
+            
             val adapter = UnitAdapter(
                 subjectContent.units,
-                onUnitClick = { unit -> openPdf(unit.pdfUrl, unit.unitName) },
-                onDownloadClick = { unit -> downloadPdf(unit.pdfUrl, unit.unitName) }
+                onUnitClick = { unit -> 
+                    android.util.Log.d("Class10Unit", "Unit clicked: ${unit.unitName}")
+                    android.util.Log.d("Class10Unit", "PDF URL: ${unit.pdfUrl}")
+                    openPdf(unit.pdfUrl, unit.unitName) 
+                },
+                onDownloadClick = { unit -> 
+                    android.util.Log.d("Class10Unit", "Download clicked: ${unit.unitName}")
+                    downloadPdf(unit.pdfUrl, unit.unitName) 
+                }
             )
             rvUnits.adapter = adapter
             rvUnits.visibility = View.VISIBLE
             tvEmptyState.visibility = View.GONE
         } else {
+            android.util.Log.e("Class10Unit", "❌ No content found for subjectId: '$subjectId'")
             rvUnits.visibility = View.GONE
             tvEmptyState.visibility = View.VISIBLE
             tvEmptyState.text = "No units available for this subject."
         }
+        android.util.Log.d("Class10Unit", "========================================")
     }
     
     private fun downloadPdf(pdfUrl: String, unitName: String) {
@@ -102,18 +126,20 @@ class Class10UnitListActivity : AppCompatActivity() {
             Toast.makeText(this, "PDF URL not available", Toast.LENGTH_SHORT).show()
             return
         }
-        DownloadHelper.downloadContent(this, pdfUrl, unitName, isVideo = false)
+        DownloadHelper.deleteOldDownloads(this, unitName, isVideo = false)
+        DownloadHelper.downloadContent(this, pdfUrl, unitName, isVideo = false, subjectName = currentSubjectName)
     }
 
     private fun openPdf(pdfUrl: String, unitName: String) {
         android.util.Log.d("Class10Unit", "========================================")
         android.util.Log.d("Class10Unit", "Opening PDF: $unitName")
+        android.util.Log.d("Class10Unit", "Subject: $currentSubjectName")
         android.util.Log.d("Class10Unit", "URL: $pdfUrl")
         android.util.Log.d("Class10Unit", "========================================")
         
-        val localUri = DownloadHelper.getLocalFileUri(this, unitName, false)
+        val localUri = DownloadHelper.getLocalFileUri(this, unitName, false, subjectName = currentSubjectName)
         if (localUri != null) {
-            android.util.Log.d("Class10Unit", "Found local file, opening offline")
+            android.util.Log.d("Class10Unit", "✅ Found correct local file with subject prefix, opening offline")
             try {
                 val intent = Intent(Intent.ACTION_VIEW)
                 intent.setDataAndType(localUri, "application/pdf")
@@ -124,6 +150,8 @@ class Class10UnitListActivity : AppCompatActivity() {
                 android.util.Log.e("Class10Unit", "Error opening downloaded file", e)
                 Toast.makeText(this, "Unable to open downloaded file. Opening online...", Toast.LENGTH_SHORT).show()
             }
+        } else {
+            android.util.Log.d("Class10Unit", "No local file found (or old format), opening online")
         }
         
         android.util.Log.d("Class10Unit", "Opening online via EducationalWebActivity")
@@ -158,14 +186,19 @@ class Class10UnitListActivity : AppCompatActivity() {
 
         override fun onBindViewHolder(holder: ViewHolder, position: Int) {
             val unit = units[position]
+            
+            android.util.Log.d("UnitAdapter", "Binding position=$position, unit=${unit.unitName}")
+            
             holder.tvUnitName.text = unit.unitName
             holder.tvUnitIcon.text = "📄"
 
             holder.itemView.setOnClickListener {
+                android.util.Log.d("UnitAdapter", "Item clicked: ${unit.unitName} at position=$position")
                 onUnitClick(unit)
             }
             
             holder.btnDownload.setOnClickListener {
+                android.util.Log.d("UnitAdapter", "Download clicked: ${unit.unitName} at position=$position")
                 onDownloadClick(unit)
             }
 
